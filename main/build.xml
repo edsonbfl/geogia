@@ -1,4 +1,4 @@
-<project name="gerp" default="test">
+<project name="geogia" default="test">
 
     <condition property="grails" value="grails.bat">
         <os family="windows"/>
