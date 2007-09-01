@@ -1,4 +1,4 @@
-package org.gerp.party
+package org.geogia.party
 
 class PartyGroup extends Party {
 	
