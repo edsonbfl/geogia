@@ -1,0 +1,13 @@
+#summary Developer's guide for setting environments
+#labels Phase-Implementation
+
+= Developer's Guide =
+
+This document provides a brief for setting up development environment for Geogia.
+
+= Mininum Requirements =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
