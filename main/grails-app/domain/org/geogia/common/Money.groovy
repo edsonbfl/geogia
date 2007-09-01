@@ -32,7 +32,7 @@ class Money {
 	Currency unit
 	
 	Double getAmount() { return this.raw / (10**this.unit.getDefaultFractionDigits()) }
-	void setAmount(double value) { this.raw = value * (10**this.unit.getDefaultFractionDigits()) }
+	void setAmount(Double value) { this.raw = value * (10**this.unit.getDefaultFractionDigits()) }
 	
 	static transients = ['amount'] 	
 	
@@ -43,7 +43,7 @@ class Money {
 		
 	def Money(){}
 	
-	def Money(double value, String unit){
+	def Money(Double value, String unit){
 		this.unit = Currency.getInstance(unit)
 		this.amount = value
 	}
