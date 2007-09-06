@@ -45,7 +45,7 @@
 		<mkdir dir="dist"/>
 		<zip destfile="dist/geogia-src-${version}.zip"
 			basedir="."
-			excludes="build.xml, .settings/**, .*, dist/**, test/**, uml/**, web-app/**, Geogia.*"
+			excludes="build.xml, .settings/**, .*, dist/**, test/**, uml/**, Geogia.*"
 		/>
 	</target>
 </project>
