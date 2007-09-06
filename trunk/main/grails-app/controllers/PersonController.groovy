@@ -1,6 +1,6 @@
 class PersonController {
 
-	def scaffold = org.gerp.party.Person
+	def scaffold = org.geogia.party.Person
 	
 }
 
