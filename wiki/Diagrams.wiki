@@ -6,7 +6,8 @@ Add your content here.
 
 
 = Details =
-[http://labs.libre-entreprise.org/plugins/scmcvs/cvsweb.php/ofbizNeogia/neogia/accounting/modeldef/zuml/accounting.zuml?cvsroot=neogia accouting module]
+  * [http://labs.libre-entreprise.org/plugins/scmcvs/cvsweb.php/ofbizNeogia/neogia/accounting/modeldef/zuml/accounting.zuml?cvsroot=neogia accouting module]
+  * [http://labs.libre-entreprise.org/plugins/scmcvs/cvsweb.php/ofbizNeogia/neogia/facility/modeldef/zuml/facility.zuml?cvsroot=neogia facility module]
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
