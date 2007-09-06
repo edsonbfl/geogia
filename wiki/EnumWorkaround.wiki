@@ -17,7 +17,7 @@ class AccountType {
 }
 }}}
 
-initialise enum values in the init closure, in {{{conf/BootStrap.groovy}}}:
+initialising enum values in the init closure, in {{{conf/BootStrap.groovy}}}:
 {{{
  if(AccountType.count() == 0) {
     new AccountType(value:"GL").save()
