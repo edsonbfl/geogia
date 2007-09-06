@@ -1,4 +1,4 @@
-<project name="geogia" default="test">
+<project name="geogia" default="src">
 
     <condition property="grails" value="grails.bat">
         <os family="windows"/>
@@ -38,4 +38,14 @@
     <target name="deploy" depends="war" description="--> The deploy target (initially empty)">
         <!-- TODO -->
     </target>
+	
+	<property name="version" value="0.1-SNAPSHOT"/>
+
+	<target name="src">
+		<mkdir dir="dist"/>
+		<zip destfile="dist/geogia-src-${version}.zip"
+			basedir="."
+			excludes="build.xml, .settings/**, .*, dist/**, test/**, uml/**, web-app/**, Geogia.*"
+		/>
+	</target>
 </project>
