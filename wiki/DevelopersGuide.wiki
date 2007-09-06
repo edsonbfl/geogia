@@ -7,7 +7,8 @@ This document provides a brief for setting up development environment for Geogia
 
 = Mininum Requirements =
 
-Add your content here.  Format your content with:
+For getting started, you just need:
+
   * Grails 0.6 (http://grails.org) 
   * Eclipse Europa (3.3)
   * Subclipse 1.2.4
