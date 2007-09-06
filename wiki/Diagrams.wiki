@@ -2,8 +2,7 @@
 
 = Introduction =
 
-Add your content here.
-
+Neogia has several ERP diagrams for describing its system with UML. We need [http://gentleware.com Poseidon UML] to open them. Poseidon CE edition is no longer free. But for just opening and reading the diagram, it would work for us.
 
 = UML Diagrams =
   * [http://labs.libre-entreprise.org/plugins/scmcvs/cvsweb.php/ofbizNeogia/neogia/accounting/modeldef/zuml/accounting.zuml?cvsroot=neogia accouting module]
