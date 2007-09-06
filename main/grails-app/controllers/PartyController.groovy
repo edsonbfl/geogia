@@ -1,6 +1,6 @@
 class PartyController {
 	
-	def scaffold = org.gerp.party.Party
+	def scaffold = org.geogia.party.Party
 	
 }
 
