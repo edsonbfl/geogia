@@ -8,7 +8,10 @@ This page describe how to create a template for Groovy-MDA to generate all class
 
 = Details =
 
-Take an MDA approach similar to Neogia would take this project progress fast. Groovy-MDA allows inputs as XMI files and now can produce JPA beans. 
+Take an MDA approach similar to Neogia would take this project progress fast. Groovy-MDA allows inputs as XMI files and now can produce JPA beans. Current mapping approaches are:
+
+  * Re-modeling Neogia UML classes
+  * todo
 
 = Defining Relationships =
 
