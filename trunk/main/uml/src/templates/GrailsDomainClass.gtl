@@ -1,0 +1,16 @@
+<% if (getPackageName(currentModelElement) != '') { %>
+package ${getPackageName(currentModelElement)}
+<% } %>
+class ${currentModelElement.name} {
+   <% getAttributes(currentModelElement).each { attribute ->
+       def attributeName = attribute.name
+       def attributeType = friendlyNameType(attribute.type)
+       def attributeTags = taggedValues(attribute) %>            
+   ${attributeType} ${attributeName}<% } %>
+      
+   String toString() {
+   	 return "\${id}: \${${getAttributes(currentModelElement)[0].name}}"
+   }
+   
+}
+
