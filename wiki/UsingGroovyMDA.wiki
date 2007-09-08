@@ -1,0 +1,11 @@
+#summary Using Groovy-MDA to generate all domain classes
+#labels Featured
+
+= Introduction =
+
+This page describe how to create a template for Groovy-MDA to generate all classes from Neogia UML diagrams.
+
+
+= Details =
+
+Take an MDA approach similar to Neogia would take this project progress fast. Groovy-MDA allows inputs as XMI files and now can produce JPA beans. 
