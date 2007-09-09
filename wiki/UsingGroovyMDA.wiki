@@ -5,14 +5,14 @@
 
 This page describe how to create a template for Groovy-MDA to generate all classes from Neogia UML diagrams.
 
-
 = Details =
 
-Take an MDA approach similar to Neogia would take this project progress fast. Groovy-MDA allows inputs as XMI files and now can produce JPA beans. Current mapping approaches are:
+Take an MDA approach similar to Neogia would take this project progress fast. The generator of this proejct is Groovy-MDA, which allows inputs as XMI files and there are the early version of Grails templates in SVN. Current transformation process are:
 
-  * Re-modeling Neogia UML classes
-  * todo
+  * Inputs as Neogia UML Classes (with UML2 namespace)
+  * Clean them with XML stylesheet
+  * Use Groovy-MDA to generate Grails domain classes
 
 = Defining Relationships =
 
-[http://docs.codehaus.org/display/GRAILS/GORM+-+Defining+relationships GORM]
+The following is a document for defining relationships in [http://docs.codehaus.org/display/GRAILS/GORM+-+Defining+relationships GORM].
