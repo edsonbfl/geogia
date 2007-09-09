@@ -7,6 +7,11 @@ class ${currentModelElement.name} {
        def attributeType = friendlyNameType(attribute.type)
        def attributeTags = taggedValues(attribute) %>            
    ${attributeType} ${attributeName}<% } %>
+   
+   // TODO generate belongTo
+   // TODO generate hasMany
+   // TODO generate embed
+   // TODO generate many-to-many   
       
    String toString() {
    	 return "\${id}: \${${getAttributes(currentModelElement)[0].name}}"
