@@ -10,6 +10,8 @@ import org.omg.uml.foundation.datatypes.OrderingKindEnum
 import org.omg.uml.modelmanagement.Model
 import org.omg.uml.modelmanagement.UmlPackage
 
+// jar:file:./uml/accounting.zargo!/accounting.xmi . file:./uml/src/GrailsDomainProcessor.groovy
+
 class GrailsDomainProcessor extends GroovyModelProcessor {
             
    def getAllEnums = { model ->
