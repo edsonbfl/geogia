@@ -7,7 +7,7 @@ This page describe how to create a template for Groovy-MDA to generate all class
 
 = Details =
 
-Take an MDA approach similar to Neogia would bring this project progress faster. The generator of this project is [http://groovy-mda.sf.net|Groovy-MDA], which allows inputs as XMI files and there are our early version of Grails templates in SVN. Current transformation process are:
+Take an MDA approach similar to Neogia would bring this project progress faster. The generator of this project is [http://groovy-mda.sf.net Groovy-MDA], which allows inputs as XMI files and there are our early version of Grails templates in SVN. Current transformation process are:
 
   * Inputs as Neogia UML Classes (with UML2 namespace)
   * Clean them with XML stylesheet
