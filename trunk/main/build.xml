@@ -48,4 +48,12 @@
 			excludes="build.xml, .settings/**, .*, dist/**, test/**, uml/**, Geogia.*"
 		/>
 	</target>
+	
+	<target name="geogia-xmi">
+		<jar destfile="dist/geogia-xmi-0.1.jar"
+			basedir="./web-app/WEB-INF/classes"
+			includes="GrailsDomainProcessor.groovy, org/geogia/xmi/*.class, xslt/*.xsl"
+		/>
+	</target>
+	
 </project>
