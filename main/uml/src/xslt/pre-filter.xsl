@@ -18,17 +18,17 @@
 
   <!-- Delete Uml1SemanticModelBridge, whatever the heck that is -->
   <xsl:template match="UML:Uml1SemanticModelBridge" />
-  
-  <!-- Delete behavior diagram inside each classifier -->
-  <xsl:template match="UML2:BehavioredClassifier.ownedBehavior"/>
-
+ 
   <!-- UML2 trick -->
   <xsl:template match="UML2:TypedElement.type">
     <xsl:element name="UML:StructuralFeature.type">
       <xsl:apply-templates />
     </xsl:element>
   </xsl:template>
-
+  
+  <!-- Delete behavior diagram inside each classifier -->
+  <xsl:template match="UML2:BehavioredClassifier.ownedBehavior" />
+  
   <!-- Pass everything else through unchanged -->
   <xsl:template match="/ | @* | node()">
     <xsl:copy>

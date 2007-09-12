@@ -1,5 +1,9 @@
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
 
 import javax.xml.transform.Result;
 import javax.xml.transform.Source;
@@ -20,14 +24,30 @@ public class XMIPreFilter {
 		Source xmlSource = new StreamSource(xmlFile);
 		Source xsltSource = new StreamSource(this.getClass().getResourceAsStream(XSLT_FILENAME));		
 		Result result = new StreamResult(
-				new File("result-" + xmlFile.getName()));
+				new File("result-" + xmlFile.getName())
+		);
+		
 
 		// create an instance of TransformerFactory
 		TransformerFactory transFact = TransformerFactory.newInstance();
 		Transformer trans = transFact.newTransformer(xsltSource);
 		trans.transform(xmlSource, result);
 	}
-
+	
+	public InputStream transform1(InputStream in) throws TransformerException, IOException {
+		Source xmlSource = new StreamSource(in);
+		Source xsltSource = new StreamSource(this.getClass().getResourceAsStream(XSLT_FILENAME));
+		StringWriter sw = new StringWriter();
+		Result result = new StreamResult(sw);
+		
+		// create an instance of TransformerFactory
+		TransformerFactory transFact = TransformerFactory.newInstance();
+		Transformer trans = transFact.newTransformer(xsltSource);
+		trans.transform(xmlSource, result);
+		sw.close();
+		return new ByteArrayInputStream(sw.toString().getBytes());
+	}
+	
 	public static void main(String[] args) throws TransformerException {
 		if (args.length != 1) {
 			System.err.println("Usage : XMIPreFilter <orginal-xmi-file>");
