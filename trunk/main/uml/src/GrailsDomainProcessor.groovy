@@ -10,6 +10,8 @@ import org.omg.uml.foundation.datatypes.OrderingKindEnum
 import org.omg.uml.modelmanagement.Model
 import org.omg.uml.modelmanagement.UmlPackage
 
+import org.geogia.xmi.XMIPreFilter
+
 // jar:file:./uml/accounting.zargo!/accounting.xmi . file:./uml/src/GrailsDomainProcessor.groovy
 
 class GrailsDomainProcessor extends GroovyModelProcessor {
@@ -57,6 +59,10 @@ class GrailsDomainProcessor extends GroovyModelProcessor {
        }
        return binding
    }
+   
+   InputStream preProcessXMI(InputStream inputStream) {
+       return new XMIPreFilter().transform(inputStream)
+   }   
                
    void process(Map context) {
 
