@@ -15,6 +15,12 @@ import org.geogia.xmi.XMIPreFilter
 // jar:file:./uml/accounting.zargo!/accounting.xmi . file:./uml/src/GrailsDomainProcessor.groovy
 
 class GrailsDomainProcessor extends GroovyModelProcessor {
+	
+   def getClassesByStereotype = { model, stereotype ->
+	  return getAllClasses(model).findAll { elem ->
+	  	elem.stereotype.any{ s -> s.name == stereotype}
+	  }
+   }
             
    def getAllEnums = { model ->
    	  return model.core.enumeration.refAllOfType()
@@ -65,26 +71,38 @@ class GrailsDomainProcessor extends GroovyModelProcessor {
    }   
                
    void process(Map context) {
-
-      getAllClasses(context.model).each { modelElement ->           
-           context.currentModelElement = modelElement                      
-           def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
-           if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {               
-               def templateName = "templates/GrailsDomainClass.gtl"
-               def outputName = "${fullyQualifiedName.replace('.','/')}.groovy"               
-               processTemplate(templateName, outputName, context)               
-           }           
-	  }
-  
-      getAllEnums(context.model).each { modelElement ->           
-           context.currentModelElement = modelElement                      
-           def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
-           if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {               
-               def templateName = "templates/GrailsDomainEnum.gtl"
-               def outputName = "${fullyQualifiedName.replace('.','/')}.groovy"               
-               processTemplate(templateName, outputName, context)               
-           }      		
-      }
+//      getAllClasses(context.model).each { modelElement ->           
+//           context.currentModelElement = modelElement                      
+//           def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
+//           if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {               
+//               def templateName = "templates/GrailsDomainClass.gtl"
+//               def outputName = "${fullyQualifiedName.replace('.','/')}.groovy"               
+//               processTemplate(templateName, outputName, context)               
+//           }           
+//	  }
+// 		if argouml
+//      getAllEnums(context.model).each { modelElement ->           
+//           context.currentModelElement = modelElement                      
+//           def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
+//           if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {               
+//               def templateName = "templates/GrailsDomainEnum.gtl"
+//               def outputName = "${fullyQualifiedName.replace('.','/')}.groovy"               
+//               processTemplate(templateName, outputName, context)               
+//           }      		
+//      }
+		getClassesByStereotype(context.model, 'entity').each { modelElement ->
+			// TODO generate entity classes
+		}
+		
+		getClassesByStereotype(context.model, 'enumeration').each { modelElement ->
+	      context.currentModelElement = modelElement                      
+	      def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
+	      if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {               
+	          def templateName = "templates/GrailsDomainEnum_P6.gtl"
+	          def outputName = "${fullyQualifiedName.replace('.','/')}.groovy"               
+	          processTemplate(templateName, outputName, context)               
+	      }      		
+		}  	  
    }
    
 }
