@@ -17,7 +17,7 @@ import javax.xml.transform.stream.StreamSource;
 
 public class XMIPreFilter {
 
-	private static final String XSLT_FILENAME = "xslt/pre-filter.xsl";
+	private static final String XSLT_FILENAME = "/xslt/pre-filter.xsl";
 	
 	public InputStream transform(InputStream in) throws TransformerException, IOException {
 		Source xmlSource = new StreamSource(in);
