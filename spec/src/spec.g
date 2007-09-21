@@ -335,6 +335,7 @@ literal
     |   StringLiteral
     |   booleanLiteral
     |   'null'
+    |	'ว่าง'
 	;
 
 integerLiteral
@@ -346,6 +347,8 @@ integerLiteral
 booleanLiteral
     :   'true'
     |   'false'
+    |	'จริง'
+    |	'เท็จ'
     ;
 
 // ANNOTATIONS
