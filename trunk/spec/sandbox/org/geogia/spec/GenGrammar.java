@@ -25,7 +25,9 @@ public class GenGrammar {
 		fout.close();
 		
 		Tool tool = new Tool();
-		tool.main(new String[]{"-o",".","./src/spec.g3"});		
+		//tool.main(null);
+		tool.main(new String[]{"-o",".","./src/spec.g3"});
+		//tool.main(new String[]{"-debug","-o",".","./src/spec.g3"});		
 	}
 	
 }

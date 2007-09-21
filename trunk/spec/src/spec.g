@@ -39,11 +39,7 @@ classDeclaration
 	;
 	
 normalClassDeclaration
-	:	'อธิบาย' Identifier 
-//		(typeParameters)?
-//        ('extends' type)?
-//        ('implements' typeList)?
-        classBody
+	:	'อธิบาย' Identifier classBody
 	;
 	
 typeParameters
@@ -106,13 +102,37 @@ classBodyDeclaration
 	;
 	
 memberDecl
-	:	genericMethodOrConstructorDecl
-	|	methodDeclaration
-	|	fieldDeclaration
-	|	'void' Identifier voidMethodDeclaratorRest
-	|	Identifier constructorDeclaratorRest
-	|	interfaceDeclaration
+	:	
+//		genericMethodOrConstructorDecl
+//	|	methodDeclaration
+//	|	fieldDeclaration
+//	|	'void' Identifier voidMethodDeclaratorRest
+//	|	Identifier constructorDeclaratorRest
+//	|	interfaceDeclaration
+		beforeDeclaration
+	|	afterDeclaration
+	|	specDeclaration
 //	|	classDeclaration
+	;
+	
+beforeDeclaration
+	:	'ก่อน' '(' symbolList ')' adviceBody
+	;
+	
+afterDeclaration
+	:	'หลัง' '(' symbolList ')' adviceBody
+	;
+	
+symbolList
+	:	symbol (',' symbol)*
+	;	
+	
+symbol
+	:	':' Identifier
+	;	
+	
+specDeclaration
+	:	'กำหนดให้' Identifier specBody
 	;
 	
 genericMethodOrConstructorDecl
@@ -391,8 +411,16 @@ defaultValue
 
 // STATEMENTS / BLOCKS
 
+adviceBody
+	:	'ให้ทำ' blockStatement* 'จบ'
+	;
+
+specBody
+	: block
+	;
+
 block
-	:	'{' blockStatement* '}'
+	:	'โดย' blockStatement* 'จบ'
 	;
 	
 blockStatement
@@ -734,9 +762,13 @@ ENUM:	'enum' {if ( !enumIsKeyword ) $type=Identifier;}
 	;
 	
 Identifier 
-    :   Letter (Letter|JavaIDDigit|' ')*
+    :   Letter (Letter|JavaIDDigit)*
     ;
-
+    
+// IdentifierWithSpace 
+//    :   Letter (Letter|JavaIDDigit|' ')*
+//    ;
+    
 /**I found this char range in JavaCC's grammar, but Letter and Digit overlap.
    Still works, but...
  */
