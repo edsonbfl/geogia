@@ -16,7 +16,7 @@ public class GenGrammar {
 		FileOutputStream fout = new FileOutputStream("./src/spec.g3");
 		for (int i = 0; i < charBuffer.length; i++) {
 			if(charBuffer[i] > 0x0E00) {
-				String s = "\\u0" + Integer.toHexString(charBuffer[i]).toUpperCase();				
+				String s = "\\u0" + Integer.toHexString(charBuffer[i]);				
 				fout.write(s.getBytes());
 			} else {
 				fout.write(charBuffer[i]);
