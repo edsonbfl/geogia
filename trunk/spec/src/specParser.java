@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 ./src/spec.g3 2007-12-12 21:43:39
+// $ANTLR 3.0.1 ./src/spec.g3 2007-12-12 22:08:41
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -11,7 +11,7 @@ import org.antlr.stringtemplate.language.*;
 import java.util.HashMap;
 public class specParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "EOL", "Identifier", "ENUM", "FloatingPointLiteral", "CharacterLiteral", "StringLiteral", "HexLiteral", "OctalLiteral", "DecimalLiteral", "HexDigit", "IntegerTypeSuffix", "Exponent", "FloatTypeSuffix", "EscapeSequence", "UnicodeEscape", "OctalEscape", "Letter", "JavaIDDigit", "WS", "COMMENT", "LINE_COMMENT", "'\\u0e41\\u0e1e\\u0e47\\u0e04\\u0e40\\u0e01\\u0e08'", "';'", "'\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32'", "'static'", "'.'", "'*'", "'\\u0e2d\\u0e18\\u0e34\\u0e1a\\u0e32\\u0e22'", "'<'", "','", "'>'", "'extends'", "'&'", "'implements'", "'{'", "'}'", "'interface'", "'\\u0e14\\u0e31\\u0e07\\u0e19\\u0e35\\u0e49'", "'\\u0e08\\u0e1a'", "'\\u0e01\\u0e48\\u0e2d\\u0e19'", "'('", "')'", "'\\u0e2b\\u0e25\\u0e31\\u0e07'", "':'", "'\\u0e01\\u0e33\\u0e2b\\u0e19\\u0e14\\u0e43\\u0e2b\\u0e49'", "'void'", "'['", "']'", "'throws'", "'='", "'public'", "'protected'", "'private'", "'abstract'", "'final'", "'native'", "'synchronized'", "'transient'", "'volatile'", "'strictfp'", "'boolean'", "'char'", "'byte'", "'short'", "'int'", "'long'", "'float'", "'double'", "'?'", "'super'", "'...'", "'null'", "'\\u0e27\\u0e48\\u0e32\\u0e07'", "'true'", "'false'", "'\\u0e08\\u0e23\\u0e34\\u0e07'", "'\\u0e40\\u0e17\\u0e47\\u0e08'", "'@'", "'default'", "'\\u0e43\\u0e2b\\u0e49\\u0e17\\u0e33'", "'\\u0e42\\u0e14\\u0e22'", "'assert'", "'if'", "'else'", "'for'", "'while'", "'do'", "'try'", "'finally'", "'switch'", "'return'", "'throw'", "'break'", "'continue'", "'catch'", "'case'", "'+='", "'-='", "'*='", "'/='", "'&='", "'|='", "'^='", "'%='", "'||'", "'&&'", "'|'", "'^'", "'=='", "'!='", "'instanceof'", "'+'", "'-'", "'/'", "'%'", "'++'", "'--'", "'~'", "'!'", "'this'", "'\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07'", "'class'", "'new'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "EOL", "Identifier", "ENUM", "FloatingPointLiteral", "CharacterLiteral", "StringLiteral", "HexLiteral", "OctalLiteral", "DecimalLiteral", "HexDigit", "IntegerTypeSuffix", "Exponent", "FloatTypeSuffix", "EscapeSequence", "UnicodeEscape", "OctalEscape", "Letter", "JavaIDDigit", "WS", "COMMENT", "LINE_COMMENT", "'\\u0e41\\u0e1e\\u0e47\\u0e04\\u0e40\\u0e01\\u0e08'", "';'", "'\\u0e19\\u0e33\\u0e40\\u0e02\\u0e49\\u0e32'", "'static'", "'.'", "'*'", "'\\u0e2d\\u0e18\\u0e34\\u0e1a\\u0e32\\u0e22'", "'<'", "','", "'>'", "'extends'", "'&'", "'implements'", "'{'", "'}'", "'interface'", "'\\u0e14\\u0e31\\u0e07\\u0e19\\u0e35\\u0e49'", "'\\u0e08\\u0e1a'", "'\\u0e01\\u0e48\\u0e2d\\u0e19'", "'('", "')'", "'\\u0e2b\\u0e25\\u0e31\\u0e07'", "':'", "'\\u0e01\\u0e33\\u0e2b\\u0e19\\u0e14\\u0e43\\u0e2b\\u0e49'", "'void'", "'['", "']'", "'throws'", "'='", "'public'", "'protected'", "'private'", "'abstract'", "'final'", "'native'", "'synchronized'", "'transient'", "'volatile'", "'strictfp'", "'boolean'", "'char'", "'byte'", "'short'", "'int'", "'long'", "'float'", "'double'", "'?'", "'super'", "'...'", "'null'", "'\\u0e27\\u0e48\\u0e32\\u0e07'", "'true'", "'false'", "'\\u0e08\\u0e23\\u0e34\\u0e07'", "'\\u0e40\\u0e17\\u0e47\\u0e08'", "'@'", "'default'", "'\\u0e43\\u0e2b\\u0e49\\u0e17\\u0e33'", "'\\u0e42\\u0e14\\u0e22'", "'assert'", "'if'", "'else'", "'for'", "'while'", "'do'", "'try'", "'finally'", "'switch'", "'return'", "'throw'", "'break'", "'continue'", "'catch'", "'case'", "'+='", "'-='", "'*='", "'/='", "'&='", "'|='", "'^='", "'%='", "'||'", "'&&'", "'|'", "'^'", "'\\u0e04\\u0e27\\u0e23'", "'=='", "'!='", "'instanceof'", "'+'", "'-'", "'/'", "'%'", "'++'", "'--'", "'~'", "'!'", "'this'", "'\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07'", "'class'", "'new'"
     };
     public static final int HexLiteral=10;
     public static final int LINE_COMMENT=24;
@@ -38,7 +38,7 @@ public class specParser extends Parser {
 
         public specParser(TokenStream input) {
             super(input);
-            ruleMemo = new HashMap[430+1];
+            ruleMemo = new HashMap[433+1];
          }
         
     protected StringTemplateGroup templateLib =
@@ -1075,11 +1075,93 @@ public class specParser extends Parser {
             match(input,Identifier,FOLLOW_Identifier_in_enumConstant349); if (failed) return retval;
             // ./src/spec.g3:70:28: ( arguments )?
             int alt19=2;
-            int LA19_0 = input.LA(1);
+            switch ( input.LA(1) ) {
+                case Identifier:
+                case FloatingPointLiteral:
+                case CharacterLiteral:
+                case StringLiteral:
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
+                case 32:
+                case 44:
+                case 45:
+                case 49:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
+                case 73:
+                case 75:
+                case 76:
+                case 77:
+                case 78:
+                case 79:
+                case 80:
+                case 116:
+                case 117:
+                case 120:
+                case 121:
+                case 122:
+                case 123:
+                case 124:
+                case 125:
+                    {
+                    alt19=1;
+                    }
+                    break;
+                case 41:
+                    {
+                    int LA19_23 = input.LA(2);
 
-            if ( (LA19_0==44) ) {
-                alt19=1;
+                    if ( (synpred22()) ) {
+                        alt19=1;
+                    }
+                    }
+                    break;
+                case 33:
+                    {
+                    int LA19_24 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt19=1;
+                    }
+                    }
+                    break;
+                case EOL:
+                case 26:
+                    {
+                    int LA19_25 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt19=1;
+                    }
+                    }
+                    break;
+                case 39:
+                    {
+                    int LA19_26 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt19=1;
+                    }
+                    }
+                    break;
+                case EOF:
+                    {
+                    int LA19_27 = input.LA(2);
+
+                    if ( (synpred22()) ) {
+                        alt19=1;
+                    }
+                    }
+                    break;
             }
+
             switch (alt19) {
                 case 1 :
                     // ./src/spec.g3:70:29: arguments
@@ -2165,11 +2247,11 @@ public class specParser extends Parser {
             if ( (LA36_0==Identifier) ) {
                 int LA36_1 = input.LA(2);
 
-                if ( (LA36_1==Identifier||LA36_1==29||LA36_1==32||LA36_1==50) ) {
-                    alt36=1;
-                }
-                else if ( (LA36_1==44) ) {
+                if ( (LA36_1==44) ) {
                     alt36=2;
+                }
+                else if ( (LA36_1==Identifier||LA36_1==29||LA36_1==32||LA36_1==50) ) {
+                    alt36=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -3774,7 +3856,7 @@ public class specParser extends Parser {
             if ( (LA58_0==38) ) {
                 alt58=1;
             }
-            else if ( (LA58_0==Identifier||(LA58_0>=FloatingPointLiteral && LA58_0<=DecimalLiteral)||LA58_0==32||LA58_0==44||LA58_0==49||(LA58_0>=64 && LA58_0<=71)||LA58_0==73||(LA58_0>=75 && LA58_0<=80)||(LA58_0>=115 && LA58_0<=116)||(LA58_0>=119 && LA58_0<=124)) ) {
+            else if ( (LA58_0==Identifier||(LA58_0>=FloatingPointLiteral && LA58_0<=DecimalLiteral)||LA58_0==32||LA58_0==44||LA58_0==49||(LA58_0>=64 && LA58_0<=71)||LA58_0==73||(LA58_0>=75 && LA58_0<=80)||(LA58_0>=116 && LA58_0<=117)||(LA58_0>=120 && LA58_0<=125)) ) {
                 alt58=2;
             }
             else {
@@ -3843,7 +3925,7 @@ public class specParser extends Parser {
             int alt61=2;
             int LA61_0 = input.LA(1);
 
-            if ( (LA61_0==Identifier||(LA61_0>=FloatingPointLiteral && LA61_0<=DecimalLiteral)||LA61_0==32||LA61_0==38||LA61_0==44||LA61_0==49||(LA61_0>=64 && LA61_0<=71)||LA61_0==73||(LA61_0>=75 && LA61_0<=80)||(LA61_0>=115 && LA61_0<=116)||(LA61_0>=119 && LA61_0<=124)) ) {
+            if ( (LA61_0==Identifier||(LA61_0>=FloatingPointLiteral && LA61_0<=DecimalLiteral)||LA61_0==32||LA61_0==38||LA61_0==44||LA61_0==49||(LA61_0>=64 && LA61_0<=71)||LA61_0==73||(LA61_0>=75 && LA61_0<=80)||(LA61_0>=116 && LA61_0<=117)||(LA61_0>=120 && LA61_0<=125)) ) {
                 alt61=1;
             }
             switch (alt61) {
@@ -3863,7 +3945,7 @@ public class specParser extends Parser {
                         if ( (LA59_0==33) ) {
                             int LA59_1 = input.LA(2);
 
-                            if ( (LA59_1==Identifier||(LA59_1>=FloatingPointLiteral && LA59_1<=DecimalLiteral)||LA59_1==32||LA59_1==38||LA59_1==44||LA59_1==49||(LA59_1>=64 && LA59_1<=71)||LA59_1==73||(LA59_1>=75 && LA59_1<=80)||(LA59_1>=115 && LA59_1<=116)||(LA59_1>=119 && LA59_1<=124)) ) {
+                            if ( (LA59_1==Identifier||(LA59_1>=FloatingPointLiteral && LA59_1<=DecimalLiteral)||LA59_1==32||LA59_1==38||LA59_1==44||LA59_1==49||(LA59_1>=64 && LA59_1<=71)||LA59_1==73||(LA59_1>=75 && LA59_1<=80)||(LA59_1>=116 && LA59_1<=117)||(LA59_1>=120 && LA59_1<=125)) ) {
                                 alt59=1;
                             }
 
@@ -4249,11 +4331,11 @@ public class specParser extends Parser {
             if ( (LA64_0==Identifier) ) {
                 int LA64_1 = input.LA(2);
 
-                if ( (LA64_1==29) ) {
-                    alt64=2;
-                }
-                else if ( (LA64_1==EOF||(LA64_1>=EOL && LA64_1<=ENUM)||LA64_1==26||LA64_1==28||(LA64_1>=31 && LA64_1<=33)||(LA64_1>=39 && LA64_1<=40)||(LA64_1>=43 && LA64_1<=46)||(LA64_1>=48 && LA64_1<=49)||(LA64_1>=54 && LA64_1<=71)||LA64_1==81) ) {
+                if ( (LA64_1==EOF||(LA64_1>=EOL && LA64_1<=ENUM)||LA64_1==26||LA64_1==28||(LA64_1>=31 && LA64_1<=33)||(LA64_1>=39 && LA64_1<=40)||(LA64_1>=43 && LA64_1<=46)||(LA64_1>=48 && LA64_1<=49)||(LA64_1>=54 && LA64_1<=71)||LA64_1==81) ) {
                     alt64=1;
+                }
+                else if ( (LA64_1==29) ) {
+                    alt64=2;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -4347,11 +4429,39 @@ public class specParser extends Parser {
                     int LA65_0 = input.LA(1);
 
                     if ( (LA65_0==32) ) {
-                        int LA65_1 = input.LA(2);
+                        switch ( input.LA(2) ) {
+                            case Identifier:
+                                {
+                                int LA65_57 = input.LA(3);
 
-                        if ( (LA65_1==Identifier||(LA65_1>=64 && LA65_1<=72)) ) {
-                            alt65=1;
+                                if ( (synpred94()) ) {
+                                    alt65=1;
+                                }
+                                }
+                                break;
+                            case 64:
+                            case 65:
+                            case 66:
+                            case 67:
+                            case 68:
+                            case 69:
+                            case 70:
+                            case 71:
+                                {
+                                int LA65_58 = input.LA(3);
+
+                                if ( (synpred94()) ) {
+                                    alt65=1;
+                                }
+                                }
+                                break;
+                            case 72:
+                                {
+                                alt65=1;
+                                }
+                                break;
                         }
+
                     }
                     switch (alt65) {
                         case 1 :
@@ -4374,7 +4484,19 @@ public class specParser extends Parser {
                         int LA67_0 = input.LA(1);
 
                         if ( (LA67_0==29) ) {
-                            alt67=1;
+                            int LA67_35 = input.LA(2);
+
+                            if ( (LA67_35==Identifier) ) {
+                                int LA67_41 = input.LA(3);
+
+                                if ( (synpred96()) ) {
+                                    alt67=1;
+                                }
+
+
+                            }
+
+
                         }
 
 
@@ -4389,11 +4511,39 @@ public class specParser extends Parser {
                     	    int LA66_0 = input.LA(1);
 
                     	    if ( (LA66_0==32) ) {
-                    	        int LA66_1 = input.LA(2);
+                    	        switch ( input.LA(2) ) {
+                    	            case Identifier:
+                    	                {
+                    	                int LA66_57 = input.LA(3);
 
-                    	        if ( (LA66_1==Identifier||(LA66_1>=64 && LA66_1<=72)) ) {
-                    	            alt66=1;
+                    	                if ( (synpred95()) ) {
+                    	                    alt66=1;
+                    	                }
+                    	                }
+                    	                break;
+                    	            case 64:
+                    	            case 65:
+                    	            case 66:
+                    	            case 67:
+                    	            case 68:
+                    	            case 69:
+                    	            case 70:
+                    	            case 71:
+                    	                {
+                    	                int LA66_58 = input.LA(3);
+
+                    	                if ( (synpred95()) ) {
+                    	                    alt66=1;
+                    	                }
+                    	                }
+                    	                break;
+                    	            case 72:
+                    	                {
+                    	                alt66=1;
+                    	                }
+                    	                break;
                     	        }
+
                     	    }
                     	    switch (alt66) {
                     	        case 1 :
@@ -4425,7 +4575,13 @@ public class specParser extends Parser {
                         int LA68_0 = input.LA(1);
 
                         if ( (LA68_0==50) ) {
-                            alt68=1;
+                            int LA68_35 = input.LA(2);
+
+                            if ( (LA68_35==51) ) {
+                                alt68=1;
+                            }
+
+
                         }
 
 
@@ -4461,7 +4617,13 @@ public class specParser extends Parser {
                         int LA69_0 = input.LA(1);
 
                         if ( (LA69_0==50) ) {
-                            alt69=1;
+                            int LA69_35 = input.LA(2);
+
+                            if ( (LA69_35==51) ) {
+                                alt69=1;
+                            }
+
+
                         }
 
 
@@ -5609,14 +5771,14 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 115:
             case 116:
-            case 119:
+            case 117:
             case 120:
             case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
                 alt87=1;
                 }
@@ -5708,7 +5870,7 @@ public class specParser extends Parser {
             int alt88=2;
             int LA88_0 = input.LA(1);
 
-            if ( (LA88_0==Identifier||(LA88_0>=FloatingPointLiteral && LA88_0<=DecimalLiteral)||LA88_0==32||LA88_0==38||LA88_0==44||LA88_0==49||(LA88_0>=64 && LA88_0<=71)||LA88_0==73||(LA88_0>=75 && LA88_0<=81)||(LA88_0>=115 && LA88_0<=116)||(LA88_0>=119 && LA88_0<=124)) ) {
+            if ( (LA88_0==Identifier||(LA88_0>=FloatingPointLiteral && LA88_0<=DecimalLiteral)||LA88_0==32||LA88_0==38||LA88_0==44||LA88_0==49||(LA88_0>=64 && LA88_0<=71)||LA88_0==73||(LA88_0>=75 && LA88_0<=81)||(LA88_0>=116 && LA88_0<=117)||(LA88_0>=120 && LA88_0<=125)) ) {
                 alt88=1;
             }
             switch (alt88) {
@@ -6398,7 +6560,7 @@ public class specParser extends Parser {
                 int alt96=2;
                 int LA96_0 = input.LA(1);
 
-                if ( ((LA96_0>=EOL && LA96_0<=Identifier)||(LA96_0>=FloatingPointLiteral && LA96_0<=DecimalLiteral)||LA96_0==26||LA96_0==28||(LA96_0>=31 && LA96_0<=32)||LA96_0==40||LA96_0==44||LA96_0==49||(LA96_0>=54 && LA96_0<=71)||LA96_0==73||(LA96_0>=75 && LA96_0<=81)||(LA96_0>=84 && LA96_0<=86)||(LA96_0>=88 && LA96_0<=91)||(LA96_0>=93 && LA96_0<=97)||(LA96_0>=115 && LA96_0<=116)||(LA96_0>=119 && LA96_0<=124)) ) {
+                if ( ((LA96_0>=EOL && LA96_0<=Identifier)||(LA96_0>=FloatingPointLiteral && LA96_0<=DecimalLiteral)||LA96_0==26||LA96_0==28||(LA96_0>=31 && LA96_0<=32)||LA96_0==40||LA96_0==44||LA96_0==49||(LA96_0>=54 && LA96_0<=71)||LA96_0==73||(LA96_0>=75 && LA96_0<=81)||(LA96_0>=84 && LA96_0<=86)||(LA96_0>=88 && LA96_0<=91)||(LA96_0>=93 && LA96_0<=97)||(LA96_0>=116 && LA96_0<=117)||(LA96_0>=120 && LA96_0<=125)) ) {
                     alt96=1;
                 }
 
@@ -6500,7 +6662,7 @@ public class specParser extends Parser {
                 int alt97=2;
                 int LA97_0 = input.LA(1);
 
-                if ( ((LA97_0>=EOL && LA97_0<=Identifier)||(LA97_0>=FloatingPointLiteral && LA97_0<=DecimalLiteral)||LA97_0==26||LA97_0==28||(LA97_0>=31 && LA97_0<=32)||LA97_0==40||LA97_0==44||LA97_0==49||(LA97_0>=54 && LA97_0<=71)||LA97_0==73||(LA97_0>=75 && LA97_0<=81)||(LA97_0>=84 && LA97_0<=86)||(LA97_0>=88 && LA97_0<=91)||(LA97_0>=93 && LA97_0<=97)||(LA97_0>=115 && LA97_0<=116)||(LA97_0>=119 && LA97_0<=124)) ) {
+                if ( ((LA97_0>=EOL && LA97_0<=Identifier)||(LA97_0>=FloatingPointLiteral && LA97_0<=DecimalLiteral)||LA97_0==26||LA97_0==28||(LA97_0>=31 && LA97_0<=32)||LA97_0==40||LA97_0==44||LA97_0==49||(LA97_0>=54 && LA97_0<=71)||LA97_0==73||(LA97_0>=75 && LA97_0<=81)||(LA97_0>=84 && LA97_0<=86)||(LA97_0>=88 && LA97_0<=91)||(LA97_0>=93 && LA97_0<=97)||(LA97_0>=116 && LA97_0<=117)||(LA97_0>=120 && LA97_0<=125)) ) {
                     alt97=1;
                 }
 
@@ -6580,14 +6742,37 @@ public class specParser extends Parser {
                 {
                 switch ( input.LA(2) ) {
                 case EOL:
+                case FloatingPointLiteral:
+                case CharacterLiteral:
+                case StringLiteral:
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
                 case 26:
                 case 30:
                 case 34:
                 case 36:
                 case 44:
+                case 45:
                 case 47:
+                case 49:
                 case 53:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
                 case 72:
+                case 73:
+                case 75:
+                case 76:
+                case 77:
+                case 78:
+                case 79:
+                case 80:
                 case 100:
                 case 101:
                 case 102:
@@ -6609,11 +6794,16 @@ public class specParser extends Parser {
                 case 118:
                 case 119:
                 case 120:
+                case 121:
+                case 122:
+                case 123:
+                case 124:
+                case 125:
                     {
                     alt98=3;
                     }
                     break;
-                case 29:
+                case 32:
                     {
                     int LA98_66 = input.LA(3);
 
@@ -6632,7 +6822,7 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 50:
+                case 29:
                     {
                     int LA98_67 = input.LA(3);
 
@@ -6651,9 +6841,9 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 32:
+                case 50:
                     {
-                    int LA98_72 = input.LA(3);
+                    int LA98_68 = input.LA(3);
 
                     if ( (synpred150()) ) {
                         alt98=1;
@@ -6664,7 +6854,7 @@ public class specParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("429:1: blockStatement : ( localVariableDeclaration | classOrInterfaceDeclaration | statement );", 98, 72, input);
+                            new NoViableAltException("429:1: blockStatement : ( localVariableDeclaration | classOrInterfaceDeclaration | statement );", 98, 68, input);
 
                         throw nvae;
                     }
@@ -6672,7 +6862,21 @@ public class specParser extends Parser {
                     break;
                 case Identifier:
                     {
-                    alt98=1;
+                    int LA98_69 = input.LA(3);
+
+                    if ( (synpred150()) ) {
+                        alt98=1;
+                    }
+                    else if ( (true) ) {
+                        alt98=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("429:1: blockStatement : ( localVariableDeclaration | classOrInterfaceDeclaration | statement );", 98, 69, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
@@ -6697,7 +6901,7 @@ public class specParser extends Parser {
                 switch ( input.LA(2) ) {
                 case 50:
                     {
-                    int LA98_93 = input.LA(3);
+                    int LA98_112 = input.LA(3);
 
                     if ( (synpred150()) ) {
                         alt98=1;
@@ -6708,20 +6912,20 @@ public class specParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("429:1: blockStatement : ( localVariableDeclaration | classOrInterfaceDeclaration | statement );", 98, 93, input);
+                            new NoViableAltException("429:1: blockStatement : ( localVariableDeclaration | classOrInterfaceDeclaration | statement );", 98, 112, input);
 
                         throw nvae;
                     }
                     }
                     break;
-                case 29:
-                    {
-                    alt98=3;
-                    }
-                    break;
                 case Identifier:
                     {
                     alt98=1;
+                    }
+                    break;
+                case 29:
+                    {
+                    alt98=3;
                     }
                     break;
                 default:
@@ -6754,11 +6958,11 @@ public class specParser extends Parser {
                 {
                 int LA98_11 = input.LA(2);
 
-                if ( (LA98_11==44) ) {
-                    alt98=3;
-                }
-                else if ( (LA98_11==28||LA98_11==31||LA98_11==40||(LA98_11>=54 && LA98_11<=63)||LA98_11==81) ) {
+                if ( (LA98_11==28||LA98_11==31||LA98_11==40||(LA98_11>=54 && LA98_11<=63)||LA98_11==81) ) {
                     alt98=2;
+                }
+                else if ( (LA98_11==44) ) {
+                    alt98=3;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -6799,14 +7003,14 @@ public class specParser extends Parser {
             case 95:
             case 96:
             case 97:
-            case 115:
             case 116:
-            case 119:
+            case 117:
             case 120:
             case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
                 alt98=3;
                 }
@@ -7049,14 +7253,14 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 115:
             case 116:
-            case 119:
+            case 117:
             case 120:
             case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
                 alt106=15;
                 }
@@ -7068,7 +7272,7 @@ public class specParser extends Parser {
                 if ( (LA106_33==47) ) {
                     alt106=16;
                 }
-                else if ( (LA106_33==EOL||LA106_33==26||(LA106_33>=29 && LA106_33<=30)||LA106_33==32||LA106_33==34||LA106_33==36||LA106_33==44||LA106_33==50||LA106_33==53||LA106_33==72||(LA106_33>=100 && LA106_33<=120)) ) {
+                else if ( ((LA106_33>=EOL && LA106_33<=Identifier)||(LA106_33>=FloatingPointLiteral && LA106_33<=DecimalLiteral)||LA106_33==26||(LA106_33>=29 && LA106_33<=30)||LA106_33==32||LA106_33==34||LA106_33==36||(LA106_33>=44 && LA106_33<=45)||(LA106_33>=49 && LA106_33<=50)||LA106_33==53||(LA106_33>=64 && LA106_33<=73)||(LA106_33>=75 && LA106_33<=80)||(LA106_33>=100 && LA106_33<=125)) ) {
                     alt106=15;
                 }
                 else {
@@ -7376,7 +7580,7 @@ public class specParser extends Parser {
                     int alt103=2;
                     int LA103_0 = input.LA(1);
 
-                    if ( (LA103_0==Identifier||(LA103_0>=FloatingPointLiteral && LA103_0<=DecimalLiteral)||LA103_0==32||LA103_0==44||LA103_0==49||(LA103_0>=64 && LA103_0<=71)||LA103_0==73||(LA103_0>=75 && LA103_0<=80)||(LA103_0>=115 && LA103_0<=116)||(LA103_0>=119 && LA103_0<=124)) ) {
+                    if ( (LA103_0==Identifier||(LA103_0>=FloatingPointLiteral && LA103_0<=DecimalLiteral)||LA103_0==32||LA103_0==44||LA103_0==49||(LA103_0>=64 && LA103_0<=71)||LA103_0==73||(LA103_0>=75 && LA103_0<=80)||(LA103_0>=116 && LA103_0<=117)||(LA103_0>=120 && LA103_0<=125)) ) {
                         alt103=1;
                     }
                     switch (alt103) {
@@ -7837,7 +8041,7 @@ public class specParser extends Parser {
                 int alt110=2;
                 int LA110_0 = input.LA(1);
 
-                if ( ((LA110_0>=EOL && LA110_0<=Identifier)||(LA110_0>=FloatingPointLiteral && LA110_0<=DecimalLiteral)||LA110_0==26||LA110_0==28||(LA110_0>=31 && LA110_0<=32)||LA110_0==40||LA110_0==44||LA110_0==49||(LA110_0>=54 && LA110_0<=71)||LA110_0==73||(LA110_0>=75 && LA110_0<=81)||(LA110_0>=84 && LA110_0<=86)||(LA110_0>=88 && LA110_0<=91)||(LA110_0>=93 && LA110_0<=97)||(LA110_0>=115 && LA110_0<=116)||(LA110_0>=119 && LA110_0<=124)) ) {
+                if ( ((LA110_0>=EOL && LA110_0<=Identifier)||(LA110_0>=FloatingPointLiteral && LA110_0<=DecimalLiteral)||LA110_0==26||LA110_0==28||(LA110_0>=31 && LA110_0<=32)||LA110_0==40||LA110_0==44||LA110_0==49||(LA110_0>=54 && LA110_0<=71)||LA110_0==73||(LA110_0>=75 && LA110_0<=81)||(LA110_0>=84 && LA110_0<=86)||(LA110_0>=88 && LA110_0<=91)||(LA110_0>=93 && LA110_0<=97)||(LA110_0>=116 && LA110_0<=117)||(LA110_0>=120 && LA110_0<=125)) ) {
                     alt110=1;
                 }
 
@@ -7897,11 +8101,8 @@ public class specParser extends Parser {
             if ( (LA111_0==99) ) {
                 int LA111_1 = input.LA(2);
 
-                if ( ((LA111_1>=FloatingPointLiteral && LA111_1<=DecimalLiteral)||LA111_1==32||LA111_1==44||LA111_1==49||(LA111_1>=64 && LA111_1<=71)||LA111_1==73||(LA111_1>=75 && LA111_1<=80)||(LA111_1>=115 && LA111_1<=116)||(LA111_1>=119 && LA111_1<=124)) ) {
-                    alt111=1;
-                }
-                else if ( (LA111_1==Identifier) ) {
-                    int LA111_21 = input.LA(3);
+                if ( (LA111_1==Identifier) ) {
+                    int LA111_3 = input.LA(3);
 
                     if ( (synpred188()) ) {
                         alt111=1;
@@ -7912,10 +8113,13 @@ public class specParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("482:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );", 111, 21, input);
+                            new NoViableAltException("482:1: switchLabel : ( 'case' constantExpression ':' | 'case' enumConstantName ':' | 'default' ':' );", 111, 3, input);
 
                         throw nvae;
                     }
+                }
+                else if ( ((LA111_1>=FloatingPointLiteral && LA111_1<=DecimalLiteral)||LA111_1==32||LA111_1==44||LA111_1==49||(LA111_1>=64 && LA111_1<=71)||LA111_1==73||(LA111_1>=75 && LA111_1<=80)||(LA111_1>=116 && LA111_1<=117)||(LA111_1>=120 && LA111_1<=125)) ) {
+                    alt111=1;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
@@ -8067,33 +8271,12 @@ public class specParser extends Parser {
             case 58:
                 {
                 switch ( input.LA(2) ) {
-                case Identifier:
+                case 81:
                     {
-                    int LA116_25 = input.LA(3);
-
-                    if ( (synpred191()) ) {
-                        alt116=1;
-                    }
-                    else if ( (true) ) {
-                        alt116=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 25, input);
-
-                        throw nvae;
-                    }
+                    alt116=1;
                     }
                     break;
-                case 64:
-                case 65:
-                case 66:
-                case 67:
-                case 68:
-                case 69:
-                case 70:
-                case 71:
+                case Identifier:
                     {
                     int LA116_26 = input.LA(3);
 
@@ -8112,9 +8295,30 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 81:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
                     {
-                    alt116=1;
+                    int LA116_27 = input.LA(3);
+
+                    if ( (synpred191()) ) {
+                        alt116=1;
+                    }
+                    else if ( (true) ) {
+                        alt116=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 27, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
@@ -8135,7 +8339,7 @@ public class specParser extends Parser {
             case Identifier:
                 {
                 switch ( input.LA(2) ) {
-                case 32:
+                case 29:
                     {
                     int LA116_28 = input.LA(3);
 
@@ -8154,7 +8358,7 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 29:
+                case 50:
                     {
                     int LA116_29 = input.LA(3);
 
@@ -8173,53 +8377,38 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 50:
-                    {
-                    int LA116_30 = input.LA(3);
-
-                    if ( (synpred191()) ) {
-                        alt116=1;
-                    }
-                    else if ( (true) ) {
-                        alt116=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 30, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case Identifier:
-                    {
-                    int LA116_31 = input.LA(3);
-
-                    if ( (synpred191()) ) {
-                        alt116=1;
-                    }
-                    else if ( (true) ) {
-                        alt116=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 31, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
                 case EOL:
+                case FloatingPointLiteral:
+                case CharacterLiteral:
+                case StringLiteral:
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
                 case 26:
                 case 30:
                 case 33:
                 case 34:
                 case 36:
                 case 44:
+                case 45:
+                case 49:
                 case 53:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
                 case 72:
+                case 73:
+                case 75:
+                case 76:
+                case 77:
+                case 78:
+                case 79:
+                case 80:
                 case 100:
                 case 101:
                 case 102:
@@ -8241,8 +8430,51 @@ public class specParser extends Parser {
                 case 118:
                 case 119:
                 case 120:
+                case 121:
+                case 122:
+                case 123:
+                case 124:
+                case 125:
                     {
                     alt116=2;
+                    }
+                    break;
+                case 32:
+                    {
+                    int LA116_37 = input.LA(3);
+
+                    if ( (synpred191()) ) {
+                        alt116=1;
+                    }
+                    else if ( (true) ) {
+                        alt116=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 37, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case Identifier:
+                    {
+                    int LA116_48 = input.LA(3);
+
+                    if ( (synpred191()) ) {
+                        alt116=1;
+                    }
+                    else if ( (true) ) {
+                        alt116=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 48, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
@@ -8267,7 +8499,7 @@ public class specParser extends Parser {
                 switch ( input.LA(2) ) {
                 case 50:
                     {
-                    int LA116_56 = input.LA(3);
+                    int LA116_75 = input.LA(3);
 
                     if ( (synpred191()) ) {
                         alt116=1;
@@ -8278,26 +8510,7 @@ public class specParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 56, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case Identifier:
-                    {
-                    int LA116_57 = input.LA(3);
-
-                    if ( (synpred191()) ) {
-                        alt116=1;
-                    }
-                    else if ( (true) ) {
-                        alt116=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 57, input);
+                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 75, input);
 
                         throw nvae;
                     }
@@ -8306,6 +8519,25 @@ public class specParser extends Parser {
                 case 29:
                     {
                     alt116=2;
+                    }
+                    break;
+                case Identifier:
+                    {
+                    int LA116_77 = input.LA(3);
+
+                    if ( (synpred191()) ) {
+                        alt116=1;
+                    }
+                    else if ( (true) ) {
+                        alt116=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("492:1: forControl : ( forVarControl | ( forInit )? ( ';' | EOL ) ( expression )? ( ';' | EOL ) ( forUpdate )? );", 116, 77, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
@@ -8336,14 +8568,14 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 115:
             case 116:
-            case 119:
+            case 117:
             case 120:
             case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
                 alt116=2;
                 }
@@ -8374,7 +8606,7 @@ public class specParser extends Parser {
                     int alt113=2;
                     int LA113_0 = input.LA(1);
 
-                    if ( (LA113_0==Identifier||(LA113_0>=FloatingPointLiteral && LA113_0<=DecimalLiteral)||LA113_0==32||LA113_0==44||LA113_0==49||LA113_0==58||(LA113_0>=64 && LA113_0<=71)||LA113_0==73||(LA113_0>=75 && LA113_0<=80)||(LA113_0>=115 && LA113_0<=116)||(LA113_0>=119 && LA113_0<=124)) ) {
+                    if ( (LA113_0==Identifier||(LA113_0>=FloatingPointLiteral && LA113_0<=DecimalLiteral)||LA113_0==32||LA113_0==44||LA113_0==49||LA113_0==58||(LA113_0>=64 && LA113_0<=71)||LA113_0==73||(LA113_0>=75 && LA113_0<=80)||(LA113_0>=116 && LA113_0<=117)||(LA113_0>=120 && LA113_0<=125)) ) {
                         alt113=1;
                     }
                     switch (alt113) {
@@ -8406,7 +8638,7 @@ public class specParser extends Parser {
                     int alt114=2;
                     int LA114_0 = input.LA(1);
 
-                    if ( (LA114_0==Identifier||(LA114_0>=FloatingPointLiteral && LA114_0<=DecimalLiteral)||LA114_0==32||LA114_0==44||LA114_0==49||(LA114_0>=64 && LA114_0<=71)||LA114_0==73||(LA114_0>=75 && LA114_0<=80)||(LA114_0>=115 && LA114_0<=116)||(LA114_0>=119 && LA114_0<=124)) ) {
+                    if ( (LA114_0==Identifier||(LA114_0>=FloatingPointLiteral && LA114_0<=DecimalLiteral)||LA114_0==32||LA114_0==44||LA114_0==49||(LA114_0>=64 && LA114_0<=71)||LA114_0==73||(LA114_0>=75 && LA114_0<=80)||(LA114_0>=116 && LA114_0<=117)||(LA114_0>=120 && LA114_0<=125)) ) {
                         alt114=1;
                     }
                     switch (alt114) {
@@ -8438,7 +8670,7 @@ public class specParser extends Parser {
                     int alt115=2;
                     int LA115_0 = input.LA(1);
 
-                    if ( (LA115_0==Identifier||(LA115_0>=FloatingPointLiteral && LA115_0<=DecimalLiteral)||LA115_0==32||LA115_0==44||LA115_0==49||(LA115_0>=64 && LA115_0<=71)||LA115_0==73||(LA115_0>=75 && LA115_0<=80)||(LA115_0>=115 && LA115_0<=116)||(LA115_0>=119 && LA115_0<=124)) ) {
+                    if ( (LA115_0==Identifier||(LA115_0>=FloatingPointLiteral && LA115_0<=DecimalLiteral)||LA115_0==32||LA115_0==44||LA115_0==49||(LA115_0>=64 && LA115_0<=71)||LA115_0==73||(LA115_0>=75 && LA115_0<=80)||(LA115_0>=116 && LA115_0<=117)||(LA115_0>=120 && LA115_0<=125)) ) {
                         alt115=1;
                     }
                     switch (alt115) {
@@ -8499,7 +8731,7 @@ public class specParser extends Parser {
             case Identifier:
                 {
                 switch ( input.LA(2) ) {
-                case 29:
+                case 32:
                     {
                     int LA118_23 = input.LA(3);
 
@@ -8518,7 +8750,7 @@ public class specParser extends Parser {
                     }
                     }
                     break;
-                case 50:
+                case 29:
                     {
                     int LA118_24 = input.LA(3);
 
@@ -8537,16 +8769,77 @@ public class specParser extends Parser {
                     }
                     }
                     break;
+                case 50:
+                    {
+                    int LA118_25 = input.LA(3);
+
+                    if ( (synpred198()) ) {
+                        alt118=1;
+                    }
+                    else if ( (true) ) {
+                        alt118=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("497:1: forInit : ( ( 'final' )? type variableDeclarators | expressionList );", 118, 25, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case Identifier:
+                    {
+                    int LA118_26 = input.LA(3);
+
+                    if ( (synpred198()) ) {
+                        alt118=1;
+                    }
+                    else if ( (true) ) {
+                        alt118=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("497:1: forInit : ( ( 'final' )? type variableDeclarators | expressionList );", 118, 26, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
                 case EOF:
                 case EOL:
+                case FloatingPointLiteral:
+                case CharacterLiteral:
+                case StringLiteral:
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
                 case 26:
                 case 30:
                 case 33:
                 case 34:
                 case 36:
                 case 44:
+                case 45:
+                case 49:
                 case 53:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
                 case 72:
+                case 73:
+                case 75:
+                case 76:
+                case 77:
+                case 78:
+                case 79:
+                case 80:
                 case 100:
                 case 101:
                 case 102:
@@ -8568,32 +8861,13 @@ public class specParser extends Parser {
                 case 118:
                 case 119:
                 case 120:
+                case 121:
+                case 122:
+                case 123:
+                case 124:
+                case 125:
                     {
                     alt118=2;
-                    }
-                    break;
-                case 32:
-                    {
-                    int LA118_29 = input.LA(3);
-
-                    if ( (synpred198()) ) {
-                        alt118=1;
-                    }
-                    else if ( (true) ) {
-                        alt118=2;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("497:1: forInit : ( ( 'final' )? type variableDeclarators | expressionList );", 118, 29, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case Identifier:
-                    {
-                    alt118=1;
                     }
                     break;
                 default:
@@ -8618,7 +8892,7 @@ public class specParser extends Parser {
                 switch ( input.LA(2) ) {
                 case 50:
                     {
-                    int LA118_52 = input.LA(3);
+                    int LA118_71 = input.LA(3);
 
                     if ( (synpred198()) ) {
                         alt118=1;
@@ -8629,7 +8903,7 @@ public class specParser extends Parser {
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("497:1: forInit : ( ( 'final' )? type variableDeclarators | expressionList );", 118, 52, input);
+                            new NoViableAltException("497:1: forInit : ( ( 'final' )? type variableDeclarators | expressionList );", 118, 71, input);
 
                         throw nvae;
                     }
@@ -8671,14 +8945,14 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 115:
             case 116:
-            case 119:
+            case 117:
             case 120:
             case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
                 alt118=2;
                 }
@@ -8915,7 +9189,7 @@ public class specParser extends Parser {
                     int alt122=2;
                     int LA122_0 = input.LA(1);
 
-                    if ( (LA122_0==Identifier||(LA122_0>=FloatingPointLiteral && LA122_0<=DecimalLiteral)||LA122_0==32||LA122_0==44||LA122_0==49||(LA122_0>=64 && LA122_0<=71)||LA122_0==73||(LA122_0>=75 && LA122_0<=80)||(LA122_0>=115 && LA122_0<=116)||(LA122_0>=119 && LA122_0<=124)) ) {
+                    if ( (LA122_0==Identifier||(LA122_0>=FloatingPointLiteral && LA122_0<=DecimalLiteral)||LA122_0==32||LA122_0==44||LA122_0==49||(LA122_0>=64 && LA122_0<=71)||LA122_0==73||(LA122_0>=75 && LA122_0<=80)||(LA122_0>=116 && LA122_0<=117)||(LA122_0>=120 && LA122_0<=125)) ) {
                         alt122=1;
                     }
                     switch (alt122) {
@@ -8937,7 +9211,7 @@ public class specParser extends Parser {
                     int alt123=2;
                     int LA123_0 = input.LA(1);
 
-                    if ( (LA123_0==Identifier||(LA123_0>=FloatingPointLiteral && LA123_0<=DecimalLiteral)||LA123_0==32||LA123_0==44||LA123_0==49||(LA123_0>=64 && LA123_0<=71)||LA123_0==73||(LA123_0>=75 && LA123_0<=80)||(LA123_0>=115 && LA123_0<=116)||(LA123_0>=119 && LA123_0<=124)) ) {
+                    if ( (LA123_0==Identifier||(LA123_0>=FloatingPointLiteral && LA123_0<=DecimalLiteral)||LA123_0==32||LA123_0==44||LA123_0==49||(LA123_0>=64 && LA123_0<=71)||LA123_0==73||(LA123_0>=75 && LA123_0<=80)||(LA123_0>=116 && LA123_0<=117)||(LA123_0>=120 && LA123_0<=125)) ) {
                         alt123=1;
                     }
                     switch (alt123) {
@@ -9090,7 +9364,13 @@ public class specParser extends Parser {
                 int LA125_0 = input.LA(1);
 
                 if ( (LA125_0==33) ) {
-                    alt125=1;
+                    int LA125_5 = input.LA(2);
+
+                    if ( (synpred206()) ) {
+                        alt125=1;
+                    }
+
+
                 }
 
 
@@ -9604,7 +9884,11 @@ public class specParser extends Parser {
             int LA128_0 = input.LA(1);
 
             if ( (LA128_0==72) ) {
-                alt128=1;
+                int LA128_1 = input.LA(2);
+
+                if ( (synpred219()) ) {
+                    alt128=1;
+                }
             }
             switch (alt128) {
                 case 1 :
@@ -9671,7 +9955,13 @@ public class specParser extends Parser {
                 int LA129_0 = input.LA(1);
 
                 if ( (LA129_0==108) ) {
-                    alt129=1;
+                    int LA129_30 = input.LA(2);
+
+                    if ( (synpred220()) ) {
+                        alt129=1;
+                    }
+
+
                 }
 
 
@@ -9738,7 +10028,13 @@ public class specParser extends Parser {
                 int LA130_0 = input.LA(1);
 
                 if ( (LA130_0==109) ) {
-                    alt130=1;
+                    int LA130_30 = input.LA(2);
+
+                    if ( (synpred221()) ) {
+                        alt130=1;
+                    }
+
+
                 }
 
 
@@ -9805,7 +10101,13 @@ public class specParser extends Parser {
                 int LA131_0 = input.LA(1);
 
                 if ( (LA131_0==110) ) {
-                    alt131=1;
+                    int LA131_30 = input.LA(2);
+
+                    if ( (synpred222()) ) {
+                        alt131=1;
+                    }
+
+
                 }
 
 
@@ -9872,7 +10174,13 @@ public class specParser extends Parser {
                 int LA132_0 = input.LA(1);
 
                 if ( (LA132_0==111) ) {
-                    alt132=1;
+                    int LA132_30 = input.LA(2);
+
+                    if ( (synpred223()) ) {
+                        alt132=1;
+                    }
+
+
                 }
 
 
@@ -9939,7 +10247,13 @@ public class specParser extends Parser {
                 int LA133_0 = input.LA(1);
 
                 if ( (LA133_0==36) ) {
-                    alt133=1;
+                    int LA133_30 = input.LA(2);
+
+                    if ( (synpred224()) ) {
+                        alt133=1;
+                    }
+
+
                 }
 
 
@@ -9985,47 +10299,124 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start equalityExpression
-    // ./src/spec.g3:576:1: equalityExpression : instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* ;
+    // ./src/spec.g3:576:1: equalityExpression : instanceOfExpression ( ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression )* ;
     public final equalityExpression_return equalityExpression() throws RecognitionException {
         equalityExpression_return retval = new equalityExpression_return();
         retval.start = input.LT(1);
         int equalityExpression_StartIndex = input.index();
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 112) ) { return retval; }
-            // ./src/spec.g3:577:5: ( instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )* )
-            // ./src/spec.g3:577:9: instanceOfExpression ( ( '==' | '!=' ) instanceOfExpression )*
+            // ./src/spec.g3:577:5: ( instanceOfExpression ( ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression )* )
+            // ./src/spec.g3:577:9: instanceOfExpression ( ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression )*
             {
             pushFollow(FOLLOW_instanceOfExpression_in_equalityExpression3339);
             instanceOfExpression();
             _fsp--;
             if (failed) return retval;
-            // ./src/spec.g3:577:30: ( ( '==' | '!=' ) instanceOfExpression )*
-            loop134:
+            // ./src/spec.g3:577:30: ( ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression )*
+            loop135:
             do {
-                int alt134=2;
-                int LA134_0 = input.LA(1);
+                int alt135=2;
+                switch ( input.LA(1) ) {
+                case 112:
+                    {
+                    int LA135_28 = input.LA(2);
 
-                if ( ((LA134_0>=112 && LA134_0<=113)) ) {
-                    alt134=1;
+                    if ( (synpred227()) ) {
+                        alt135=1;
+                    }
+
+
+                    }
+                    break;
+                case 113:
+                    {
+                    int LA135_29 = input.LA(2);
+
+                    if ( (synpred227()) ) {
+                        alt135=1;
+                    }
+
+
+                    }
+                    break;
+                case 114:
+                    {
+                    int LA135_30 = input.LA(2);
+
+                    if ( (synpred227()) ) {
+                        alt135=1;
+                    }
+
+
+                    }
+                    break;
+
                 }
 
-
-                switch (alt134) {
+                switch (alt135) {
             	case 1 :
-            	    // ./src/spec.g3:577:32: ( '==' | '!=' ) instanceOfExpression
+            	    // ./src/spec.g3:577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression
             	    {
-            	    if ( (input.LA(1)>=112 && input.LA(1)<=113) ) {
-            	        input.consume();
-            	        errorRecovery=false;failed=false;
-            	    }
-            	    else {
+            	    // ./src/spec.g3:577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' )
+            	    int alt134=3;
+            	    switch ( input.LA(1) ) {
+            	    case 112:
+            	        {
+            	        alt134=1;
+            	        }
+            	        break;
+            	    case 113:
+            	        {
+            	        alt134=2;
+            	        }
+            	        break;
+            	    case 114:
+            	        {
+            	        alt134=3;
+            	        }
+            	        break;
+            	    default:
             	        if (backtracking>0) {failed=true; return retval;}
-            	        MismatchedSetException mse =
-            	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_equalityExpression3343);    throw mse;
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' )", 134, 0, input);
+
+            	        throw nvae;
             	    }
 
-            	    pushFollow(FOLLOW_instanceOfExpression_in_equalityExpression3351);
+            	    switch (alt134) {
+            	        case 1 :
+            	            // ./src/spec.g3:577:33: ( '\\u0e04\\u0e27\\u0e23' '==' )
+            	            {
+            	            // ./src/spec.g3:577:33: ( '\\u0e04\\u0e27\\u0e23' '==' )
+            	            // ./src/spec.g3:577:34: '\\u0e04\\u0e27\\u0e23' '=='
+            	            {
+            	            match(input,112,FOLLOW_112_in_equalityExpression3345); if (failed) return retval;
+            	            match(input,113,FOLLOW_113_in_equalityExpression3347); if (failed) return retval;
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // ./src/spec.g3:577:63: '=='
+            	            {
+            	            match(input,113,FOLLOW_113_in_equalityExpression3352); if (failed) return retval;
+
+            	            }
+            	            break;
+            	        case 3 :
+            	            // ./src/spec.g3:577:70: '!='
+            	            {
+            	            match(input,114,FOLLOW_114_in_equalityExpression3356); if (failed) return retval;
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    pushFollow(FOLLOW_instanceOfExpression_in_equalityExpression3359);
             	    instanceOfExpression();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10034,7 +10425,7 @@ public class specParser extends Parser {
             	    break;
 
             	default :
-            	    break loop134;
+            	    break loop135;
                 }
             } while (true);
 
@@ -10072,23 +10463,27 @@ public class specParser extends Parser {
             // ./src/spec.g3:581:5: ( relationalExpression ( 'instanceof' type )? )
             // ./src/spec.g3:581:9: relationalExpression ( 'instanceof' type )?
             {
-            pushFollow(FOLLOW_relationalExpression_in_instanceOfExpression3370);
+            pushFollow(FOLLOW_relationalExpression_in_instanceOfExpression3378);
             relationalExpression();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:581:30: ( 'instanceof' type )?
-            int alt135=2;
-            int LA135_0 = input.LA(1);
+            int alt136=2;
+            int LA136_0 = input.LA(1);
 
-            if ( (LA135_0==114) ) {
-                alt135=1;
+            if ( (LA136_0==115) ) {
+                int LA136_1 = input.LA(2);
+
+                if ( (synpred228()) ) {
+                    alt136=1;
+                }
             }
-            switch (alt135) {
+            switch (alt136) {
                 case 1 :
                     // ./src/spec.g3:581:31: 'instanceof' type
                     {
-                    match(input,114,FOLLOW_114_in_instanceOfExpression3373); if (failed) return retval;
-                    pushFollow(FOLLOW_type_in_instanceOfExpression3375);
+                    match(input,115,FOLLOW_115_in_instanceOfExpression3381); if (failed) return retval;
+                    pushFollow(FOLLOW_type_in_instanceOfExpression3383);
                     type();
                     _fsp--;
                     if (failed) return retval;
@@ -10132,54 +10527,45 @@ public class specParser extends Parser {
             // ./src/spec.g3:585:5: ( shiftExpression ( relationalOp shiftExpression )* )
             // ./src/spec.g3:585:9: shiftExpression ( relationalOp shiftExpression )*
             {
-            pushFollow(FOLLOW_shiftExpression_in_relationalExpression3393);
+            pushFollow(FOLLOW_shiftExpression_in_relationalExpression3401);
             shiftExpression();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:585:25: ( relationalOp shiftExpression )*
-            loop136:
+            loop137:
             do {
-                int alt136=2;
-                int LA136_0 = input.LA(1);
+                int alt137=2;
+                int LA137_0 = input.LA(1);
 
-                if ( (LA136_0==32) ) {
-                    int LA136_23 = input.LA(2);
+                if ( (LA137_0==32) ) {
+                    int LA137_25 = input.LA(2);
 
-                    if ( (LA136_23==32) ) {
-                        int LA136_27 = input.LA(3);
-
-                        if ( (synpred228()) ) {
-                            alt136=1;
-                        }
-
-
-                    }
-                    else if ( (LA136_23==Identifier||(LA136_23>=FloatingPointLiteral && LA136_23<=DecimalLiteral)||LA136_23==44||LA136_23==49||LA136_23==53||(LA136_23>=64 && LA136_23<=71)||LA136_23==73||(LA136_23>=75 && LA136_23<=80)||(LA136_23>=115 && LA136_23<=116)||(LA136_23>=119 && LA136_23<=124)) ) {
-                        alt136=1;
+                    if ( (synpred229()) ) {
+                        alt137=1;
                     }
 
 
                 }
-                else if ( (LA136_0==34) ) {
-                    int LA136_24 = input.LA(2);
+                else if ( (LA137_0==34) ) {
+                    int LA137_26 = input.LA(2);
 
-                    if ( (LA136_24==Identifier||(LA136_24>=FloatingPointLiteral && LA136_24<=DecimalLiteral)||LA136_24==32||LA136_24==44||LA136_24==49||LA136_24==53||(LA136_24>=64 && LA136_24<=71)||LA136_24==73||(LA136_24>=75 && LA136_24<=80)||(LA136_24>=115 && LA136_24<=116)||(LA136_24>=119 && LA136_24<=124)) ) {
-                        alt136=1;
+                    if ( (synpred229()) ) {
+                        alt137=1;
                     }
 
 
                 }
 
 
-                switch (alt136) {
+                switch (alt137) {
             	case 1 :
             	    // ./src/spec.g3:585:27: relationalOp shiftExpression
             	    {
-            	    pushFollow(FOLLOW_relationalOp_in_relationalExpression3397);
+            	    pushFollow(FOLLOW_relationalOp_in_relationalExpression3405);
             	    relationalOp();
             	    _fsp--;
             	    if (failed) return retval;
-            	    pushFollow(FOLLOW_shiftExpression_in_relationalExpression3399);
+            	    pushFollow(FOLLOW_shiftExpression_in_relationalExpression3407);
             	    shiftExpression();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10188,7 +10574,7 @@ public class specParser extends Parser {
             	    break;
 
             	default :
-            	    break loop136;
+            	    break loop137;
                 }
             } while (true);
 
@@ -10227,39 +10613,39 @@ public class specParser extends Parser {
             // ./src/spec.g3:589:4: ( '<' '=' | '>' '=' | '<' | '>' )
             {
             // ./src/spec.g3:589:4: ( '<' '=' | '>' '=' | '<' | '>' )
-            int alt137=4;
-            int LA137_0 = input.LA(1);
+            int alt138=4;
+            int LA138_0 = input.LA(1);
 
-            if ( (LA137_0==32) ) {
-                int LA137_1 = input.LA(2);
+            if ( (LA138_0==32) ) {
+                int LA138_1 = input.LA(2);
 
-                if ( (LA137_1==53) ) {
-                    alt137=1;
+                if ( (LA138_1==53) ) {
+                    alt138=1;
                 }
-                else if ( (LA137_1==Identifier||(LA137_1>=FloatingPointLiteral && LA137_1<=DecimalLiteral)||LA137_1==32||LA137_1==44||LA137_1==49||(LA137_1>=64 && LA137_1<=71)||LA137_1==73||(LA137_1>=75 && LA137_1<=80)||(LA137_1>=115 && LA137_1<=116)||(LA137_1>=119 && LA137_1<=124)) ) {
-                    alt137=3;
+                else if ( (LA138_1==Identifier||(LA138_1>=FloatingPointLiteral && LA138_1<=DecimalLiteral)||LA138_1==32||LA138_1==44||LA138_1==49||(LA138_1>=64 && LA138_1<=71)||LA138_1==73||(LA138_1>=75 && LA138_1<=80)||(LA138_1>=116 && LA138_1<=117)||(LA138_1>=120 && LA138_1<=125)) ) {
+                    alt138=3;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 137, 1, input);
+                        new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 138, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA137_0==34) ) {
-                int LA137_2 = input.LA(2);
+            else if ( (LA138_0==34) ) {
+                int LA138_2 = input.LA(2);
 
-                if ( (LA137_2==53) ) {
-                    alt137=2;
+                if ( (LA138_2==53) ) {
+                    alt138=2;
                 }
-                else if ( (LA137_2==Identifier||(LA137_2>=FloatingPointLiteral && LA137_2<=DecimalLiteral)||LA137_2==32||LA137_2==44||LA137_2==49||(LA137_2>=64 && LA137_2<=71)||LA137_2==73||(LA137_2>=75 && LA137_2<=80)||(LA137_2>=115 && LA137_2<=116)||(LA137_2>=119 && LA137_2<=124)) ) {
-                    alt137=4;
+                else if ( (LA138_2==Identifier||(LA138_2>=FloatingPointLiteral && LA138_2<=DecimalLiteral)||LA138_2==32||LA138_2==44||LA138_2==49||(LA138_2>=64 && LA138_2<=71)||LA138_2==73||(LA138_2>=75 && LA138_2<=80)||(LA138_2>=116 && LA138_2<=117)||(LA138_2>=120 && LA138_2<=125)) ) {
+                    alt138=4;
                 }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 137, 2, input);
+                        new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 138, 2, input);
 
                     throw nvae;
                 }
@@ -10267,38 +10653,38 @@ public class specParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 137, 0, input);
+                    new NoViableAltException("589:4: ( '<' '=' | '>' '=' | '<' | '>' )", 138, 0, input);
 
                 throw nvae;
             }
-            switch (alt137) {
+            switch (alt138) {
                 case 1 :
                     // ./src/spec.g3:589:5: '<' '='
                     {
-                    match(input,32,FOLLOW_32_in_relationalOp3415); if (failed) return retval;
-                    match(input,53,FOLLOW_53_in_relationalOp3417); if (failed) return retval;
+                    match(input,32,FOLLOW_32_in_relationalOp3423); if (failed) return retval;
+                    match(input,53,FOLLOW_53_in_relationalOp3425); if (failed) return retval;
 
                     }
                     break;
                 case 2 :
                     // ./src/spec.g3:589:15: '>' '='
                     {
-                    match(input,34,FOLLOW_34_in_relationalOp3421); if (failed) return retval;
-                    match(input,53,FOLLOW_53_in_relationalOp3423); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_relationalOp3429); if (failed) return retval;
+                    match(input,53,FOLLOW_53_in_relationalOp3431); if (failed) return retval;
 
                     }
                     break;
                 case 3 :
                     // ./src/spec.g3:589:25: '<'
                     {
-                    match(input,32,FOLLOW_32_in_relationalOp3427); if (failed) return retval;
+                    match(input,32,FOLLOW_32_in_relationalOp3435); if (failed) return retval;
 
                     }
                     break;
                 case 4 :
                     // ./src/spec.g3:589:31: '>'
                     {
-                    match(input,34,FOLLOW_34_in_relationalOp3431); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_relationalOp3439); if (failed) return retval;
 
                     }
                     break;
@@ -10339,57 +10725,45 @@ public class specParser extends Parser {
             // ./src/spec.g3:593:5: ( additiveExpression ( shiftOp additiveExpression )* )
             // ./src/spec.g3:593:9: additiveExpression ( shiftOp additiveExpression )*
             {
-            pushFollow(FOLLOW_additiveExpression_in_shiftExpression3448);
+            pushFollow(FOLLOW_additiveExpression_in_shiftExpression3456);
             additiveExpression();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:593:28: ( shiftOp additiveExpression )*
-            loop138:
+            loop139:
             do {
-                int alt138=2;
-                int LA138_0 = input.LA(1);
+                int alt139=2;
+                int LA139_0 = input.LA(1);
 
-                if ( (LA138_0==32) ) {
-                    int LA138_1 = input.LA(2);
+                if ( (LA139_0==32) ) {
+                    int LA139_1 = input.LA(2);
 
-                    if ( (LA138_1==32) ) {
-                        int LA138_27 = input.LA(3);
-
-                        if ( (synpred232()) ) {
-                            alt138=1;
-                        }
-
-
+                    if ( (synpred233()) ) {
+                        alt139=1;
                     }
 
 
                 }
-                else if ( (LA138_0==34) ) {
-                    int LA138_2 = input.LA(2);
+                else if ( (LA139_0==34) ) {
+                    int LA139_2 = input.LA(2);
 
-                    if ( (LA138_2==34) ) {
-                        int LA138_49 = input.LA(3);
-
-                        if ( (synpred232()) ) {
-                            alt138=1;
-                        }
-
-
+                    if ( (synpred233()) ) {
+                        alt139=1;
                     }
 
 
                 }
 
 
-                switch (alt138) {
+                switch (alt139) {
             	case 1 :
             	    // ./src/spec.g3:593:30: shiftOp additiveExpression
             	    {
-            	    pushFollow(FOLLOW_shiftOp_in_shiftExpression3452);
+            	    pushFollow(FOLLOW_shiftOp_in_shiftExpression3460);
             	    shiftOp();
             	    _fsp--;
             	    if (failed) return retval;
-            	    pushFollow(FOLLOW_additiveExpression_in_shiftExpression3454);
+            	    pushFollow(FOLLOW_additiveExpression_in_shiftExpression3462);
             	    additiveExpression();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10398,7 +10772,7 @@ public class specParser extends Parser {
             	    break;
 
             	default :
-            	    break loop138;
+            	    break loop139;
                 }
             } while (true);
 
@@ -10437,28 +10811,28 @@ public class specParser extends Parser {
             // ./src/spec.g3:598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )
             {
             // ./src/spec.g3:598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )
-            int alt139=3;
-            int LA139_0 = input.LA(1);
+            int alt140=3;
+            int LA140_0 = input.LA(1);
 
-            if ( (LA139_0==32) ) {
-                alt139=1;
+            if ( (LA140_0==32) ) {
+                alt140=1;
             }
-            else if ( (LA139_0==34) ) {
-                int LA139_2 = input.LA(2);
+            else if ( (LA140_0==34) ) {
+                int LA140_2 = input.LA(2);
 
-                if ( (LA139_2==34) ) {
-                    int LA139_3 = input.LA(3);
+                if ( (LA140_2==34) ) {
+                    int LA140_3 = input.LA(3);
 
-                    if ( (synpred234()) ) {
-                        alt139=2;
+                    if ( (synpred235()) ) {
+                        alt140=2;
                     }
                     else if ( (true) ) {
-                        alt139=3;
+                        alt140=3;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 139, 3, input);
+                            new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 140, 3, input);
 
                         throw nvae;
                     }
@@ -10466,7 +10840,7 @@ public class specParser extends Parser {
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 139, 2, input);
+                        new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 140, 2, input);
 
                     throw nvae;
                 }
@@ -10474,33 +10848,33 @@ public class specParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 139, 0, input);
+                    new NoViableAltException("598:4: ( '<' '<' | '>' '>' '>' | '>' '>' )", 140, 0, input);
 
                 throw nvae;
             }
-            switch (alt139) {
+            switch (alt140) {
                 case 1 :
                     // ./src/spec.g3:598:5: '<' '<'
                     {
-                    match(input,32,FOLLOW_32_in_shiftOp3478); if (failed) return retval;
-                    match(input,32,FOLLOW_32_in_shiftOp3480); if (failed) return retval;
+                    match(input,32,FOLLOW_32_in_shiftOp3486); if (failed) return retval;
+                    match(input,32,FOLLOW_32_in_shiftOp3488); if (failed) return retval;
 
                     }
                     break;
                 case 2 :
                     // ./src/spec.g3:598:15: '>' '>' '>'
                     {
-                    match(input,34,FOLLOW_34_in_shiftOp3484); if (failed) return retval;
-                    match(input,34,FOLLOW_34_in_shiftOp3486); if (failed) return retval;
-                    match(input,34,FOLLOW_34_in_shiftOp3488); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_shiftOp3492); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_shiftOp3494); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_shiftOp3496); if (failed) return retval;
 
                     }
                     break;
                 case 3 :
                     // ./src/spec.g3:598:29: '>' '>'
                     {
-                    match(input,34,FOLLOW_34_in_shiftOp3492); if (failed) return retval;
-                    match(input,34,FOLLOW_34_in_shiftOp3494); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_shiftOp3500); if (failed) return retval;
+                    match(input,34,FOLLOW_34_in_shiftOp3502); if (failed) return retval;
 
                     }
                     break;
@@ -10541,26 +10915,32 @@ public class specParser extends Parser {
             // ./src/spec.g3:603:5: ( multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )* )
             // ./src/spec.g3:603:9: multiplicativeExpression ( ( '+' | '-' ) multiplicativeExpression )*
             {
-            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression3512);
+            pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression3520);
             multiplicativeExpression();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:603:34: ( ( '+' | '-' ) multiplicativeExpression )*
-            loop140:
+            loop141:
             do {
-                int alt140=2;
-                int LA140_0 = input.LA(1);
+                int alt141=2;
+                int LA141_0 = input.LA(1);
 
-                if ( ((LA140_0>=115 && LA140_0<=116)) ) {
-                    alt140=1;
+                if ( ((LA141_0>=116 && LA141_0<=117)) ) {
+                    int LA141_30 = input.LA(2);
+
+                    if ( (synpred237()) ) {
+                        alt141=1;
+                    }
+
+
                 }
 
 
-                switch (alt140) {
+                switch (alt141) {
             	case 1 :
             	    // ./src/spec.g3:603:36: ( '+' | '-' ) multiplicativeExpression
             	    {
-            	    if ( (input.LA(1)>=115 && input.LA(1)<=116) ) {
+            	    if ( (input.LA(1)>=116 && input.LA(1)<=117) ) {
             	        input.consume();
             	        errorRecovery=false;failed=false;
             	    }
@@ -10568,10 +10948,10 @@ public class specParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_additiveExpression3516);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_additiveExpression3524);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression3524);
+            	    pushFollow(FOLLOW_multiplicativeExpression_in_additiveExpression3532);
             	    multiplicativeExpression();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10580,7 +10960,7 @@ public class specParser extends Parser {
             	    break;
 
             	default :
-            	    break loop140;
+            	    break loop141;
                 }
             } while (true);
 
@@ -10618,26 +10998,32 @@ public class specParser extends Parser {
             // ./src/spec.g3:607:5: ( unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )* )
             // ./src/spec.g3:607:9: unaryExpression ( ( '*' | '/' | '%' ) unaryExpression )*
             {
-            pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression3543);
+            pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression3551);
             unaryExpression();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:607:25: ( ( '*' | '/' | '%' ) unaryExpression )*
-            loop141:
+            loop142:
             do {
-                int alt141=2;
-                int LA141_0 = input.LA(1);
+                int alt142=2;
+                int LA142_0 = input.LA(1);
 
-                if ( (LA141_0==30||(LA141_0>=117 && LA141_0<=118)) ) {
-                    alt141=1;
+                if ( (LA142_0==30||(LA142_0>=118 && LA142_0<=119)) ) {
+                    int LA142_30 = input.LA(2);
+
+                    if ( (synpred240()) ) {
+                        alt142=1;
+                    }
+
+
                 }
 
 
-                switch (alt141) {
+                switch (alt142) {
             	case 1 :
             	    // ./src/spec.g3:607:27: ( '*' | '/' | '%' ) unaryExpression
             	    {
-            	    if ( input.LA(1)==30||(input.LA(1)>=117 && input.LA(1)<=118) ) {
+            	    if ( input.LA(1)==30||(input.LA(1)>=118 && input.LA(1)<=119) ) {
             	        input.consume();
             	        errorRecovery=false;failed=false;
             	    }
@@ -10645,10 +11031,10 @@ public class specParser extends Parser {
             	        if (backtracking>0) {failed=true; return retval;}
             	        MismatchedSetException mse =
             	            new MismatchedSetException(null,input);
-            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_multiplicativeExpression3547);    throw mse;
+            	        recoverFromMismatchedSet(input,mse,FOLLOW_set_in_multiplicativeExpression3555);    throw mse;
             	    }
 
-            	    pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression3561);
+            	    pushFollow(FOLLOW_unaryExpression_in_multiplicativeExpression3569);
             	    unaryExpression();
             	    _fsp--;
             	    if (failed) return retval;
@@ -10657,7 +11043,7 @@ public class specParser extends Parser {
             	    break;
 
             	default :
-            	    break loop141;
+            	    break loop142;
                 }
             } while (true);
 
@@ -10693,26 +11079,26 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 120) ) { return retval; }
             // ./src/spec.g3:611:5: ( '+' unaryExpression | '-' unaryExpression | '++' primary | '--' primary | unaryExpressionNotPlusMinus )
-            int alt142=5;
+            int alt143=5;
             switch ( input.LA(1) ) {
-            case 115:
-                {
-                alt142=1;
-                }
-                break;
             case 116:
                 {
-                alt142=2;
+                alt143=1;
                 }
                 break;
-            case 119:
+            case 117:
                 {
-                alt142=3;
+                alt143=2;
                 }
                 break;
             case 120:
                 {
-                alt142=4;
+                alt143=3;
+                }
+                break;
+            case 121:
+                {
+                alt143=4;
                 }
                 break;
             case Identifier:
@@ -10740,28 +11126,28 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 121:
             case 122:
             case 123:
             case 124:
+            case 125:
                 {
-                alt142=5;
+                alt143=5;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("610:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' primary | '--' primary | unaryExpressionNotPlusMinus );", 142, 0, input);
+                    new NoViableAltException("610:1: unaryExpression : ( '+' unaryExpression | '-' unaryExpression | '++' primary | '--' primary | unaryExpressionNotPlusMinus );", 143, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt142) {
+            switch (alt143) {
                 case 1 :
                     // ./src/spec.g3:611:9: '+' unaryExpression
                     {
-                    match(input,115,FOLLOW_115_in_unaryExpression3581); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression3583);
+                    match(input,116,FOLLOW_116_in_unaryExpression3589); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression3591);
                     unaryExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -10771,8 +11157,8 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:612:7: '-' unaryExpression
                     {
-                    match(input,116,FOLLOW_116_in_unaryExpression3591); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression3593);
+                    match(input,117,FOLLOW_117_in_unaryExpression3599); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpression3601);
                     unaryExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -10782,8 +11168,8 @@ public class specParser extends Parser {
                 case 3 :
                     // ./src/spec.g3:613:9: '++' primary
                     {
-                    match(input,119,FOLLOW_119_in_unaryExpression3603); if (failed) return retval;
-                    pushFollow(FOLLOW_primary_in_unaryExpression3605);
+                    match(input,120,FOLLOW_120_in_unaryExpression3611); if (failed) return retval;
+                    pushFollow(FOLLOW_primary_in_unaryExpression3613);
                     primary();
                     _fsp--;
                     if (failed) return retval;
@@ -10793,8 +11179,8 @@ public class specParser extends Parser {
                 case 4 :
                     // ./src/spec.g3:614:9: '--' primary
                     {
-                    match(input,120,FOLLOW_120_in_unaryExpression3615); if (failed) return retval;
-                    pushFollow(FOLLOW_primary_in_unaryExpression3617);
+                    match(input,121,FOLLOW_121_in_unaryExpression3623); if (failed) return retval;
+                    pushFollow(FOLLOW_primary_in_unaryExpression3625);
                     primary();
                     _fsp--;
                     if (failed) return retval;
@@ -10804,7 +11190,7 @@ public class specParser extends Parser {
                 case 5 :
                     // ./src/spec.g3:615:9: unaryExpressionNotPlusMinus
                     {
-                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression3627);
+                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression3635);
                     unaryExpressionNotPlusMinus();
                     _fsp--;
                     if (failed) return retval;
@@ -10842,35 +11228,42 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 121) ) { return retval; }
             // ./src/spec.g3:619:5: ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? )
-            int alt145=4;
+            int alt146=4;
             switch ( input.LA(1) ) {
-            case 121:
-                {
-                alt145=1;
-                }
-                break;
             case 122:
                 {
-                alt145=2;
+                alt146=1;
+                }
+                break;
+            case 123:
+                {
+                alt146=2;
                 }
                 break;
             case 44:
                 {
                 switch ( input.LA(2) ) {
-                case 115:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
                     {
-                    int LA145_18 = input.LA(3);
+                    int LA146_18 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 18, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 18, input);
 
                         throw nvae;
                     }
@@ -10878,37 +11271,37 @@ public class specParser extends Parser {
                     break;
                 case 116:
                     {
-                    int LA145_19 = input.LA(3);
+                    int LA146_19 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 19, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 19, input);
 
                         throw nvae;
                     }
                     }
                     break;
-                case 119:
+                case 117:
                     {
-                    int LA145_20 = input.LA(3);
+                    int LA146_20 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 20, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 20, input);
 
                         throw nvae;
                     }
@@ -10916,18 +11309,18 @@ public class specParser extends Parser {
                     break;
                 case 120:
                     {
-                    int LA145_21 = input.LA(3);
+                    int LA146_21 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 21, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 21, input);
 
                         throw nvae;
                     }
@@ -10935,18 +11328,18 @@ public class specParser extends Parser {
                     break;
                 case 121:
                     {
-                    int LA145_22 = input.LA(3);
+                    int LA146_22 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 22, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 22, input);
 
                         throw nvae;
                     }
@@ -10954,56 +11347,18 @@ public class specParser extends Parser {
                     break;
                 case 122:
                     {
-                    int LA145_23 = input.LA(3);
+                    int LA146_23 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 23, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 44:
-                    {
-                    int LA145_24 = input.LA(3);
-
-                    if ( (synpred246()) ) {
-                        alt145=3;
-                    }
-                    else if ( (true) ) {
-                        alt145=4;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 24, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 32:
-                    {
-                    int LA145_25 = input.LA(3);
-
-                    if ( (synpred246()) ) {
-                        alt145=3;
-                    }
-                    else if ( (true) ) {
-                        alt145=4;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 25, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 23, input);
 
                         throw nvae;
                     }
@@ -11011,18 +11366,75 @@ public class specParser extends Parser {
                     break;
                 case 123:
                     {
-                    int LA145_26 = input.LA(3);
+                    int LA146_24 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 26, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 24, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 44:
+                    {
+                    int LA146_25 = input.LA(3);
+
+                    if ( (synpred247()) ) {
+                        alt146=3;
+                    }
+                    else if ( (true) ) {
+                        alt146=4;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 25, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 32:
+                    {
+                    int LA146_26 = input.LA(3);
+
+                    if ( (synpred247()) ) {
+                        alt146=3;
+                    }
+                    else if ( (true) ) {
+                        alt146=4;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 26, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 124:
+                    {
+                    int LA146_27 = input.LA(3);
+
+                    if ( (synpred247()) ) {
+                        alt146=3;
+                    }
+                    else if ( (true) ) {
+                        alt146=4;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 27, input);
 
                         throw nvae;
                     }
@@ -11030,18 +11442,18 @@ public class specParser extends Parser {
                     break;
                 case 73:
                     {
-                    int LA145_27 = input.LA(3);
+                    int LA146_28 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 27, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 28, input);
 
                         throw nvae;
                     }
@@ -11051,18 +11463,18 @@ public class specParser extends Parser {
                 case OctalLiteral:
                 case DecimalLiteral:
                     {
-                    int LA145_28 = input.LA(3);
+                    int LA146_29 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 28, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 29, input);
 
                         throw nvae;
                     }
@@ -11070,18 +11482,18 @@ public class specParser extends Parser {
                     break;
                 case FloatingPointLiteral:
                     {
-                    int LA145_29 = input.LA(3);
+                    int LA146_30 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 29, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 30, input);
 
                         throw nvae;
                     }
@@ -11089,18 +11501,18 @@ public class specParser extends Parser {
                     break;
                 case CharacterLiteral:
                     {
-                    int LA145_30 = input.LA(3);
+                    int LA146_31 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 30, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 31, input);
 
                         throw nvae;
                     }
@@ -11108,18 +11520,18 @@ public class specParser extends Parser {
                     break;
                 case StringLiteral:
                     {
-                    int LA145_31 = input.LA(3);
+                    int LA146_32 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 31, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 32, input);
 
                         throw nvae;
                     }
@@ -11130,18 +11542,18 @@ public class specParser extends Parser {
                 case 79:
                 case 80:
                     {
-                    int LA145_32 = input.LA(3);
+                    int LA146_33 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 32, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 33, input);
 
                         throw nvae;
                     }
@@ -11149,18 +11561,18 @@ public class specParser extends Parser {
                     break;
                 case 75:
                     {
-                    int LA145_33 = input.LA(3);
+                    int LA146_34 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 33, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 34, input);
 
                         throw nvae;
                     }
@@ -11168,37 +11580,37 @@ public class specParser extends Parser {
                     break;
                 case 76:
                     {
-                    int LA145_34 = input.LA(3);
+                    int LA146_35 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 34, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 35, input);
 
                         throw nvae;
                     }
                     }
                     break;
-                case 124:
+                case 125:
                     {
-                    int LA145_35 = input.LA(3);
+                    int LA146_36 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 35, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 36, input);
 
                         throw nvae;
                     }
@@ -11206,44 +11618,18 @@ public class specParser extends Parser {
                     break;
                 case Identifier:
                     {
-                    int LA145_36 = input.LA(3);
+                    int LA146_37 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 36, input);
-
-                        throw nvae;
-                    }
-                    }
-                    break;
-                case 64:
-                case 65:
-                case 66:
-                case 67:
-                case 68:
-                case 69:
-                case 70:
-                case 71:
-                    {
-                    int LA145_37 = input.LA(3);
-
-                    if ( (synpred246()) ) {
-                        alt145=3;
-                    }
-                    else if ( (true) ) {
-                        alt145=4;
-                    }
-                    else {
-                        if (backtracking>0) {failed=true; return retval;}
-                        NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 37, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 37, input);
 
                         throw nvae;
                     }
@@ -11251,18 +11637,18 @@ public class specParser extends Parser {
                     break;
                 case 49:
                     {
-                    int LA145_38 = input.LA(3);
+                    int LA146_38 = input.LA(3);
 
-                    if ( (synpred246()) ) {
-                        alt145=3;
+                    if ( (synpred247()) ) {
+                        alt146=3;
                     }
                     else if ( (true) ) {
-                        alt145=4;
+                        alt146=4;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 38, input);
+                            new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 38, input);
 
                         throw nvae;
                     }
@@ -11271,7 +11657,7 @@ public class specParser extends Parser {
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 3, input);
+                        new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 3, input);
 
                     throw nvae;
                 }
@@ -11302,26 +11688,26 @@ public class specParser extends Parser {
             case 78:
             case 79:
             case 80:
-            case 123:
             case 124:
+            case 125:
                 {
-                alt145=4;
+                alt146=4;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 145, 0, input);
+                    new NoViableAltException("618:1: unaryExpressionNotPlusMinus : ( '~' unaryExpression | '!' unaryExpression | castExpression | primary ( selector )* ( '++' | '--' )? );", 146, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt145) {
+            switch (alt146) {
                 case 1 :
                     // ./src/spec.g3:619:9: '~' unaryExpression
                     {
-                    match(input,121,FOLLOW_121_in_unaryExpressionNotPlusMinus3646); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3648);
+                    match(input,122,FOLLOW_122_in_unaryExpressionNotPlusMinus3654); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3656);
                     unaryExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -11331,8 +11717,8 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:620:8: '!' unaryExpression
                     {
-                    match(input,122,FOLLOW_122_in_unaryExpressionNotPlusMinus3657); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3659);
+                    match(input,123,FOLLOW_123_in_unaryExpressionNotPlusMinus3665); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3667);
                     unaryExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -11342,7 +11728,7 @@ public class specParser extends Parser {
                 case 3 :
                     // ./src/spec.g3:621:9: castExpression
                     {
-                    pushFollow(FOLLOW_castExpression_in_unaryExpressionNotPlusMinus3669);
+                    pushFollow(FOLLOW_castExpression_in_unaryExpressionNotPlusMinus3677);
                     castExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -11352,26 +11738,41 @@ public class specParser extends Parser {
                 case 4 :
                     // ./src/spec.g3:622:9: primary ( selector )* ( '++' | '--' )?
                     {
-                    pushFollow(FOLLOW_primary_in_unaryExpressionNotPlusMinus3679);
+                    pushFollow(FOLLOW_primary_in_unaryExpressionNotPlusMinus3687);
                     primary();
                     _fsp--;
                     if (failed) return retval;
                     // ./src/spec.g3:622:17: ( selector )*
-                    loop143:
+                    loop144:
                     do {
-                        int alt143=2;
-                        int LA143_0 = input.LA(1);
+                        int alt144=2;
+                        int LA144_0 = input.LA(1);
 
-                        if ( (LA143_0==29||LA143_0==50) ) {
-                            alt143=1;
+                        if ( (LA144_0==29) ) {
+                            int LA144_32 = input.LA(2);
+
+                            if ( (synpred248()) ) {
+                                alt144=1;
+                            }
+
+
+                        }
+                        else if ( (LA144_0==50) ) {
+                            int LA144_33 = input.LA(2);
+
+                            if ( (synpred248()) ) {
+                                alt144=1;
+                            }
+
+
                         }
 
 
-                        switch (alt143) {
+                        switch (alt144) {
                     	case 1 :
                     	    // ./src/spec.g3:0:0: selector
                     	    {
-                    	    pushFollow(FOLLOW_selector_in_unaryExpressionNotPlusMinus3681);
+                    	    pushFollow(FOLLOW_selector_in_unaryExpressionNotPlusMinus3689);
                     	    selector();
                     	    _fsp--;
                     	    if (failed) return retval;
@@ -11380,22 +11781,22 @@ public class specParser extends Parser {
                     	    break;
 
                     	default :
-                    	    break loop143;
+                    	    break loop144;
                         }
                     } while (true);
 
                     // ./src/spec.g3:622:27: ( '++' | '--' )?
-                    int alt144=2;
-                    int LA144_0 = input.LA(1);
+                    int alt145=2;
+                    int LA145_0 = input.LA(1);
 
-                    if ( ((LA144_0>=119 && LA144_0<=120)) ) {
-                        alt144=1;
+                    if ( ((LA145_0>=120 && LA145_0<=121)) ) {
+                        alt145=1;
                     }
-                    switch (alt144) {
+                    switch (alt145) {
                         case 1 :
                             // ./src/spec.g3:
                             {
-                            if ( (input.LA(1)>=119 && input.LA(1)<=120) ) {
+                            if ( (input.LA(1)>=120 && input.LA(1)<=121) ) {
                                 input.consume();
                                 errorRecovery=false;failed=false;
                             }
@@ -11403,7 +11804,7 @@ public class specParser extends Parser {
                                 if (backtracking>0) {failed=true; return retval;}
                                 MismatchedSetException mse =
                                     new MismatchedSetException(null,input);
-                                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unaryExpressionNotPlusMinus3684);    throw mse;
+                                recoverFromMismatchedSet(input,mse,FOLLOW_set_in_unaryExpressionNotPlusMinus3692);    throw mse;
                             }
 
 
@@ -11446,36 +11847,36 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 122) ) { return retval; }
             // ./src/spec.g3:626:5: ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus )
-            int alt147=2;
-            int LA147_0 = input.LA(1);
+            int alt148=2;
+            int LA148_0 = input.LA(1);
 
-            if ( (LA147_0==44) ) {
-                int LA147_1 = input.LA(2);
+            if ( (LA148_0==44) ) {
+                int LA148_1 = input.LA(2);
 
-                if ( ((LA147_1>=64 && LA147_1<=71)) ) {
-                    int LA147_2 = input.LA(3);
+                if ( (LA148_1==Identifier||(LA148_1>=FloatingPointLiteral && LA148_1<=DecimalLiteral)||LA148_1==32||LA148_1==44||LA148_1==49||LA148_1==73||(LA148_1>=75 && LA148_1<=80)||(LA148_1>=116 && LA148_1<=117)||(LA148_1>=120 && LA148_1<=125)) ) {
+                    alt148=2;
+                }
+                else if ( ((LA148_1>=64 && LA148_1<=71)) ) {
+                    int LA148_21 = input.LA(3);
 
-                    if ( (synpred250()) ) {
-                        alt147=1;
+                    if ( (synpred251()) ) {
+                        alt148=1;
                     }
                     else if ( (true) ) {
-                        alt147=2;
+                        alt148=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 147, 2, input);
+                            new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 148, 21, input);
 
                         throw nvae;
                     }
                 }
-                else if ( (LA147_1==Identifier||(LA147_1>=FloatingPointLiteral && LA147_1<=DecimalLiteral)||LA147_1==32||LA147_1==44||LA147_1==49||LA147_1==73||(LA147_1>=75 && LA147_1<=80)||(LA147_1>=115 && LA147_1<=116)||(LA147_1>=119 && LA147_1<=124)) ) {
-                    alt147=2;
-                }
                 else {
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 147, 1, input);
+                        new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 148, 1, input);
 
                     throw nvae;
                 }
@@ -11483,21 +11884,21 @@ public class specParser extends Parser {
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 147, 0, input);
+                    new NoViableAltException("625:1: castExpression : ( '(' primitiveType ')' unaryExpression | '(' ( expression | type ) ')' unaryExpressionNotPlusMinus );", 148, 0, input);
 
                 throw nvae;
             }
-            switch (alt147) {
+            switch (alt148) {
                 case 1 :
                     // ./src/spec.g3:626:8: '(' primitiveType ')' unaryExpression
                     {
-                    match(input,44,FOLLOW_44_in_castExpression3707); if (failed) return retval;
-                    pushFollow(FOLLOW_primitiveType_in_castExpression3709);
+                    match(input,44,FOLLOW_44_in_castExpression3715); if (failed) return retval;
+                    pushFollow(FOLLOW_primitiveType_in_castExpression3717);
                     primitiveType();
                     _fsp--;
                     if (failed) return retval;
-                    match(input,45,FOLLOW_45_in_castExpression3711); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpression_in_castExpression3713);
+                    match(input,45,FOLLOW_45_in_castExpression3719); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpression_in_castExpression3721);
                     unaryExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -11507,9 +11908,9 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:627:8: '(' ( expression | type ) ')' unaryExpressionNotPlusMinus
                     {
-                    match(input,44,FOLLOW_44_in_castExpression3722); if (failed) return retval;
+                    match(input,44,FOLLOW_44_in_castExpression3730); if (failed) return retval;
                     // ./src/spec.g3:627:12: ( expression | type )
-                    int alt146=2;
+                    int alt147=2;
                     switch ( input.LA(1) ) {
                     case FloatingPointLiteral:
                     case CharacterLiteral:
@@ -11527,32 +11928,32 @@ public class specParser extends Parser {
                     case 78:
                     case 79:
                     case 80:
-                    case 115:
                     case 116:
-                    case 119:
+                    case 117:
                     case 120:
                     case 121:
                     case 122:
                     case 123:
                     case 124:
+                    case 125:
                         {
-                        alt146=1;
+                        alt147=1;
                         }
                         break;
                     case Identifier:
                         {
-                        int LA146_19 = input.LA(2);
+                        int LA147_19 = input.LA(2);
 
-                        if ( (synpred251()) ) {
-                            alt146=1;
+                        if ( (synpred252()) ) {
+                            alt147=1;
                         }
                         else if ( (true) ) {
-                            alt146=2;
+                            alt147=2;
                         }
                         else {
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("627:12: ( expression | type )", 146, 19, input);
+                                new NoViableAltException("627:12: ( expression | type )", 147, 19, input);
 
                             throw nvae;
                         }
@@ -11570,37 +11971,37 @@ public class specParser extends Parser {
                         switch ( input.LA(2) ) {
                         case 50:
                             {
-                            int LA146_49 = input.LA(3);
+                            int LA147_68 = input.LA(3);
 
-                            if ( (synpred251()) ) {
-                                alt146=1;
+                            if ( (synpred252()) ) {
+                                alt147=1;
                             }
                             else if ( (true) ) {
-                                alt146=2;
+                                alt147=2;
                             }
                             else {
                                 if (backtracking>0) {failed=true; return retval;}
                                 NoViableAltException nvae =
-                                    new NoViableAltException("627:12: ( expression | type )", 146, 49, input);
+                                    new NoViableAltException("627:12: ( expression | type )", 147, 68, input);
 
                                 throw nvae;
                             }
                             }
                             break;
-                        case 29:
-                            {
-                            alt146=1;
-                            }
-                            break;
                         case 45:
                             {
-                            alt146=2;
+                            alt147=2;
+                            }
+                            break;
+                        case 29:
+                            {
+                            alt147=1;
                             }
                             break;
                         default:
                             if (backtracking>0) {failed=true; return retval;}
                             NoViableAltException nvae =
-                                new NoViableAltException("627:12: ( expression | type )", 146, 20, input);
+                                new NoViableAltException("627:12: ( expression | type )", 147, 20, input);
 
                             throw nvae;
                         }
@@ -11610,16 +12011,16 @@ public class specParser extends Parser {
                     default:
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("627:12: ( expression | type )", 146, 0, input);
+                            new NoViableAltException("627:12: ( expression | type )", 147, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt146) {
+                    switch (alt147) {
                         case 1 :
                             // ./src/spec.g3:627:13: expression
                             {
-                            pushFollow(FOLLOW_expression_in_castExpression3725);
+                            pushFollow(FOLLOW_expression_in_castExpression3733);
                             expression();
                             _fsp--;
                             if (failed) return retval;
@@ -11629,7 +12030,7 @@ public class specParser extends Parser {
                         case 2 :
                             // ./src/spec.g3:627:26: type
                             {
-                            pushFollow(FOLLOW_type_in_castExpression3729);
+                            pushFollow(FOLLOW_type_in_castExpression3737);
                             type();
                             _fsp--;
                             if (failed) return retval;
@@ -11639,8 +12040,8 @@ public class specParser extends Parser {
 
                     }
 
-                    match(input,45,FOLLOW_45_in_castExpression3732); if (failed) return retval;
-                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_castExpression3734);
+                    match(input,45,FOLLOW_45_in_castExpression3740); if (failed) return retval;
+                    pushFollow(FOLLOW_unaryExpressionNotPlusMinus_in_castExpression3742);
                     unaryExpressionNotPlusMinus();
                     _fsp--;
                     if (failed) return retval;
@@ -11678,26 +12079,26 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 123) ) { return retval; }
             // ./src/spec.g3:631:5: ( parExpression | nonWildcardTypeArguments ( explicitGenericInvocationSuffix | 'this' arguments ) | 'this' ( arguments )? | 'super' superSuffix | literal | '\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07' creator | Identifier ( '.' Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' )
-            int alt153=9;
+            int alt154=9;
             switch ( input.LA(1) ) {
             case 44:
                 {
-                alt153=1;
+                alt154=1;
                 }
                 break;
             case 32:
                 {
-                alt153=2;
+                alt154=2;
                 }
                 break;
-            case 123:
+            case 124:
                 {
-                alt153=3;
+                alt154=3;
                 }
                 break;
             case 73:
                 {
-                alt153=4;
+                alt154=4;
                 }
                 break;
             case FloatingPointLiteral:
@@ -11713,17 +12114,17 @@ public class specParser extends Parser {
             case 79:
             case 80:
                 {
-                alt153=5;
+                alt154=5;
                 }
                 break;
-            case 124:
+            case 125:
                 {
-                alt153=6;
+                alt154=6;
                 }
                 break;
             case Identifier:
                 {
-                alt153=7;
+                alt154=7;
                 }
                 break;
             case 64:
@@ -11735,27 +12136,27 @@ public class specParser extends Parser {
             case 70:
             case 71:
                 {
-                alt153=8;
+                alt154=8;
                 }
                 break;
             case 49:
                 {
-                alt153=9;
+                alt154=9;
                 }
                 break;
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("630:1: primary : ( parExpression | nonWildcardTypeArguments ( explicitGenericInvocationSuffix | 'this' arguments ) | 'this' ( arguments )? | 'super' superSuffix | literal | '\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07' creator | Identifier ( '.' Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );", 153, 0, input);
+                    new NoViableAltException("630:1: primary : ( parExpression | nonWildcardTypeArguments ( explicitGenericInvocationSuffix | 'this' arguments ) | 'this' ( arguments )? | 'super' superSuffix | literal | '\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07' creator | Identifier ( '.' Identifier )* ( identifierSuffix )? | primitiveType ( '[' ']' )* '.' 'class' | 'void' '.' 'class' );", 154, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt153) {
+            switch (alt154) {
                 case 1 :
                     // ./src/spec.g3:631:7: parExpression
                     {
-                    pushFollow(FOLLOW_parExpression_in_primary3751);
+                    pushFollow(FOLLOW_parExpression_in_primary3759);
                     parExpression();
                     _fsp--;
                     if (failed) return retval;
@@ -11765,32 +12166,32 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:632:9: nonWildcardTypeArguments ( explicitGenericInvocationSuffix | 'this' arguments )
                     {
-                    pushFollow(FOLLOW_nonWildcardTypeArguments_in_primary3761);
+                    pushFollow(FOLLOW_nonWildcardTypeArguments_in_primary3769);
                     nonWildcardTypeArguments();
                     _fsp--;
                     if (failed) return retval;
                     // ./src/spec.g3:633:9: ( explicitGenericInvocationSuffix | 'this' arguments )
-                    int alt148=2;
-                    int LA148_0 = input.LA(1);
+                    int alt149=2;
+                    int LA149_0 = input.LA(1);
 
-                    if ( (LA148_0==Identifier||LA148_0==73) ) {
-                        alt148=1;
+                    if ( (LA149_0==Identifier||LA149_0==73) ) {
+                        alt149=1;
                     }
-                    else if ( (LA148_0==123) ) {
-                        alt148=2;
+                    else if ( (LA149_0==124) ) {
+                        alt149=2;
                     }
                     else {
                         if (backtracking>0) {failed=true; return retval;}
                         NoViableAltException nvae =
-                            new NoViableAltException("633:9: ( explicitGenericInvocationSuffix | 'this' arguments )", 148, 0, input);
+                            new NoViableAltException("633:9: ( explicitGenericInvocationSuffix | 'this' arguments )", 149, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt148) {
+                    switch (alt149) {
                         case 1 :
                             // ./src/spec.g3:633:10: explicitGenericInvocationSuffix
                             {
-                            pushFollow(FOLLOW_explicitGenericInvocationSuffix_in_primary3772);
+                            pushFollow(FOLLOW_explicitGenericInvocationSuffix_in_primary3780);
                             explicitGenericInvocationSuffix();
                             _fsp--;
                             if (failed) return retval;
@@ -11800,8 +12201,8 @@ public class specParser extends Parser {
                         case 2 :
                             // ./src/spec.g3:633:44: 'this' arguments
                             {
-                            match(input,123,FOLLOW_123_in_primary3776); if (failed) return retval;
-                            pushFollow(FOLLOW_arguments_in_primary3778);
+                            match(input,124,FOLLOW_124_in_primary3784); if (failed) return retval;
+                            pushFollow(FOLLOW_arguments_in_primary3786);
                             arguments();
                             _fsp--;
                             if (failed) return retval;
@@ -11817,19 +12218,376 @@ public class specParser extends Parser {
                 case 3 :
                     // ./src/spec.g3:634:9: 'this' ( arguments )?
                     {
-                    match(input,123,FOLLOW_123_in_primary3789); if (failed) return retval;
+                    match(input,124,FOLLOW_124_in_primary3797); if (failed) return retval;
                     // ./src/spec.g3:634:16: ( arguments )?
-                    int alt149=2;
-                    int LA149_0 = input.LA(1);
+                    int alt150=2;
+                    switch ( input.LA(1) ) {
+                        case Identifier:
+                        case FloatingPointLiteral:
+                        case CharacterLiteral:
+                        case StringLiteral:
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
+                        case 44:
+                        case 49:
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                        case 73:
+                        case 75:
+                        case 76:
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                        case 122:
+                        case 123:
+                        case 124:
+                        case 125:
+                            {
+                            alt150=1;
+                            }
+                            break;
+                        case 116:
+                            {
+                            int LA150_2 = input.LA(2);
 
-                    if ( (LA149_0==44) ) {
-                        alt149=1;
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA150_3 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA150_4 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA150_5 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA150_8 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 45:
+                            {
+                            int LA150_22 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 30:
+                        case 118:
+                        case 119:
+                            {
+                            int LA150_23 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 34:
+                            {
+                            int LA150_24 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 115:
+                            {
+                            int LA150_25 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 112:
+                            {
+                            int LA150_26 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 113:
+                            {
+                            int LA150_27 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 114:
+                            {
+                            int LA150_28 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 36:
+                            {
+                            int LA150_29 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 111:
+                            {
+                            int LA150_30 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 110:
+                            {
+                            int LA150_31 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 109:
+                            {
+                            int LA150_32 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 108:
+                            {
+                            int LA150_33 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 72:
+                            {
+                            int LA150_34 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 33:
+                            {
+                            int LA150_35 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 39:
+                            {
+                            int LA150_36 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case EOL:
+                        case 26:
+                            {
+                            int LA150_37 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case EOF:
+                            {
+                            int LA150_38 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 53:
+                            {
+                            int LA150_39 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 100:
+                            {
+                            int LA150_40 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 101:
+                            {
+                            int LA150_41 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 102:
+                            {
+                            int LA150_42 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 103:
+                            {
+                            int LA150_43 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 104:
+                            {
+                            int LA150_44 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 105:
+                            {
+                            int LA150_45 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 106:
+                            {
+                            int LA150_46 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 107:
+                            {
+                            int LA150_47 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 47:
+                            {
+                            int LA150_48 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 41:
+                            {
+                            int LA150_49 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 29:
+                            {
+                            int LA150_50 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 50:
+                            {
+                            int LA150_51 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
+                        case 51:
+                            {
+                            int LA150_52 = input.LA(2);
+
+                            if ( (synpred256()) ) {
+                                alt150=1;
+                            }
+                            }
+                            break;
                     }
-                    switch (alt149) {
+
+                    switch (alt150) {
                         case 1 :
                             // ./src/spec.g3:634:17: arguments
                             {
-                            pushFollow(FOLLOW_arguments_in_primary3792);
+                            pushFollow(FOLLOW_arguments_in_primary3800);
                             arguments();
                             _fsp--;
                             if (failed) return retval;
@@ -11845,8 +12603,8 @@ public class specParser extends Parser {
                 case 4 :
                     // ./src/spec.g3:635:9: 'super' superSuffix
                     {
-                    match(input,73,FOLLOW_73_in_primary3804); if (failed) return retval;
-                    pushFollow(FOLLOW_superSuffix_in_primary3806);
+                    match(input,73,FOLLOW_73_in_primary3812); if (failed) return retval;
+                    pushFollow(FOLLOW_superSuffix_in_primary3814);
                     superSuffix();
                     _fsp--;
                     if (failed) return retval;
@@ -11856,7 +12614,7 @@ public class specParser extends Parser {
                 case 5 :
                     // ./src/spec.g3:636:9: literal
                     {
-                    pushFollow(FOLLOW_literal_in_primary3816);
+                    pushFollow(FOLLOW_literal_in_primary3824);
                     literal();
                     _fsp--;
                     if (failed) return retval;
@@ -11866,8 +12624,8 @@ public class specParser extends Parser {
                 case 6 :
                     // ./src/spec.g3:637:9: '\\u0e2a\\u0e23\\u0e49\\u0e32\\u0e07' creator
                     {
-                    match(input,124,FOLLOW_124_in_primary3826); if (failed) return retval;
-                    pushFollow(FOLLOW_creator_in_primary3828);
+                    match(input,125,FOLLOW_125_in_primary3834); if (failed) return retval;
+                    pushFollow(FOLLOW_creator_in_primary3836);
                     creator();
                     _fsp--;
                     if (failed) return retval;
@@ -11877,21 +12635,21 @@ public class specParser extends Parser {
                 case 7 :
                     // ./src/spec.g3:638:9: Identifier ( '.' Identifier )* ( identifierSuffix )?
                     {
-                    match(input,Identifier,FOLLOW_Identifier_in_primary3838); if (failed) return retval;
+                    match(input,Identifier,FOLLOW_Identifier_in_primary3846); if (failed) return retval;
                     // ./src/spec.g3:638:20: ( '.' Identifier )*
-                    loop150:
+                    loop151:
                     do {
-                        int alt150=2;
-                        int LA150_0 = input.LA(1);
+                        int alt151=2;
+                        int LA151_0 = input.LA(1);
 
-                        if ( (LA150_0==29) ) {
-                            int LA150_3 = input.LA(2);
+                        if ( (LA151_0==29) ) {
+                            int LA151_51 = input.LA(2);
 
-                            if ( (LA150_3==Identifier) ) {
-                                int LA150_36 = input.LA(3);
+                            if ( (LA151_51==Identifier) ) {
+                                int LA151_56 = input.LA(3);
 
-                                if ( (synpred260()) ) {
-                                    alt150=1;
+                                if ( (synpred261()) ) {
+                                    alt151=1;
                                 }
 
 
@@ -11901,289 +12659,390 @@ public class specParser extends Parser {
                         }
 
 
-                        switch (alt150) {
+                        switch (alt151) {
                     	case 1 :
                     	    // ./src/spec.g3:638:21: '.' Identifier
                     	    {
-                    	    match(input,29,FOLLOW_29_in_primary3841); if (failed) return retval;
-                    	    match(input,Identifier,FOLLOW_Identifier_in_primary3843); if (failed) return retval;
+                    	    match(input,29,FOLLOW_29_in_primary3849); if (failed) return retval;
+                    	    match(input,Identifier,FOLLOW_Identifier_in_primary3851); if (failed) return retval;
 
                     	    }
                     	    break;
 
                     	default :
-                    	    break loop150;
+                    	    break loop151;
                         }
                     } while (true);
 
                     // ./src/spec.g3:638:38: ( identifierSuffix )?
-                    int alt151=2;
+                    int alt152=2;
                     switch ( input.LA(1) ) {
                         case 50:
                             {
-                            switch ( input.LA(2) ) {
-                                case 51:
-                                    {
-                                    alt151=1;
-                                    }
-                                    break;
-                                case 115:
-                                    {
-                                    int LA151_34 = input.LA(3);
+                            int LA152_1 = input.LA(2);
 
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 116:
-                                    {
-                                    int LA151_35 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 119:
-                                    {
-                                    int LA151_36 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 120:
-                                    {
-                                    int LA151_37 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 121:
-                                    {
-                                    int LA151_38 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 122:
-                                    {
-                                    int LA151_39 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 44:
-                                    {
-                                    int LA151_40 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 32:
-                                    {
-                                    int LA151_41 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 123:
-                                    {
-                                    int LA151_42 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 73:
-                                    {
-                                    int LA151_43 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case HexLiteral:
-                                case OctalLiteral:
-                                case DecimalLiteral:
-                                    {
-                                    int LA151_44 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case FloatingPointLiteral:
-                                    {
-                                    int LA151_45 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case CharacterLiteral:
-                                    {
-                                    int LA151_46 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case StringLiteral:
-                                    {
-                                    int LA151_47 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 77:
-                                case 78:
-                                case 79:
-                                case 80:
-                                    {
-                                    int LA151_48 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 75:
-                                    {
-                                    int LA151_49 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 76:
-                                    {
-                                    int LA151_50 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 124:
-                                    {
-                                    int LA151_51 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case Identifier:
-                                    {
-                                    int LA151_52 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 64:
-                                case 65:
-                                case 66:
-                                case 67:
-                                case 68:
-                                case 69:
-                                case 70:
-                                case 71:
-                                    {
-                                    int LA151_53 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 49:
-                                    {
-                                    int LA151_54 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
+                            if ( (synpred262()) ) {
+                                alt152=1;
                             }
-
                             }
                             break;
+                        case Identifier:
+                        case FloatingPointLiteral:
+                        case CharacterLiteral:
+                        case StringLiteral:
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
                         case 44:
+                        case 49:
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                        case 73:
+                        case 75:
+                        case 76:
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                        case 122:
+                        case 123:
+                        case 124:
+                        case 125:
                             {
-                            alt151=1;
+                            alt152=1;
+                            }
+                            break;
+                        case 116:
+                            {
+                            int LA152_3 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA152_4 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA152_5 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA152_6 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA152_9 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 45:
+                            {
+                            int LA152_23 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 30:
+                        case 118:
+                        case 119:
+                            {
+                            int LA152_24 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 34:
+                            {
+                            int LA152_25 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 115:
+                            {
+                            int LA152_26 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 112:
+                            {
+                            int LA152_27 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 113:
+                            {
+                            int LA152_28 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 114:
+                            {
+                            int LA152_29 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 36:
+                            {
+                            int LA152_30 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 111:
+                            {
+                            int LA152_31 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 110:
+                            {
+                            int LA152_32 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 109:
+                            {
+                            int LA152_33 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 108:
+                            {
+                            int LA152_34 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 72:
+                            {
+                            int LA152_35 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 33:
+                            {
+                            int LA152_36 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 39:
+                            {
+                            int LA152_37 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case EOL:
+                        case 26:
+                            {
+                            int LA152_38 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case EOF:
+                            {
+                            int LA152_39 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 53:
+                            {
+                            int LA152_40 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 100:
+                            {
+                            int LA152_41 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 101:
+                            {
+                            int LA152_42 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 102:
+                            {
+                            int LA152_43 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 103:
+                            {
+                            int LA152_44 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 104:
+                            {
+                            int LA152_45 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 105:
+                            {
+                            int LA152_46 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 106:
+                            {
+                            int LA152_47 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 107:
+                            {
+                            int LA152_48 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 47:
+                            {
+                            int LA152_49 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
+                            }
+                            break;
+                        case 41:
+                            {
+                            int LA152_50 = input.LA(2);
+
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
                             }
                             break;
                         case 29:
                             {
-                            switch ( input.LA(2) ) {
-                                case 73:
-                                    {
-                                    int LA151_55 = input.LA(3);
+                            int LA152_51 = input.LA(2);
 
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 123:
-                                    {
-                                    int LA151_56 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 126:
-                                    {
-                                    int LA151_57 = input.LA(3);
-
-                                    if ( (synpred261()) ) {
-                                        alt151=1;
-                                    }
-                                    }
-                                    break;
-                                case 32:
-                                case 125:
-                                    {
-                                    alt151=1;
-                                    }
-                                    break;
+                            if ( (synpred262()) ) {
+                                alt152=1;
                             }
+                            }
+                            break;
+                        case 51:
+                            {
+                            int LA152_52 = input.LA(2);
 
+                            if ( (synpred262()) ) {
+                                alt152=1;
+                            }
                             }
                             break;
                     }
 
-                    switch (alt151) {
+                    switch (alt152) {
                         case 1 :
                             // ./src/spec.g3:638:39: identifierSuffix
                             {
-                            pushFollow(FOLLOW_identifierSuffix_in_primary3848);
+                            pushFollow(FOLLOW_identifierSuffix_in_primary3856);
                             identifierSuffix();
                             _fsp--;
                             if (failed) return retval;
@@ -12199,47 +13058,47 @@ public class specParser extends Parser {
                 case 8 :
                     // ./src/spec.g3:639:9: primitiveType ( '[' ']' )* '.' 'class'
                     {
-                    pushFollow(FOLLOW_primitiveType_in_primary3860);
+                    pushFollow(FOLLOW_primitiveType_in_primary3868);
                     primitiveType();
                     _fsp--;
                     if (failed) return retval;
                     // ./src/spec.g3:639:23: ( '[' ']' )*
-                    loop152:
+                    loop153:
                     do {
-                        int alt152=2;
-                        int LA152_0 = input.LA(1);
+                        int alt153=2;
+                        int LA153_0 = input.LA(1);
 
-                        if ( (LA152_0==50) ) {
-                            alt152=1;
+                        if ( (LA153_0==50) ) {
+                            alt153=1;
                         }
 
 
-                        switch (alt152) {
+                        switch (alt153) {
                     	case 1 :
                     	    // ./src/spec.g3:639:24: '[' ']'
                     	    {
-                    	    match(input,50,FOLLOW_50_in_primary3863); if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_primary3865); if (failed) return retval;
+                    	    match(input,50,FOLLOW_50_in_primary3871); if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_primary3873); if (failed) return retval;
 
                     	    }
                     	    break;
 
                     	default :
-                    	    break loop152;
+                    	    break loop153;
                         }
                     } while (true);
 
-                    match(input,29,FOLLOW_29_in_primary3869); if (failed) return retval;
-                    match(input,125,FOLLOW_125_in_primary3871); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_primary3877); if (failed) return retval;
+                    match(input,126,FOLLOW_126_in_primary3879); if (failed) return retval;
 
                     }
                     break;
                 case 9 :
                     // ./src/spec.g3:640:9: 'void' '.' 'class'
                     {
-                    match(input,49,FOLLOW_49_in_primary3881); if (failed) return retval;
-                    match(input,29,FOLLOW_29_in_primary3883); if (failed) return retval;
-                    match(input,125,FOLLOW_125_in_primary3885); if (failed) return retval;
+                    match(input,49,FOLLOW_49_in_primary3889); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_primary3891); if (failed) return retval;
+                    match(input,126,FOLLOW_126_in_primary3893); if (failed) return retval;
 
                     }
                     break;
@@ -12274,64 +13133,585 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 124) ) { return retval; }
             // ./src/spec.g3:644:2: ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator )
-            int alt157=8;
+            int alt158=8;
             switch ( input.LA(1) ) {
             case 50:
                 {
-                int LA157_1 = input.LA(2);
-
-                if ( (LA157_1==51) ) {
-                    alt157=1;
-                }
-                else if ( (LA157_1==Identifier||(LA157_1>=FloatingPointLiteral && LA157_1<=DecimalLiteral)||LA157_1==32||LA157_1==44||LA157_1==49||(LA157_1>=64 && LA157_1<=71)||LA157_1==73||(LA157_1>=75 && LA157_1<=80)||(LA157_1>=115 && LA157_1<=116)||(LA157_1>=119 && LA157_1<=124)) ) {
-                    alt157=2;
-                }
-                else {
-                    if (backtracking>0) {failed=true; return retval;}
-                    NoViableAltException nvae =
-                        new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 157, 1, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case 44:
-                {
-                alt157=3;
-                }
-                break;
-            case 29:
-                {
                 switch ( input.LA(2) ) {
-                case 126:
+                case 51:
                     {
-                    alt157=8;
+                    alt158=1;
                     }
                     break;
-                case 125:
+                case 116:
                     {
-                    alt157=4;
+                    int LA158_54 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 54, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 117:
+                    {
+                    int LA158_55 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 55, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 120:
+                    {
+                    int LA158_56 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 56, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 121:
+                    {
+                    int LA158_57 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 57, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 122:
+                    {
+                    int LA158_58 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 58, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 case 123:
                     {
-                    alt157=6;
+                    int LA158_59 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 59, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
-                case 73:
+                case 44:
                     {
-                    alt157=7;
+                    int LA158_60 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 60, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 case 32:
                     {
-                    alt157=5;
+                    int LA158_61 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 61, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 124:
+                    {
+                    int LA158_62 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 62, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 73:
+                    {
+                    int LA158_63 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 63, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
+                    {
+                    int LA158_64 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 64, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case FloatingPointLiteral:
+                    {
+                    int LA158_65 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 65, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case CharacterLiteral:
+                    {
+                    int LA158_66 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 66, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case StringLiteral:
+                    {
+                    int LA158_67 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 67, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 77:
+                case 78:
+                case 79:
+                case 80:
+                    {
+                    int LA158_68 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 68, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 75:
+                    {
+                    int LA158_69 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 69, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 76:
+                    {
+                    int LA158_70 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 70, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 125:
+                    {
+                    int LA158_71 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 71, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case Identifier:
+                    {
+                    int LA158_72 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 72, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
+                    {
+                    int LA158_73 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 73, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 49:
+                    {
+                    int LA158_74 = input.LA(3);
+
+                    if ( (synpred269()) ) {
+                        alt158=2;
+                    }
+                    else if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 74, input);
+
+                        throw nvae;
+                    }
                     }
                     break;
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 157, 3, input);
+                        new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 1, input);
+
+                    throw nvae;
+                }
+
+                }
+                break;
+            case EOF:
+            case EOL:
+            case Identifier:
+            case FloatingPointLiteral:
+            case CharacterLiteral:
+            case StringLiteral:
+            case HexLiteral:
+            case OctalLiteral:
+            case DecimalLiteral:
+            case 26:
+            case 30:
+            case 32:
+            case 33:
+            case 34:
+            case 36:
+            case 39:
+            case 41:
+            case 44:
+            case 45:
+            case 47:
+            case 49:
+            case 51:
+            case 53:
+            case 64:
+            case 65:
+            case 66:
+            case 67:
+            case 68:
+            case 69:
+            case 70:
+            case 71:
+            case 72:
+            case 73:
+            case 75:
+            case 76:
+            case 77:
+            case 78:
+            case 79:
+            case 80:
+            case 100:
+            case 101:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+            case 106:
+            case 107:
+            case 108:
+            case 109:
+            case 110:
+            case 111:
+            case 112:
+            case 113:
+            case 114:
+            case 115:
+            case 116:
+            case 117:
+            case 118:
+            case 119:
+            case 120:
+            case 121:
+            case 122:
+            case 123:
+            case 124:
+            case 125:
+                {
+                alt158=3;
+                }
+                break;
+            case 29:
+                {
+                switch ( input.LA(2) ) {
+                case 124:
+                    {
+                    int LA158_75 = input.LA(3);
+
+                    if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else if ( (synpred273()) ) {
+                        alt158=6;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 75, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 127:
+                    {
+                    int LA158_76 = input.LA(3);
+
+                    if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else if ( (true) ) {
+                        alt158=8;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 76, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 73:
+                    {
+                    int LA158_77 = input.LA(3);
+
+                    if ( (synpred270()) ) {
+                        alt158=3;
+                    }
+                    else if ( (synpred274()) ) {
+                        alt158=7;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 77, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case Identifier:
+                    {
+                    alt158=3;
+                    }
+                    break;
+                case 126:
+                    {
+                    alt158=4;
+                    }
+                    break;
+                case 32:
+                    {
+                    alt158=5;
+                    }
+                    break;
+                default:
+                    if (backtracking>0) {failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 51, input);
 
                     throw nvae;
                 }
@@ -12341,56 +13721,16 @@ public class specParser extends Parser {
             default:
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 157, 0, input);
+                    new NoViableAltException("643:1: identifierSuffix : ( ( '[' ']' )+ '.' 'class' | ( '[' expression ']' )+ | arguments | '.' 'class' | '.' explicitGenericInvocation | '.' 'this' | '.' 'super' arguments | '.' 'new' ( nonWildcardTypeArguments )? innerCreator );", 158, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt157) {
+            switch (alt158) {
                 case 1 :
                     // ./src/spec.g3:644:4: ( '[' ']' )+ '.' 'class'
                     {
                     // ./src/spec.g3:644:4: ( '[' ']' )+
-                    int cnt154=0;
-                    loop154:
-                    do {
-                        int alt154=2;
-                        int LA154_0 = input.LA(1);
-
-                        if ( (LA154_0==50) ) {
-                            alt154=1;
-                        }
-
-
-                        switch (alt154) {
-                    	case 1 :
-                    	    // ./src/spec.g3:644:5: '[' ']'
-                    	    {
-                    	    match(input,50,FOLLOW_50_in_identifierSuffix3897); if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_identifierSuffix3899); if (failed) return retval;
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    if ( cnt154 >= 1 ) break loop154;
-                    	    if (backtracking>0) {failed=true; return retval;}
-                                EarlyExitException eee =
-                                    new EarlyExitException(154, input);
-                                throw eee;
-                        }
-                        cnt154++;
-                    } while (true);
-
-                    match(input,29,FOLLOW_29_in_identifierSuffix3903); if (failed) return retval;
-                    match(input,125,FOLLOW_125_in_identifierSuffix3905); if (failed) return retval;
-
-                    }
-                    break;
-                case 2 :
-                    // ./src/spec.g3:645:4: ( '[' expression ']' )+
-                    {
-                    // ./src/spec.g3:645:4: ( '[' expression ']' )+
                     int cnt155=0;
                     loop155:
                     do {
@@ -12398,266 +13738,16 @@ public class specParser extends Parser {
                         int LA155_0 = input.LA(1);
 
                         if ( (LA155_0==50) ) {
-                            switch ( input.LA(2) ) {
-                            case 115:
-                                {
-                                int LA155_32 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 116:
-                                {
-                                int LA155_33 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 119:
-                                {
-                                int LA155_34 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 120:
-                                {
-                                int LA155_35 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 121:
-                                {
-                                int LA155_36 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 122:
-                                {
-                                int LA155_37 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 44:
-                                {
-                                int LA155_38 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 32:
-                                {
-                                int LA155_39 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 123:
-                                {
-                                int LA155_40 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 73:
-                                {
-                                int LA155_41 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case HexLiteral:
-                            case OctalLiteral:
-                            case DecimalLiteral:
-                                {
-                                int LA155_42 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case FloatingPointLiteral:
-                                {
-                                int LA155_43 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case CharacterLiteral:
-                                {
-                                int LA155_44 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case StringLiteral:
-                                {
-                                int LA155_45 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 77:
-                            case 78:
-                            case 79:
-                            case 80:
-                                {
-                                int LA155_46 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 75:
-                                {
-                                int LA155_47 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 76:
-                                {
-                                int LA155_48 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 124:
-                                {
-                                int LA155_49 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case Identifier:
-                                {
-                                int LA155_50 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 64:
-                            case 65:
-                            case 66:
-                            case 67:
-                            case 68:
-                            case 69:
-                            case 70:
-                            case 71:
-                                {
-                                int LA155_51 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-                            case 49:
-                                {
-                                int LA155_52 = input.LA(3);
-
-                                if ( (synpred267()) ) {
-                                    alt155=1;
-                                }
-
-
-                                }
-                                break;
-
-                            }
-
+                            alt155=1;
                         }
 
 
                         switch (alt155) {
                     	case 1 :
-                    	    // ./src/spec.g3:645:5: '[' expression ']'
+                    	    // ./src/spec.g3:644:5: '[' ']'
                     	    {
-                    	    match(input,50,FOLLOW_50_in_identifierSuffix3911); if (failed) return retval;
-                    	    pushFollow(FOLLOW_expression_in_identifierSuffix3913);
-                    	    expression();
-                    	    _fsp--;
-                    	    if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_identifierSuffix3915); if (failed) return retval;
+                    	    match(input,50,FOLLOW_50_in_identifierSuffix3905); if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_identifierSuffix3907); if (failed) return retval;
 
                     	    }
                     	    break;
@@ -12672,13 +13762,303 @@ public class specParser extends Parser {
                         cnt155++;
                     } while (true);
 
+                    match(input,29,FOLLOW_29_in_identifierSuffix3911); if (failed) return retval;
+                    match(input,126,FOLLOW_126_in_identifierSuffix3913); if (failed) return retval;
+
+                    }
+                    break;
+                case 2 :
+                    // ./src/spec.g3:645:4: ( '[' expression ']' )+
+                    {
+                    // ./src/spec.g3:645:4: ( '[' expression ']' )+
+                    int cnt156=0;
+                    loop156:
+                    do {
+                        int alt156=2;
+                        int LA156_0 = input.LA(1);
+
+                        if ( (LA156_0==50) ) {
+                            switch ( input.LA(2) ) {
+                            case 116:
+                                {
+                                int LA156_35 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 117:
+                                {
+                                int LA156_36 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 120:
+                                {
+                                int LA156_37 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 121:
+                                {
+                                int LA156_38 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 122:
+                                {
+                                int LA156_39 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 123:
+                                {
+                                int LA156_40 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 44:
+                                {
+                                int LA156_41 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 32:
+                                {
+                                int LA156_42 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 124:
+                                {
+                                int LA156_43 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 73:
+                                {
+                                int LA156_44 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case HexLiteral:
+                            case OctalLiteral:
+                            case DecimalLiteral:
+                                {
+                                int LA156_45 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case FloatingPointLiteral:
+                                {
+                                int LA156_46 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case CharacterLiteral:
+                                {
+                                int LA156_47 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case StringLiteral:
+                                {
+                                int LA156_48 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 77:
+                            case 78:
+                            case 79:
+                            case 80:
+                                {
+                                int LA156_49 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 75:
+                                {
+                                int LA156_50 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 76:
+                                {
+                                int LA156_51 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 125:
+                                {
+                                int LA156_52 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case Identifier:
+                                {
+                                int LA156_53 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 64:
+                            case 65:
+                            case 66:
+                            case 67:
+                            case 68:
+                            case 69:
+                            case 70:
+                            case 71:
+                                {
+                                int LA156_54 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+                            case 49:
+                                {
+                                int LA156_55 = input.LA(3);
+
+                                if ( (synpred268()) ) {
+                                    alt156=1;
+                                }
+
+
+                                }
+                                break;
+
+                            }
+
+                        }
+
+
+                        switch (alt156) {
+                    	case 1 :
+                    	    // ./src/spec.g3:645:5: '[' expression ']'
+                    	    {
+                    	    match(input,50,FOLLOW_50_in_identifierSuffix3919); if (failed) return retval;
+                    	    pushFollow(FOLLOW_expression_in_identifierSuffix3921);
+                    	    expression();
+                    	    _fsp--;
+                    	    if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_identifierSuffix3923); if (failed) return retval;
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt156 >= 1 ) break loop156;
+                    	    if (backtracking>0) {failed=true; return retval;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(156, input);
+                                throw eee;
+                        }
+                        cnt156++;
+                    } while (true);
+
 
                     }
                     break;
                 case 3 :
                     // ./src/spec.g3:646:9: arguments
                     {
-                    pushFollow(FOLLOW_arguments_in_identifierSuffix3928);
+                    pushFollow(FOLLOW_arguments_in_identifierSuffix3936);
                     arguments();
                     _fsp--;
                     if (failed) return retval;
@@ -12688,16 +14068,16 @@ public class specParser extends Parser {
                 case 4 :
                     // ./src/spec.g3:647:9: '.' 'class'
                     {
-                    match(input,29,FOLLOW_29_in_identifierSuffix3938); if (failed) return retval;
-                    match(input,125,FOLLOW_125_in_identifierSuffix3940); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_identifierSuffix3946); if (failed) return retval;
+                    match(input,126,FOLLOW_126_in_identifierSuffix3948); if (failed) return retval;
 
                     }
                     break;
                 case 5 :
                     // ./src/spec.g3:648:9: '.' explicitGenericInvocation
                     {
-                    match(input,29,FOLLOW_29_in_identifierSuffix3950); if (failed) return retval;
-                    pushFollow(FOLLOW_explicitGenericInvocation_in_identifierSuffix3952);
+                    match(input,29,FOLLOW_29_in_identifierSuffix3958); if (failed) return retval;
+                    pushFollow(FOLLOW_explicitGenericInvocation_in_identifierSuffix3960);
                     explicitGenericInvocation();
                     _fsp--;
                     if (failed) return retval;
@@ -12707,17 +14087,17 @@ public class specParser extends Parser {
                 case 6 :
                     // ./src/spec.g3:649:9: '.' 'this'
                     {
-                    match(input,29,FOLLOW_29_in_identifierSuffix3962); if (failed) return retval;
-                    match(input,123,FOLLOW_123_in_identifierSuffix3964); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_identifierSuffix3970); if (failed) return retval;
+                    match(input,124,FOLLOW_124_in_identifierSuffix3972); if (failed) return retval;
 
                     }
                     break;
                 case 7 :
                     // ./src/spec.g3:650:9: '.' 'super' arguments
                     {
-                    match(input,29,FOLLOW_29_in_identifierSuffix3974); if (failed) return retval;
-                    match(input,73,FOLLOW_73_in_identifierSuffix3976); if (failed) return retval;
-                    pushFollow(FOLLOW_arguments_in_identifierSuffix3978);
+                    match(input,29,FOLLOW_29_in_identifierSuffix3982); if (failed) return retval;
+                    match(input,73,FOLLOW_73_in_identifierSuffix3984); if (failed) return retval;
+                    pushFollow(FOLLOW_arguments_in_identifierSuffix3986);
                     arguments();
                     _fsp--;
                     if (failed) return retval;
@@ -12727,20 +14107,20 @@ public class specParser extends Parser {
                 case 8 :
                     // ./src/spec.g3:651:9: '.' 'new' ( nonWildcardTypeArguments )? innerCreator
                     {
-                    match(input,29,FOLLOW_29_in_identifierSuffix3988); if (failed) return retval;
-                    match(input,126,FOLLOW_126_in_identifierSuffix3990); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_identifierSuffix3996); if (failed) return retval;
+                    match(input,127,FOLLOW_127_in_identifierSuffix3998); if (failed) return retval;
                     // ./src/spec.g3:651:19: ( nonWildcardTypeArguments )?
-                    int alt156=2;
-                    int LA156_0 = input.LA(1);
+                    int alt157=2;
+                    int LA157_0 = input.LA(1);
 
-                    if ( (LA156_0==32) ) {
-                        alt156=1;
+                    if ( (LA157_0==32) ) {
+                        alt157=1;
                     }
-                    switch (alt156) {
+                    switch (alt157) {
                         case 1 :
                             // ./src/spec.g3:651:20: nonWildcardTypeArguments
                             {
-                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_identifierSuffix3993);
+                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_identifierSuffix4001);
                             nonWildcardTypeArguments();
                             _fsp--;
                             if (failed) return retval;
@@ -12750,7 +14130,7 @@ public class specParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_innerCreator_in_identifierSuffix3997);
+                    pushFollow(FOLLOW_innerCreator_in_identifierSuffix4005);
                     innerCreator();
                     _fsp--;
                     if (failed) return retval;
@@ -12791,17 +14171,17 @@ public class specParser extends Parser {
             // ./src/spec.g3:655:4: ( nonWildcardTypeArguments )? createdName ( arrayCreatorRest | classCreatorRest )
             {
             // ./src/spec.g3:655:4: ( nonWildcardTypeArguments )?
-            int alt158=2;
-            int LA158_0 = input.LA(1);
+            int alt159=2;
+            int LA159_0 = input.LA(1);
 
-            if ( (LA158_0==32) ) {
-                alt158=1;
+            if ( (LA159_0==32) ) {
+                alt159=1;
             }
-            switch (alt158) {
+            switch (alt159) {
                 case 1 :
                     // ./src/spec.g3:0:0: nonWildcardTypeArguments
                     {
-                    pushFollow(FOLLOW_nonWildcardTypeArguments_in_creator4009);
+                    pushFollow(FOLLOW_nonWildcardTypeArguments_in_creator4017);
                     nonWildcardTypeArguments();
                     _fsp--;
                     if (failed) return retval;
@@ -12811,32 +14191,456 @@ public class specParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_createdName_in_creator4012);
+            pushFollow(FOLLOW_createdName_in_creator4020);
             createdName();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:656:9: ( arrayCreatorRest | classCreatorRest )
-            int alt159=2;
-            int LA159_0 = input.LA(1);
+            int alt160=2;
+            int LA160_0 = input.LA(1);
 
-            if ( (LA159_0==50) ) {
-                alt159=1;
+            if ( (LA160_0==50) ) {
+                switch ( input.LA(2) ) {
+                case 116:
+                    {
+                    int LA160_53 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 53, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 117:
+                    {
+                    int LA160_54 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 54, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 120:
+                    {
+                    int LA160_55 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 55, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 121:
+                    {
+                    int LA160_56 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 56, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 122:
+                    {
+                    int LA160_57 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 57, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 123:
+                    {
+                    int LA160_58 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 58, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 44:
+                    {
+                    int LA160_59 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 59, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 32:
+                    {
+                    int LA160_60 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 60, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 124:
+                    {
+                    int LA160_61 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 61, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 73:
+                    {
+                    int LA160_62 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 62, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
+                    {
+                    int LA160_63 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 63, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case FloatingPointLiteral:
+                    {
+                    int LA160_64 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 64, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case CharacterLiteral:
+                    {
+                    int LA160_65 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 65, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case StringLiteral:
+                    {
+                    int LA160_66 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 66, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 77:
+                case 78:
+                case 79:
+                case 80:
+                    {
+                    int LA160_67 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 67, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 75:
+                    {
+                    int LA160_68 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 68, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 76:
+                    {
+                    int LA160_69 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 69, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 125:
+                    {
+                    int LA160_70 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 70, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case Identifier:
+                    {
+                    int LA160_71 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 71, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
+                    {
+                    int LA160_72 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 72, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 49:
+                    {
+                    int LA160_73 = input.LA(3);
+
+                    if ( (synpred277()) ) {
+                        alt160=1;
+                    }
+                    else if ( (true) ) {
+                        alt160=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 73, input);
+
+                        throw nvae;
+                    }
+                    }
+                    break;
+                case 51:
+                    {
+                    alt160=1;
+                    }
+                    break;
+                default:
+                    if (backtracking>0) {failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 1, input);
+
+                    throw nvae;
+                }
+
             }
-            else if ( (LA159_0==44) ) {
-                alt159=2;
+            else if ( (LA160_0==EOF||(LA160_0>=EOL && LA160_0<=Identifier)||(LA160_0>=FloatingPointLiteral && LA160_0<=DecimalLiteral)||LA160_0==26||(LA160_0>=29 && LA160_0<=30)||(LA160_0>=32 && LA160_0<=34)||LA160_0==36||LA160_0==39||LA160_0==41||(LA160_0>=44 && LA160_0<=45)||LA160_0==47||LA160_0==49||LA160_0==51||LA160_0==53||(LA160_0>=64 && LA160_0<=73)||(LA160_0>=75 && LA160_0<=80)||(LA160_0>=100 && LA160_0<=125)) ) {
+                alt160=2;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 159, 0, input);
+                    new NoViableAltException("656:9: ( arrayCreatorRest | classCreatorRest )", 160, 0, input);
 
                 throw nvae;
             }
-            switch (alt159) {
+            switch (alt160) {
                 case 1 :
                     // ./src/spec.g3:656:10: arrayCreatorRest
                     {
-                    pushFollow(FOLLOW_arrayCreatorRest_in_creator4023);
+                    pushFollow(FOLLOW_arrayCreatorRest_in_creator4031);
                     arrayCreatorRest();
                     _fsp--;
                     if (failed) return retval;
@@ -12846,7 +14650,7 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:656:29: classCreatorRest
                     {
-                    pushFollow(FOLLOW_classCreatorRest_in_creator4027);
+                    pushFollow(FOLLOW_classCreatorRest_in_creator4035);
                     classCreatorRest();
                     _fsp--;
                     if (failed) return retval;
@@ -12888,39 +14692,54 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 126) ) { return retval; }
             // ./src/spec.g3:660:2: ( Identifier ( nonWildcardTypeArguments )? ( '.' Identifier ( nonWildcardTypeArguments )? )* | primitiveType )
-            int alt163=2;
-            int LA163_0 = input.LA(1);
+            int alt164=2;
+            int LA164_0 = input.LA(1);
 
-            if ( (LA163_0==Identifier) ) {
-                alt163=1;
+            if ( (LA164_0==Identifier) ) {
+                alt164=1;
             }
-            else if ( ((LA163_0>=64 && LA163_0<=71)) ) {
-                alt163=2;
+            else if ( ((LA164_0>=64 && LA164_0<=71)) ) {
+                alt164=2;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("659:1: createdName : ( Identifier ( nonWildcardTypeArguments )? ( '.' Identifier ( nonWildcardTypeArguments )? )* | primitiveType );", 163, 0, input);
+                    new NoViableAltException("659:1: createdName : ( Identifier ( nonWildcardTypeArguments )? ( '.' Identifier ( nonWildcardTypeArguments )? )* | primitiveType );", 164, 0, input);
 
                 throw nvae;
             }
-            switch (alt163) {
+            switch (alt164) {
                 case 1 :
                     // ./src/spec.g3:660:4: Identifier ( nonWildcardTypeArguments )? ( '.' Identifier ( nonWildcardTypeArguments )? )*
                     {
-                    match(input,Identifier,FOLLOW_Identifier_in_createdName4039); if (failed) return retval;
+                    match(input,Identifier,FOLLOW_Identifier_in_createdName4047); if (failed) return retval;
                     // ./src/spec.g3:660:15: ( nonWildcardTypeArguments )?
-                    int alt160=2;
-                    int LA160_0 = input.LA(1);
+                    int alt161=2;
+                    int LA161_0 = input.LA(1);
 
-                    if ( (LA160_0==32) ) {
-                        alt160=1;
+                    if ( (LA161_0==32) ) {
+                        int LA161_1 = input.LA(2);
+
+                        if ( (LA161_1==Identifier) ) {
+                            int LA161_72 = input.LA(3);
+
+                            if ( (synpred278()) ) {
+                                alt161=1;
+                            }
+                        }
+                        else if ( ((LA161_1>=64 && LA161_1<=71)) ) {
+                            int LA161_73 = input.LA(3);
+
+                            if ( (synpred278()) ) {
+                                alt161=1;
+                            }
+                        }
                     }
-                    switch (alt160) {
+                    switch (alt161) {
                         case 1 :
                             // ./src/spec.g3:0:0: nonWildcardTypeArguments
                             {
-                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_createdName4041);
+                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_createdName4049);
                             nonWildcardTypeArguments();
                             _fsp--;
                             if (failed) return retval;
@@ -12931,34 +14750,61 @@ public class specParser extends Parser {
                     }
 
                     // ./src/spec.g3:661:9: ( '.' Identifier ( nonWildcardTypeArguments )? )*
-                    loop162:
+                    loop163:
                     do {
-                        int alt162=2;
-                        int LA162_0 = input.LA(1);
+                        int alt163=2;
+                        int LA163_0 = input.LA(1);
 
-                        if ( (LA162_0==29) ) {
-                            alt162=1;
+                        if ( (LA163_0==29) ) {
+                            int LA163_51 = input.LA(2);
+
+                            if ( (LA163_51==Identifier) ) {
+                                int LA163_56 = input.LA(3);
+
+                                if ( (synpred280()) ) {
+                                    alt163=1;
+                                }
+
+
+                            }
+
+
                         }
 
 
-                        switch (alt162) {
+                        switch (alt163) {
                     	case 1 :
                     	    // ./src/spec.g3:661:10: '.' Identifier ( nonWildcardTypeArguments )?
                     	    {
-                    	    match(input,29,FOLLOW_29_in_createdName4053); if (failed) return retval;
-                    	    match(input,Identifier,FOLLOW_Identifier_in_createdName4055); if (failed) return retval;
+                    	    match(input,29,FOLLOW_29_in_createdName4061); if (failed) return retval;
+                    	    match(input,Identifier,FOLLOW_Identifier_in_createdName4063); if (failed) return retval;
                     	    // ./src/spec.g3:661:25: ( nonWildcardTypeArguments )?
-                    	    int alt161=2;
-                    	    int LA161_0 = input.LA(1);
+                    	    int alt162=2;
+                    	    int LA162_0 = input.LA(1);
 
-                    	    if ( (LA161_0==32) ) {
-                    	        alt161=1;
+                    	    if ( (LA162_0==32) ) {
+                    	        int LA162_1 = input.LA(2);
+
+                    	        if ( (LA162_1==Identifier) ) {
+                    	            int LA162_55 = input.LA(3);
+
+                    	            if ( (synpred279()) ) {
+                    	                alt162=1;
+                    	            }
+                    	        }
+                    	        else if ( ((LA162_1>=64 && LA162_1<=71)) ) {
+                    	            int LA162_56 = input.LA(3);
+
+                    	            if ( (synpred279()) ) {
+                    	                alt162=1;
+                    	            }
+                    	        }
                     	    }
-                    	    switch (alt161) {
+                    	    switch (alt162) {
                     	        case 1 :
                     	            // ./src/spec.g3:0:0: nonWildcardTypeArguments
                     	            {
-                    	            pushFollow(FOLLOW_nonWildcardTypeArguments_in_createdName4057);
+                    	            pushFollow(FOLLOW_nonWildcardTypeArguments_in_createdName4065);
                     	            nonWildcardTypeArguments();
                     	            _fsp--;
                     	            if (failed) return retval;
@@ -12973,7 +14819,7 @@ public class specParser extends Parser {
                     	    break;
 
                     	default :
-                    	    break loop162;
+                    	    break loop163;
                         }
                     } while (true);
 
@@ -12983,7 +14829,7 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:662:7: primitiveType
                     {
-                    pushFollow(FOLLOW_primitiveType_in_createdName4068);
+                    pushFollow(FOLLOW_primitiveType_in_createdName4076);
                     primitiveType();
                     _fsp--;
                     if (failed) return retval;
@@ -13023,8 +14869,8 @@ public class specParser extends Parser {
             // ./src/spec.g3:666:2: ( Identifier classCreatorRest )
             // ./src/spec.g3:666:4: Identifier classCreatorRest
             {
-            match(input,Identifier,FOLLOW_Identifier_in_innerCreator4080); if (failed) return retval;
-            pushFollow(FOLLOW_classCreatorRest_in_innerCreator4082);
+            match(input,Identifier,FOLLOW_Identifier_in_innerCreator4088); if (failed) return retval;
+            pushFollow(FOLLOW_classCreatorRest_in_innerCreator4090);
             classCreatorRest();
             _fsp--;
             if (failed) return retval;
@@ -13062,56 +14908,56 @@ public class specParser extends Parser {
             // ./src/spec.g3:670:2: ( '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* ) )
             // ./src/spec.g3:670:4: '[' ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
             {
-            match(input,50,FOLLOW_50_in_arrayCreatorRest4093); if (failed) return retval;
+            match(input,50,FOLLOW_50_in_arrayCreatorRest4101); if (failed) return retval;
             // ./src/spec.g3:671:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )
-            int alt167=2;
-            int LA167_0 = input.LA(1);
+            int alt168=2;
+            int LA168_0 = input.LA(1);
 
-            if ( (LA167_0==51) ) {
-                alt167=1;
+            if ( (LA168_0==51) ) {
+                alt168=1;
             }
-            else if ( (LA167_0==Identifier||(LA167_0>=FloatingPointLiteral && LA167_0<=DecimalLiteral)||LA167_0==32||LA167_0==44||LA167_0==49||(LA167_0>=64 && LA167_0<=71)||LA167_0==73||(LA167_0>=75 && LA167_0<=80)||(LA167_0>=115 && LA167_0<=116)||(LA167_0>=119 && LA167_0<=124)) ) {
-                alt167=2;
+            else if ( (LA168_0==Identifier||(LA168_0>=FloatingPointLiteral && LA168_0<=DecimalLiteral)||LA168_0==32||LA168_0==44||LA168_0==49||(LA168_0>=64 && LA168_0<=71)||LA168_0==73||(LA168_0>=75 && LA168_0<=80)||(LA168_0>=116 && LA168_0<=117)||(LA168_0>=120 && LA168_0<=125)) ) {
+                alt168=2;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("671:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )", 167, 0, input);
+                    new NoViableAltException("671:9: ( ']' ( '[' ']' )* arrayInitializer | expression ']' ( '[' expression ']' )* ( '[' ']' )* )", 168, 0, input);
 
                 throw nvae;
             }
-            switch (alt167) {
+            switch (alt168) {
                 case 1 :
                     // ./src/spec.g3:671:13: ']' ( '[' ']' )* arrayInitializer
                     {
-                    match(input,51,FOLLOW_51_in_arrayCreatorRest4107); if (failed) return retval;
+                    match(input,51,FOLLOW_51_in_arrayCreatorRest4115); if (failed) return retval;
                     // ./src/spec.g3:671:17: ( '[' ']' )*
-                    loop164:
+                    loop165:
                     do {
-                        int alt164=2;
-                        int LA164_0 = input.LA(1);
+                        int alt165=2;
+                        int LA165_0 = input.LA(1);
 
-                        if ( (LA164_0==50) ) {
-                            alt164=1;
+                        if ( (LA165_0==50) ) {
+                            alt165=1;
                         }
 
 
-                        switch (alt164) {
+                        switch (alt165) {
                     	case 1 :
                     	    // ./src/spec.g3:671:18: '[' ']'
                     	    {
-                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4110); if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4112); if (failed) return retval;
+                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4118); if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4120); if (failed) return retval;
 
                     	    }
                     	    break;
 
                     	default :
-                    	    break loop164;
+                    	    break loop165;
                         }
                     } while (true);
 
-                    pushFollow(FOLLOW_arrayInitializer_in_arrayCreatorRest4116);
+                    pushFollow(FOLLOW_arrayInitializer_in_arrayCreatorRest4124);
                     arrayInitializer();
                     _fsp--;
                     if (failed) return retval;
@@ -13121,47 +14967,36 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:672:13: expression ']' ( '[' expression ']' )* ( '[' ']' )*
                     {
-                    pushFollow(FOLLOW_expression_in_arrayCreatorRest4130);
+                    pushFollow(FOLLOW_expression_in_arrayCreatorRest4138);
                     expression();
                     _fsp--;
                     if (failed) return retval;
-                    match(input,51,FOLLOW_51_in_arrayCreatorRest4132); if (failed) return retval;
+                    match(input,51,FOLLOW_51_in_arrayCreatorRest4140); if (failed) return retval;
                     // ./src/spec.g3:672:28: ( '[' expression ']' )*
-                    loop165:
+                    loop166:
                     do {
-                        int alt165=2;
-                        int LA165_0 = input.LA(1);
+                        int alt166=2;
+                        int LA166_0 = input.LA(1);
 
-                        if ( (LA165_0==50) ) {
+                        if ( (LA166_0==50) ) {
                             switch ( input.LA(2) ) {
-                            case 115:
-                                {
-                                int LA165_33 = input.LA(3);
-
-                                if ( (synpred283()) ) {
-                                    alt165=1;
-                                }
-
-
-                                }
-                                break;
                             case 116:
                                 {
-                                int LA165_34 = input.LA(3);
+                                int LA166_36 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
                                 }
                                 break;
-                            case 119:
+                            case 117:
                                 {
-                                int LA165_35 = input.LA(3);
+                                int LA166_37 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13169,10 +15004,10 @@ public class specParser extends Parser {
                                 break;
                             case 120:
                                 {
-                                int LA165_36 = input.LA(3);
+                                int LA166_38 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13180,10 +15015,10 @@ public class specParser extends Parser {
                                 break;
                             case 121:
                                 {
-                                int LA165_37 = input.LA(3);
+                                int LA166_39 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13191,32 +15026,10 @@ public class specParser extends Parser {
                                 break;
                             case 122:
                                 {
-                                int LA165_38 = input.LA(3);
+                                int LA166_40 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
-                                }
-
-
-                                }
-                                break;
-                            case 44:
-                                {
-                                int LA165_39 = input.LA(3);
-
-                                if ( (synpred283()) ) {
-                                    alt165=1;
-                                }
-
-
-                                }
-                                break;
-                            case 32:
-                                {
-                                int LA165_40 = input.LA(3);
-
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13224,10 +15037,43 @@ public class specParser extends Parser {
                                 break;
                             case 123:
                                 {
-                                int LA165_41 = input.LA(3);
+                                int LA166_41 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
+                                }
+
+
+                                }
+                                break;
+                            case 44:
+                                {
+                                int LA166_42 = input.LA(3);
+
+                                if ( (synpred284()) ) {
+                                    alt166=1;
+                                }
+
+
+                                }
+                                break;
+                            case 32:
+                                {
+                                int LA166_43 = input.LA(3);
+
+                                if ( (synpred284()) ) {
+                                    alt166=1;
+                                }
+
+
+                                }
+                                break;
+                            case 124:
+                                {
+                                int LA166_44 = input.LA(3);
+
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13235,10 +15081,10 @@ public class specParser extends Parser {
                                 break;
                             case 73:
                                 {
-                                int LA165_42 = input.LA(3);
+                                int LA166_45 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13248,10 +15094,10 @@ public class specParser extends Parser {
                             case OctalLiteral:
                             case DecimalLiteral:
                                 {
-                                int LA165_43 = input.LA(3);
+                                int LA166_46 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13259,10 +15105,10 @@ public class specParser extends Parser {
                                 break;
                             case FloatingPointLiteral:
                                 {
-                                int LA165_44 = input.LA(3);
+                                int LA166_47 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13270,10 +15116,10 @@ public class specParser extends Parser {
                                 break;
                             case CharacterLiteral:
                                 {
-                                int LA165_45 = input.LA(3);
+                                int LA166_48 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13281,10 +15127,10 @@ public class specParser extends Parser {
                                 break;
                             case StringLiteral:
                                 {
-                                int LA165_46 = input.LA(3);
+                                int LA166_49 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13295,10 +15141,10 @@ public class specParser extends Parser {
                             case 79:
                             case 80:
                                 {
-                                int LA165_47 = input.LA(3);
+                                int LA166_50 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13306,10 +15152,10 @@ public class specParser extends Parser {
                                 break;
                             case 75:
                                 {
-                                int LA165_48 = input.LA(3);
+                                int LA166_51 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13317,21 +15163,21 @@ public class specParser extends Parser {
                                 break;
                             case 76:
                                 {
-                                int LA165_49 = input.LA(3);
+                                int LA166_52 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
                                 }
                                 break;
-                            case 124:
+                            case 125:
                                 {
-                                int LA165_50 = input.LA(3);
+                                int LA166_53 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13339,10 +15185,10 @@ public class specParser extends Parser {
                                 break;
                             case Identifier:
                                 {
-                                int LA165_51 = input.LA(3);
+                                int LA166_54 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13357,10 +15203,10 @@ public class specParser extends Parser {
                             case 70:
                             case 71:
                                 {
-                                int LA165_52 = input.LA(3);
+                                int LA166_55 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13368,10 +15214,10 @@ public class specParser extends Parser {
                                 break;
                             case 49:
                                 {
-                                int LA165_53 = input.LA(3);
+                                int LA166_56 = input.LA(3);
 
-                                if ( (synpred283()) ) {
-                                    alt165=1;
+                                if ( (synpred284()) ) {
+                                    alt166=1;
                                 }
 
 
@@ -13383,54 +15229,54 @@ public class specParser extends Parser {
                         }
 
 
-                        switch (alt165) {
+                        switch (alt166) {
                     	case 1 :
                     	    // ./src/spec.g3:672:29: '[' expression ']'
                     	    {
-                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4135); if (failed) return retval;
-                    	    pushFollow(FOLLOW_expression_in_arrayCreatorRest4137);
+                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4143); if (failed) return retval;
+                    	    pushFollow(FOLLOW_expression_in_arrayCreatorRest4145);
                     	    expression();
                     	    _fsp--;
                     	    if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4139); if (failed) return retval;
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop165;
-                        }
-                    } while (true);
-
-                    // ./src/spec.g3:672:50: ( '[' ']' )*
-                    loop166:
-                    do {
-                        int alt166=2;
-                        int LA166_0 = input.LA(1);
-
-                        if ( (LA166_0==50) ) {
-                            int LA166_30 = input.LA(2);
-
-                            if ( (LA166_30==51) ) {
-                                alt166=1;
-                            }
-
-
-                        }
-
-
-                        switch (alt166) {
-                    	case 1 :
-                    	    // ./src/spec.g3:672:51: '[' ']'
-                    	    {
-                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4144); if (failed) return retval;
-                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4146); if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4147); if (failed) return retval;
 
                     	    }
                     	    break;
 
                     	default :
                     	    break loop166;
+                        }
+                    } while (true);
+
+                    // ./src/spec.g3:672:50: ( '[' ']' )*
+                    loop167:
+                    do {
+                        int alt167=2;
+                        int LA167_0 = input.LA(1);
+
+                        if ( (LA167_0==50) ) {
+                            int LA167_33 = input.LA(2);
+
+                            if ( (LA167_33==51) ) {
+                                alt167=1;
+                            }
+
+
+                        }
+
+
+                        switch (alt167) {
+                    	case 1 :
+                    	    // ./src/spec.g3:672:51: '[' ']'
+                    	    {
+                    	    match(input,50,FOLLOW_50_in_arrayCreatorRest4152); if (failed) return retval;
+                    	    match(input,51,FOLLOW_51_in_arrayCreatorRest4154); if (failed) return retval;
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop167;
                         }
                     } while (true);
 
@@ -13474,22 +15320,26 @@ public class specParser extends Parser {
             // ./src/spec.g3:677:2: ( arguments ( classBody )? )
             // ./src/spec.g3:677:4: arguments ( classBody )?
             {
-            pushFollow(FOLLOW_arguments_in_classCreatorRest4169);
+            pushFollow(FOLLOW_arguments_in_classCreatorRest4177);
             arguments();
             _fsp--;
             if (failed) return retval;
             // ./src/spec.g3:677:14: ( classBody )?
-            int alt168=2;
-            int LA168_0 = input.LA(1);
+            int alt169=2;
+            int LA169_0 = input.LA(1);
 
-            if ( (LA168_0==41) ) {
-                alt168=1;
+            if ( (LA169_0==41) ) {
+                int LA169_1 = input.LA(2);
+
+                if ( (synpred286()) ) {
+                    alt169=1;
+                }
             }
-            switch (alt168) {
+            switch (alt169) {
                 case 1 :
                     // ./src/spec.g3:0:0: classBody
                     {
-                    pushFollow(FOLLOW_classBody_in_classCreatorRest4171);
+                    pushFollow(FOLLOW_classBody_in_classCreatorRest4179);
                     classBody();
                     _fsp--;
                     if (failed) return retval;
@@ -13533,11 +15383,11 @@ public class specParser extends Parser {
             // ./src/spec.g3:681:2: ( nonWildcardTypeArguments explicitGenericInvocationSuffix )
             // ./src/spec.g3:681:4: nonWildcardTypeArguments explicitGenericInvocationSuffix
             {
-            pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitGenericInvocation4184);
+            pushFollow(FOLLOW_nonWildcardTypeArguments_in_explicitGenericInvocation4192);
             nonWildcardTypeArguments();
             _fsp--;
             if (failed) return retval;
-            pushFollow(FOLLOW_explicitGenericInvocationSuffix_in_explicitGenericInvocation4186);
+            pushFollow(FOLLOW_explicitGenericInvocationSuffix_in_explicitGenericInvocation4194);
             explicitGenericInvocationSuffix();
             _fsp--;
             if (failed) return retval;
@@ -13575,12 +15425,12 @@ public class specParser extends Parser {
             // ./src/spec.g3:685:2: ( '<' typeList '>' )
             // ./src/spec.g3:685:4: '<' typeList '>'
             {
-            match(input,32,FOLLOW_32_in_nonWildcardTypeArguments4198); if (failed) return retval;
-            pushFollow(FOLLOW_typeList_in_nonWildcardTypeArguments4200);
+            match(input,32,FOLLOW_32_in_nonWildcardTypeArguments4206); if (failed) return retval;
+            pushFollow(FOLLOW_typeList_in_nonWildcardTypeArguments4208);
             typeList();
             _fsp--;
             if (failed) return retval;
-            match(input,34,FOLLOW_34_in_nonWildcardTypeArguments4202); if (failed) return retval;
+            match(input,34,FOLLOW_34_in_nonWildcardTypeArguments4210); if (failed) return retval;
 
             }
 
@@ -13613,28 +15463,28 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 132) ) { return retval; }
             // ./src/spec.g3:689:2: ( 'super' superSuffix | Identifier arguments )
-            int alt169=2;
-            int LA169_0 = input.LA(1);
+            int alt170=2;
+            int LA170_0 = input.LA(1);
 
-            if ( (LA169_0==73) ) {
-                alt169=1;
+            if ( (LA170_0==73) ) {
+                alt170=1;
             }
-            else if ( (LA169_0==Identifier) ) {
-                alt169=2;
+            else if ( (LA170_0==Identifier) ) {
+                alt170=2;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("688:1: explicitGenericInvocationSuffix : ( 'super' superSuffix | Identifier arguments );", 169, 0, input);
+                    new NoViableAltException("688:1: explicitGenericInvocationSuffix : ( 'super' superSuffix | Identifier arguments );", 170, 0, input);
 
                 throw nvae;
             }
-            switch (alt169) {
+            switch (alt170) {
                 case 1 :
                     // ./src/spec.g3:689:4: 'super' superSuffix
                     {
-                    match(input,73,FOLLOW_73_in_explicitGenericInvocationSuffix4214); if (failed) return retval;
-                    pushFollow(FOLLOW_superSuffix_in_explicitGenericInvocationSuffix4216);
+                    match(input,73,FOLLOW_73_in_explicitGenericInvocationSuffix4222); if (failed) return retval;
+                    pushFollow(FOLLOW_superSuffix_in_explicitGenericInvocationSuffix4224);
                     superSuffix();
                     _fsp--;
                     if (failed) return retval;
@@ -13644,8 +15494,8 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:690:6: Identifier arguments
                     {
-                    match(input,Identifier,FOLLOW_Identifier_in_explicitGenericInvocationSuffix4223); if (failed) return retval;
-                    pushFollow(FOLLOW_arguments_in_explicitGenericInvocationSuffix4225);
+                    match(input,Identifier,FOLLOW_Identifier_in_explicitGenericInvocationSuffix4231); if (failed) return retval;
+                    pushFollow(FOLLOW_arguments_in_explicitGenericInvocationSuffix4233);
                     arguments();
                     _fsp--;
                     if (failed) return retval;
@@ -13683,68 +15533,425 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 133) ) { return retval; }
             // ./src/spec.g3:694:2: ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' ( nonWildcardTypeArguments )? innerCreator | '[' expression ']' )
-            int alt172=5;
-            int LA172_0 = input.LA(1);
+            int alt173=5;
+            int LA173_0 = input.LA(1);
 
-            if ( (LA172_0==29) ) {
+            if ( (LA173_0==29) ) {
                 switch ( input.LA(2) ) {
-                case 126:
+                case 127:
                     {
-                    alt172=4;
+                    alt173=4;
+                    }
+                    break;
+                case 124:
+                    {
+                    alt173=2;
                     }
                     break;
                 case Identifier:
                     {
-                    alt172=1;
+                    alt173=1;
                     }
                     break;
                 case 73:
                     {
-                    alt172=3;
-                    }
-                    break;
-                case 123:
-                    {
-                    alt172=2;
+                    alt173=3;
                     }
                     break;
                 default:
                     if (backtracking>0) {failed=true; return retval;}
                     NoViableAltException nvae =
-                        new NoViableAltException("693:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' ( nonWildcardTypeArguments )? innerCreator | '[' expression ']' );", 172, 1, input);
+                        new NoViableAltException("693:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' ( nonWildcardTypeArguments )? innerCreator | '[' expression ']' );", 173, 1, input);
 
                     throw nvae;
                 }
 
             }
-            else if ( (LA172_0==50) ) {
-                alt172=5;
+            else if ( (LA173_0==50) ) {
+                alt173=5;
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("693:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' ( nonWildcardTypeArguments )? innerCreator | '[' expression ']' );", 172, 0, input);
+                    new NoViableAltException("693:1: selector : ( '.' Identifier ( arguments )? | '.' 'this' | '.' 'super' superSuffix | '.' 'new' ( nonWildcardTypeArguments )? innerCreator | '[' expression ']' );", 173, 0, input);
 
                 throw nvae;
             }
-            switch (alt172) {
+            switch (alt173) {
                 case 1 :
                     // ./src/spec.g3:694:4: '.' Identifier ( arguments )?
                     {
-                    match(input,29,FOLLOW_29_in_selector4237); if (failed) return retval;
-                    match(input,Identifier,FOLLOW_Identifier_in_selector4239); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_selector4245); if (failed) return retval;
+                    match(input,Identifier,FOLLOW_Identifier_in_selector4247); if (failed) return retval;
                     // ./src/spec.g3:694:19: ( arguments )?
-                    int alt170=2;
-                    int LA170_0 = input.LA(1);
+                    int alt171=2;
+                    switch ( input.LA(1) ) {
+                        case Identifier:
+                        case FloatingPointLiteral:
+                        case CharacterLiteral:
+                        case StringLiteral:
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
+                        case 44:
+                        case 49:
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                        case 73:
+                        case 75:
+                        case 76:
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                        case 122:
+                        case 123:
+                        case 124:
+                        case 125:
+                            {
+                            alt171=1;
+                            }
+                            break;
+                        case 116:
+                            {
+                            int LA171_2 = input.LA(2);
 
-                    if ( (LA170_0==44) ) {
-                        alt170=1;
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA171_3 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA171_4 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA171_5 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA171_8 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 45:
+                            {
+                            int LA171_22 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 30:
+                        case 118:
+                        case 119:
+                            {
+                            int LA171_23 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 34:
+                            {
+                            int LA171_24 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 115:
+                            {
+                            int LA171_25 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 112:
+                            {
+                            int LA171_26 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 113:
+                            {
+                            int LA171_27 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 114:
+                            {
+                            int LA171_28 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 36:
+                            {
+                            int LA171_29 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 111:
+                            {
+                            int LA171_30 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 110:
+                            {
+                            int LA171_31 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 109:
+                            {
+                            int LA171_32 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 108:
+                            {
+                            int LA171_33 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 72:
+                            {
+                            int LA171_34 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 33:
+                            {
+                            int LA171_35 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 39:
+                            {
+                            int LA171_36 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case EOL:
+                        case 26:
+                            {
+                            int LA171_37 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case EOF:
+                            {
+                            int LA171_38 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 53:
+                            {
+                            int LA171_39 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 100:
+                            {
+                            int LA171_40 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 101:
+                            {
+                            int LA171_41 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 102:
+                            {
+                            int LA171_42 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 103:
+                            {
+                            int LA171_43 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 104:
+                            {
+                            int LA171_44 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 105:
+                            {
+                            int LA171_45 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 106:
+                            {
+                            int LA171_46 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 107:
+                            {
+                            int LA171_47 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 47:
+                            {
+                            int LA171_48 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 41:
+                            {
+                            int LA171_49 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 29:
+                            {
+                            int LA171_50 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 50:
+                            {
+                            int LA171_51 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
+                        case 51:
+                            {
+                            int LA171_52 = input.LA(2);
+
+                            if ( (synpred288()) ) {
+                                alt171=1;
+                            }
+                            }
+                            break;
                     }
-                    switch (alt170) {
+
+                    switch (alt171) {
                         case 1 :
                             // ./src/spec.g3:694:20: arguments
                             {
-                            pushFollow(FOLLOW_arguments_in_selector4242);
+                            pushFollow(FOLLOW_arguments_in_selector4250);
                             arguments();
                             _fsp--;
                             if (failed) return retval;
@@ -13760,17 +15967,17 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:695:6: '.' 'this'
                     {
-                    match(input,29,FOLLOW_29_in_selector4251); if (failed) return retval;
-                    match(input,123,FOLLOW_123_in_selector4253); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_selector4259); if (failed) return retval;
+                    match(input,124,FOLLOW_124_in_selector4261); if (failed) return retval;
 
                     }
                     break;
                 case 3 :
                     // ./src/spec.g3:696:6: '.' 'super' superSuffix
                     {
-                    match(input,29,FOLLOW_29_in_selector4260); if (failed) return retval;
-                    match(input,73,FOLLOW_73_in_selector4262); if (failed) return retval;
-                    pushFollow(FOLLOW_superSuffix_in_selector4264);
+                    match(input,29,FOLLOW_29_in_selector4268); if (failed) return retval;
+                    match(input,73,FOLLOW_73_in_selector4270); if (failed) return retval;
+                    pushFollow(FOLLOW_superSuffix_in_selector4272);
                     superSuffix();
                     _fsp--;
                     if (failed) return retval;
@@ -13780,20 +15987,20 @@ public class specParser extends Parser {
                 case 4 :
                     // ./src/spec.g3:697:6: '.' 'new' ( nonWildcardTypeArguments )? innerCreator
                     {
-                    match(input,29,FOLLOW_29_in_selector4271); if (failed) return retval;
-                    match(input,126,FOLLOW_126_in_selector4273); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_selector4279); if (failed) return retval;
+                    match(input,127,FOLLOW_127_in_selector4281); if (failed) return retval;
                     // ./src/spec.g3:697:16: ( nonWildcardTypeArguments )?
-                    int alt171=2;
-                    int LA171_0 = input.LA(1);
+                    int alt172=2;
+                    int LA172_0 = input.LA(1);
 
-                    if ( (LA171_0==32) ) {
-                        alt171=1;
+                    if ( (LA172_0==32) ) {
+                        alt172=1;
                     }
-                    switch (alt171) {
+                    switch (alt172) {
                         case 1 :
                             // ./src/spec.g3:697:17: nonWildcardTypeArguments
                             {
-                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_selector4276);
+                            pushFollow(FOLLOW_nonWildcardTypeArguments_in_selector4284);
                             nonWildcardTypeArguments();
                             _fsp--;
                             if (failed) return retval;
@@ -13803,7 +16010,7 @@ public class specParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_innerCreator_in_selector4280);
+                    pushFollow(FOLLOW_innerCreator_in_selector4288);
                     innerCreator();
                     _fsp--;
                     if (failed) return retval;
@@ -13813,12 +16020,12 @@ public class specParser extends Parser {
                 case 5 :
                     // ./src/spec.g3:698:6: '[' expression ']'
                     {
-                    match(input,50,FOLLOW_50_in_selector4287); if (failed) return retval;
-                    pushFollow(FOLLOW_expression_in_selector4289);
+                    match(input,50,FOLLOW_50_in_selector4295); if (failed) return retval;
+                    pushFollow(FOLLOW_expression_in_selector4297);
                     expression();
                     _fsp--;
                     if (failed) return retval;
-                    match(input,51,FOLLOW_51_in_selector4291); if (failed) return retval;
+                    match(input,51,FOLLOW_51_in_selector4299); if (failed) return retval;
 
                     }
                     break;
@@ -13853,27 +16060,55 @@ public class specParser extends Parser {
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 134) ) { return retval; }
             // ./src/spec.g3:702:2: ( arguments | '.' Identifier ( arguments )? )
-            int alt174=2;
-            int LA174_0 = input.LA(1);
+            int alt175=2;
+            int LA175_0 = input.LA(1);
 
-            if ( (LA174_0==44) ) {
-                alt174=1;
+            if ( (LA175_0==EOF||(LA175_0>=EOL && LA175_0<=Identifier)||(LA175_0>=FloatingPointLiteral && LA175_0<=DecimalLiteral)||LA175_0==26||LA175_0==30||(LA175_0>=32 && LA175_0<=34)||LA175_0==36||LA175_0==39||LA175_0==41||(LA175_0>=44 && LA175_0<=45)||LA175_0==47||(LA175_0>=49 && LA175_0<=51)||LA175_0==53||(LA175_0>=64 && LA175_0<=73)||(LA175_0>=75 && LA175_0<=80)||(LA175_0>=100 && LA175_0<=125)) ) {
+                alt175=1;
             }
-            else if ( (LA174_0==29) ) {
-                alt174=2;
+            else if ( (LA175_0==29) ) {
+                int LA175_50 = input.LA(2);
+
+                if ( (LA175_50==73||LA175_50==124||LA175_50==127) ) {
+                    alt175=1;
+                }
+                else if ( (LA175_50==Identifier) ) {
+                    int LA175_56 = input.LA(3);
+
+                    if ( (synpred294()) ) {
+                        alt175=1;
+                    }
+                    else if ( (true) ) {
+                        alt175=2;
+                    }
+                    else {
+                        if (backtracking>0) {failed=true; return retval;}
+                        NoViableAltException nvae =
+                            new NoViableAltException("701:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );", 175, 56, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    if (backtracking>0) {failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("701:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );", 175, 50, input);
+
+                    throw nvae;
+                }
             }
             else {
                 if (backtracking>0) {failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("701:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );", 174, 0, input);
+                    new NoViableAltException("701:1: superSuffix : ( arguments | '.' Identifier ( arguments )? );", 175, 0, input);
 
                 throw nvae;
             }
-            switch (alt174) {
+            switch (alt175) {
                 case 1 :
                     // ./src/spec.g3:702:4: arguments
                     {
-                    pushFollow(FOLLOW_arguments_in_superSuffix4303);
+                    pushFollow(FOLLOW_arguments_in_superSuffix4311);
                     arguments();
                     _fsp--;
                     if (failed) return retval;
@@ -13883,20 +16118,377 @@ public class specParser extends Parser {
                 case 2 :
                     // ./src/spec.g3:703:6: '.' Identifier ( arguments )?
                     {
-                    match(input,29,FOLLOW_29_in_superSuffix4310); if (failed) return retval;
-                    match(input,Identifier,FOLLOW_Identifier_in_superSuffix4312); if (failed) return retval;
+                    match(input,29,FOLLOW_29_in_superSuffix4318); if (failed) return retval;
+                    match(input,Identifier,FOLLOW_Identifier_in_superSuffix4320); if (failed) return retval;
                     // ./src/spec.g3:703:21: ( arguments )?
-                    int alt173=2;
-                    int LA173_0 = input.LA(1);
+                    int alt174=2;
+                    switch ( input.LA(1) ) {
+                        case Identifier:
+                        case FloatingPointLiteral:
+                        case CharacterLiteral:
+                        case StringLiteral:
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
+                        case 44:
+                        case 49:
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                        case 73:
+                        case 75:
+                        case 76:
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                        case 122:
+                        case 123:
+                        case 124:
+                        case 125:
+                            {
+                            alt174=1;
+                            }
+                            break;
+                        case 116:
+                            {
+                            int LA174_2 = input.LA(2);
 
-                    if ( (LA173_0==44) ) {
-                        alt173=1;
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA174_3 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA174_4 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA174_5 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA174_8 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 45:
+                            {
+                            int LA174_22 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 30:
+                        case 118:
+                        case 119:
+                            {
+                            int LA174_23 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 34:
+                            {
+                            int LA174_24 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 115:
+                            {
+                            int LA174_25 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 112:
+                            {
+                            int LA174_26 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 113:
+                            {
+                            int LA174_27 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 114:
+                            {
+                            int LA174_28 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 36:
+                            {
+                            int LA174_29 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 111:
+                            {
+                            int LA174_30 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 110:
+                            {
+                            int LA174_31 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 109:
+                            {
+                            int LA174_32 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 108:
+                            {
+                            int LA174_33 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 72:
+                            {
+                            int LA174_34 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 33:
+                            {
+                            int LA174_35 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 39:
+                            {
+                            int LA174_36 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case EOL:
+                        case 26:
+                            {
+                            int LA174_37 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case EOF:
+                            {
+                            int LA174_38 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 53:
+                            {
+                            int LA174_39 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 100:
+                            {
+                            int LA174_40 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 101:
+                            {
+                            int LA174_41 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 102:
+                            {
+                            int LA174_42 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 103:
+                            {
+                            int LA174_43 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 104:
+                            {
+                            int LA174_44 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 105:
+                            {
+                            int LA174_45 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 106:
+                            {
+                            int LA174_46 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 107:
+                            {
+                            int LA174_47 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 47:
+                            {
+                            int LA174_48 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 41:
+                            {
+                            int LA174_49 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 29:
+                            {
+                            int LA174_50 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 50:
+                            {
+                            int LA174_51 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
+                        case 51:
+                            {
+                            int LA174_52 = input.LA(2);
+
+                            if ( (synpred295()) ) {
+                                alt174=1;
+                            }
+                            }
+                            break;
                     }
-                    switch (alt173) {
+
+                    switch (alt174) {
                         case 1 :
                             // ./src/spec.g3:703:22: arguments
                             {
-                            pushFollow(FOLLOW_arguments_in_superSuffix4315);
+                            pushFollow(FOLLOW_arguments_in_superSuffix4323);
                             arguments();
                             _fsp--;
                             if (failed) return retval;
@@ -13932,29 +16524,785 @@ public class specParser extends Parser {
     };
 
     // $ANTLR start arguments
-    // ./src/spec.g3:706:1: arguments : '(' ( expressionList )? ')' ;
+    // ./src/spec.g3:706:1: arguments : ( '(' )? ( expressionList )? ( ')' )? ;
     public final arguments_return arguments() throws RecognitionException {
         arguments_return retval = new arguments_return();
         retval.start = input.LT(1);
         int arguments_StartIndex = input.index();
         try {
             if ( backtracking>0 && alreadyParsedRule(input, 135) ) { return retval; }
-            // ./src/spec.g3:707:2: ( '(' ( expressionList )? ')' )
-            // ./src/spec.g3:707:4: '(' ( expressionList )? ')'
+            // ./src/spec.g3:707:2: ( ( '(' )? ( expressionList )? ( ')' )? )
+            // ./src/spec.g3:707:4: ( '(' )? ( expressionList )? ( ')' )?
             {
-            match(input,44,FOLLOW_44_in_arguments4331); if (failed) return retval;
-            // ./src/spec.g3:707:8: ( expressionList )?
-            int alt175=2;
-            int LA175_0 = input.LA(1);
+            // ./src/spec.g3:707:4: ( '(' )?
+            int alt176=2;
+            int LA176_0 = input.LA(1);
 
-            if ( (LA175_0==Identifier||(LA175_0>=FloatingPointLiteral && LA175_0<=DecimalLiteral)||LA175_0==32||LA175_0==44||LA175_0==49||(LA175_0>=64 && LA175_0<=71)||LA175_0==73||(LA175_0>=75 && LA175_0<=80)||(LA175_0>=115 && LA175_0<=116)||(LA175_0>=119 && LA175_0<=124)) ) {
-                alt175=1;
+            if ( (LA176_0==44) ) {
+                switch ( input.LA(2) ) {
+                    case 64:
+                    case 65:
+                    case 66:
+                    case 67:
+                    case 68:
+                    case 69:
+                    case 70:
+                    case 71:
+                        {
+                        int LA176_53 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 116:
+                        {
+                        int LA176_54 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 117:
+                        {
+                        int LA176_55 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 120:
+                        {
+                        int LA176_56 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 121:
+                        {
+                        int LA176_57 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 122:
+                        {
+                        int LA176_58 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 123:
+                        {
+                        int LA176_59 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 44:
+                        {
+                        int LA176_60 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 32:
+                        {
+                        int LA176_61 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 124:
+                        {
+                        int LA176_62 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 73:
+                        {
+                        int LA176_63 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case HexLiteral:
+                    case OctalLiteral:
+                    case DecimalLiteral:
+                        {
+                        int LA176_64 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case FloatingPointLiteral:
+                        {
+                        int LA176_65 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case CharacterLiteral:
+                        {
+                        int LA176_66 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case StringLiteral:
+                        {
+                        int LA176_67 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 77:
+                    case 78:
+                    case 79:
+                    case 80:
+                        {
+                        int LA176_68 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 75:
+                        {
+                        int LA176_69 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 76:
+                        {
+                        int LA176_70 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 125:
+                        {
+                        int LA176_71 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case Identifier:
+                        {
+                        int LA176_72 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case 49:
+                        {
+                        int LA176_73 = input.LA(3);
+
+                        if ( (synpred296()) ) {
+                            alt176=1;
+                        }
+                        }
+                        break;
+                    case EOF:
+                    case EOL:
+                    case 26:
+                    case 29:
+                    case 30:
+                    case 33:
+                    case 34:
+                    case 36:
+                    case 39:
+                    case 41:
+                    case 45:
+                    case 47:
+                    case 50:
+                    case 51:
+                    case 53:
+                    case 72:
+                    case 100:
+                    case 101:
+                    case 102:
+                    case 103:
+                    case 104:
+                    case 105:
+                    case 106:
+                    case 107:
+                    case 108:
+                    case 109:
+                    case 110:
+                    case 111:
+                    case 112:
+                    case 113:
+                    case 114:
+                    case 115:
+                    case 118:
+                    case 119:
+                        {
+                        alt176=1;
+                        }
+                        break;
+                }
+
             }
-            switch (alt175) {
+            switch (alt176) {
+                case 1 :
+                    // ./src/spec.g3:0:0: '('
+                    {
+                    match(input,44,FOLLOW_44_in_arguments4339); if (failed) return retval;
+
+                    }
+                    break;
+
+            }
+
+            // ./src/spec.g3:707:9: ( expressionList )?
+            int alt177=2;
+            switch ( input.LA(1) ) {
+                case 116:
+                    {
+                    switch ( input.LA(2) ) {
+                        case 116:
+                            {
+                            int LA177_53 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA177_54 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA177_55 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA177_56 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 122:
+                            {
+                            int LA177_57 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 123:
+                            {
+                            int LA177_58 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 44:
+                            {
+                            int LA177_59 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA177_60 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 124:
+                            {
+                            int LA177_61 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 73:
+                            {
+                            int LA177_62 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
+                            {
+                            int LA177_63 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case FloatingPointLiteral:
+                            {
+                            int LA177_64 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case CharacterLiteral:
+                            {
+                            int LA177_65 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case StringLiteral:
+                            {
+                            int LA177_66 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                            {
+                            int LA177_67 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 75:
+                            {
+                            int LA177_68 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 76:
+                            {
+                            int LA177_69 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 125:
+                            {
+                            int LA177_70 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case Identifier:
+                            {
+                            int LA177_71 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                            {
+                            int LA177_72 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 49:
+                            {
+                            int LA177_73 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                    }
+
+                    }
+                    break;
+                case 117:
+                    {
+                    switch ( input.LA(2) ) {
+                        case 116:
+                            {
+                            int LA177_74 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 117:
+                            {
+                            int LA177_75 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 120:
+                            {
+                            int LA177_76 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 121:
+                            {
+                            int LA177_77 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 122:
+                            {
+                            int LA177_78 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 123:
+                            {
+                            int LA177_79 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 44:
+                            {
+                            int LA177_80 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 32:
+                            {
+                            int LA177_81 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 124:
+                            {
+                            int LA177_82 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 73:
+                            {
+                            int LA177_83 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case HexLiteral:
+                        case OctalLiteral:
+                        case DecimalLiteral:
+                            {
+                            int LA177_84 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case FloatingPointLiteral:
+                            {
+                            int LA177_85 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case CharacterLiteral:
+                            {
+                            int LA177_86 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case StringLiteral:
+                            {
+                            int LA177_87 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 77:
+                        case 78:
+                        case 79:
+                        case 80:
+                            {
+                            int LA177_88 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 75:
+                            {
+                            int LA177_89 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 76:
+                            {
+                            int LA177_90 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 125:
+                            {
+                            int LA177_91 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case Identifier:
+                            {
+                            int LA177_92 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 64:
+                        case 65:
+                        case 66:
+                        case 67:
+                        case 68:
+                        case 69:
+                        case 70:
+                        case 71:
+                            {
+                            int LA177_93 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                        case 49:
+                            {
+                            int LA177_94 = input.LA(3);
+
+                            if ( (synpred297()) ) {
+                                alt177=1;
+                            }
+                            }
+                            break;
+                    }
+
+                    }
+                    break;
+                case 120:
+                    {
+                    int LA177_3 = input.LA(2);
+
+                    if ( (LA177_3==Identifier||(LA177_3>=FloatingPointLiteral && LA177_3<=DecimalLiteral)||LA177_3==44||LA177_3==49||(LA177_3>=64 && LA177_3<=71)||LA177_3==73||(LA177_3>=75 && LA177_3<=80)||(LA177_3>=124 && LA177_3<=125)) ) {
+                        alt177=1;
+                    }
+                    else if ( (LA177_3==32) ) {
+                        int LA177_96 = input.LA(3);
+
+                        if ( (synpred297()) ) {
+                            alt177=1;
+                        }
+                    }
+                    }
+                    break;
+                case 121:
+                    {
+                    int LA177_4 = input.LA(2);
+
+                    if ( (LA177_4==Identifier||(LA177_4>=FloatingPointLiteral && LA177_4<=DecimalLiteral)||LA177_4==44||LA177_4==49||(LA177_4>=64 && LA177_4<=71)||LA177_4==73||(LA177_4>=75 && LA177_4<=80)||(LA177_4>=124 && LA177_4<=125)) ) {
+                        alt177=1;
+                    }
+                    else if ( (LA177_4==32) ) {
+                        int LA177_144 = input.LA(3);
+
+                        if ( (synpred297()) ) {
+                            alt177=1;
+                        }
+                    }
+                    }
+                    break;
+                case Identifier:
+                case FloatingPointLiteral:
+                case CharacterLiteral:
+                case StringLiteral:
+                case HexLiteral:
+                case OctalLiteral:
+                case DecimalLiteral:
+                case 44:
+                case 49:
+                case 64:
+                case 65:
+                case 66:
+                case 67:
+                case 68:
+                case 69:
+                case 70:
+                case 71:
+                case 73:
+                case 75:
+                case 76:
+                case 77:
+                case 78:
+                case 79:
+                case 80:
+                case 122:
+                case 123:
+                case 124:
+                case 125:
+                    {
+                    alt177=1;
+                    }
+                    break;
+                case 32:
+                    {
+                    int LA177_8 = input.LA(2);
+
+                    if ( (LA177_8==Identifier) ) {
+                        int LA177_210 = input.LA(3);
+
+                        if ( (synpred297()) ) {
+                            alt177=1;
+                        }
+                    }
+                    else if ( ((LA177_8>=64 && LA177_8<=71)) ) {
+                        int LA177_211 = input.LA(3);
+
+                        if ( (synpred297()) ) {
+                            alt177=1;
+                        }
+                    }
+                    }
+                    break;
+            }
+
+            switch (alt177) {
                 case 1 :
                     // ./src/spec.g3:0:0: expressionList
                     {
-                    pushFollow(FOLLOW_expressionList_in_arguments4333);
+                    pushFollow(FOLLOW_expressionList_in_arguments4342);
                     expressionList();
                     _fsp--;
                     if (failed) return retval;
@@ -13964,7 +17312,28 @@ public class specParser extends Parser {
 
             }
 
-            match(input,45,FOLLOW_45_in_arguments4336); if (failed) return retval;
+            // ./src/spec.g3:707:25: ( ')' )?
+            int alt178=2;
+            int LA178_0 = input.LA(1);
+
+            if ( (LA178_0==45) ) {
+                int LA178_1 = input.LA(2);
+
+                if ( (synpred298()) ) {
+                    alt178=1;
+                }
+            }
+            switch (alt178) {
+                case 1 :
+                    // ./src/spec.g3:0:0: ')'
+                    {
+                    match(input,45,FOLLOW_45_in_arguments4345); if (failed) return retval;
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -13982,6 +17351,20 @@ public class specParser extends Parser {
     }
     // $ANTLR end arguments
 
+    // $ANTLR start synpred22
+    public final void synpred22_fragment() throws RecognitionException {   
+        // ./src/spec.g3:70:29: ( arguments )
+        // ./src/spec.g3:70:29: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred22352);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred22
+
     // $ANTLR start synpred92
     public final void synpred92_fragment() throws RecognitionException {   
         // ./src/spec.g3:264:16: ( '.' Identifier )
@@ -13993,6 +17376,67 @@ public class specParser extends Parser {
         }
     }
     // $ANTLR end synpred92
+
+    // $ANTLR start synpred94
+    public final void synpred94_fragment() throws RecognitionException {   
+        // ./src/spec.g3:277:16: ( typeArguments )
+        // ./src/spec.g3:277:16: typeArguments
+        {
+        pushFollow(FOLLOW_typeArguments_in_synpred941508);
+        typeArguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred94
+
+    // $ANTLR start synpred95
+    public final void synpred95_fragment() throws RecognitionException {   
+        // ./src/spec.g3:277:49: ( typeArguments )
+        // ./src/spec.g3:277:49: typeArguments
+        {
+        pushFollow(FOLLOW_typeArguments_in_synpred951518);
+        typeArguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred95
+
+    // $ANTLR start synpred96
+    public final void synpred96_fragment() throws RecognitionException {   
+        // ./src/spec.g3:277:33: ( '.' Identifier ( typeArguments )? )
+        // ./src/spec.g3:277:33: '.' Identifier ( typeArguments )?
+        {
+        match(input,29,FOLLOW_29_in_synpred961513); if (failed) return ;
+        match(input,Identifier,FOLLOW_Identifier_in_synpred961515); if (failed) return ;
+        // ./src/spec.g3:277:48: ( typeArguments )?
+        int alt186=2;
+        int LA186_0 = input.LA(1);
+
+        if ( (LA186_0==32) ) {
+            alt186=1;
+        }
+        switch (alt186) {
+            case 1 :
+                // ./src/spec.g3:277:49: typeArguments
+                {
+                pushFollow(FOLLOW_typeArguments_in_synpred961518);
+                typeArguments();
+                _fsp--;
+                if (failed) return ;
+
+                }
+                break;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred96
 
     // $ANTLR start synpred144
     public final void synpred144_fragment() throws RecognitionException {   
@@ -14122,13 +17566,13 @@ public class specParser extends Parser {
         // ./src/spec.g3:498:4: ( 'final' )? type variableDeclarators
         {
         // ./src/spec.g3:498:4: ( 'final' )?
-        int alt196=2;
-        int LA196_0 = input.LA(1);
+        int alt199=2;
+        int LA199_0 = input.LA(1);
 
-        if ( (LA196_0==58) ) {
-            alt196=1;
+        if ( (LA199_0==58) ) {
+            alt199=1;
         }
-        switch (alt196) {
+        switch (alt199) {
             case 1 :
                 // ./src/spec.g3:0:0: 'final'
                 {
@@ -14151,6 +17595,21 @@ public class specParser extends Parser {
         }
     }
     // $ANTLR end synpred198
+
+    // $ANTLR start synpred206
+    public final void synpred206_fragment() throws RecognitionException {   
+        // ./src/spec.g3:522:21: ( ',' expression )
+        // ./src/spec.g3:522:21: ',' expression
+        {
+        match(input,33,FOLLOW_33_in_synpred2062984); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2062986);
+        expression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred206
 
     // $ANTLR start synpred207
     public final void synpred207_fragment() throws RecognitionException {   
@@ -14183,17 +17642,181 @@ public class specParser extends Parser {
     }
     // $ANTLR end synpred218
 
-    // $ANTLR start synpred228
-    public final void synpred228_fragment() throws RecognitionException {   
-        // ./src/spec.g3:585:27: ( relationalOp shiftExpression )
-        // ./src/spec.g3:585:27: relationalOp shiftExpression
+    // $ANTLR start synpred219
+    public final void synpred219_fragment() throws RecognitionException {   
+        // ./src/spec.g3:553:35: ( '?' expression ':' expression )
+        // ./src/spec.g3:553:35: '?' expression ':' expression
         {
-        pushFollow(FOLLOW_relationalOp_in_synpred2283397);
-        relationalOp();
+        match(input,72,FOLLOW_72_in_synpred2193189); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2193191);
+        expression();
         _fsp--;
         if (failed) return ;
-        pushFollow(FOLLOW_shiftExpression_in_synpred2283399);
-        shiftExpression();
+        match(input,47,FOLLOW_47_in_synpred2193193); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2193195);
+        expression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred219
+
+    // $ANTLR start synpred220
+    public final void synpred220_fragment() throws RecognitionException {   
+        // ./src/spec.g3:557:36: ( '||' conditionalAndExpression )
+        // ./src/spec.g3:557:36: '||' conditionalAndExpression
+        {
+        match(input,108,FOLLOW_108_in_synpred2203218); if (failed) return ;
+        pushFollow(FOLLOW_conditionalAndExpression_in_synpred2203220);
+        conditionalAndExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred220
+
+    // $ANTLR start synpred221
+    public final void synpred221_fragment() throws RecognitionException {   
+        // ./src/spec.g3:561:33: ( '&&' inclusiveOrExpression )
+        // ./src/spec.g3:561:33: '&&' inclusiveOrExpression
+        {
+        match(input,109,FOLLOW_109_in_synpred2213243); if (failed) return ;
+        pushFollow(FOLLOW_inclusiveOrExpression_in_synpred2213245);
+        inclusiveOrExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred221
+
+    // $ANTLR start synpred222
+    public final void synpred222_fragment() throws RecognitionException {   
+        // ./src/spec.g3:565:33: ( '|' exclusiveOrExpression )
+        // ./src/spec.g3:565:33: '|' exclusiveOrExpression
+        {
+        match(input,110,FOLLOW_110_in_synpred2223268); if (failed) return ;
+        pushFollow(FOLLOW_exclusiveOrExpression_in_synpred2223270);
+        exclusiveOrExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred222
+
+    // $ANTLR start synpred223
+    public final void synpred223_fragment() throws RecognitionException {   
+        // ./src/spec.g3:569:25: ( '^' andExpression )
+        // ./src/spec.g3:569:25: '^' andExpression
+        {
+        match(input,111,FOLLOW_111_in_synpred2233293); if (failed) return ;
+        pushFollow(FOLLOW_andExpression_in_synpred2233295);
+        andExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred223
+
+    // $ANTLR start synpred224
+    public final void synpred224_fragment() throws RecognitionException {   
+        // ./src/spec.g3:573:30: ( '&' equalityExpression )
+        // ./src/spec.g3:573:30: '&' equalityExpression
+        {
+        match(input,36,FOLLOW_36_in_synpred2243318); if (failed) return ;
+        pushFollow(FOLLOW_equalityExpression_in_synpred2243320);
+        equalityExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred224
+
+    // $ANTLR start synpred227
+    public final void synpred227_fragment() throws RecognitionException {   
+        // ./src/spec.g3:577:32: ( ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression )
+        // ./src/spec.g3:577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' ) instanceOfExpression
+        {
+        // ./src/spec.g3:577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' )
+        int alt203=3;
+        switch ( input.LA(1) ) {
+        case 112:
+            {
+            alt203=1;
+            }
+            break;
+        case 113:
+            {
+            alt203=2;
+            }
+            break;
+        case 114:
+            {
+            alt203=3;
+            }
+            break;
+        default:
+            if (backtracking>0) {failed=true; return ;}
+            NoViableAltException nvae =
+                new NoViableAltException("577:32: ( ( '\\u0e04\\u0e27\\u0e23' '==' ) | '==' | '!=' )", 203, 0, input);
+
+            throw nvae;
+        }
+
+        switch (alt203) {
+            case 1 :
+                // ./src/spec.g3:577:33: ( '\\u0e04\\u0e27\\u0e23' '==' )
+                {
+                // ./src/spec.g3:577:33: ( '\\u0e04\\u0e27\\u0e23' '==' )
+                // ./src/spec.g3:577:34: '\\u0e04\\u0e27\\u0e23' '=='
+                {
+                match(input,112,FOLLOW_112_in_synpred2273345); if (failed) return ;
+                match(input,113,FOLLOW_113_in_synpred2273347); if (failed) return ;
+
+                }
+
+
+                }
+                break;
+            case 2 :
+                // ./src/spec.g3:577:63: '=='
+                {
+                match(input,113,FOLLOW_113_in_synpred2273352); if (failed) return ;
+
+                }
+                break;
+            case 3 :
+                // ./src/spec.g3:577:70: '!='
+                {
+                match(input,114,FOLLOW_114_in_synpred2273356); if (failed) return ;
+
+                }
+                break;
+
+        }
+
+        pushFollow(FOLLOW_instanceOfExpression_in_synpred2273359);
+        instanceOfExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred227
+
+    // $ANTLR start synpred228
+    public final void synpred228_fragment() throws RecognitionException {   
+        // ./src/spec.g3:581:31: ( 'instanceof' type )
+        // ./src/spec.g3:581:31: 'instanceof' type
+        {
+        match(input,115,FOLLOW_115_in_synpred2283381); if (failed) return ;
+        pushFollow(FOLLOW_type_in_synpred2283383);
+        type();
         _fsp--;
         if (failed) return ;
 
@@ -14201,78 +17824,146 @@ public class specParser extends Parser {
     }
     // $ANTLR end synpred228
 
-    // $ANTLR start synpred232
-    public final void synpred232_fragment() throws RecognitionException {   
+    // $ANTLR start synpred229
+    public final void synpred229_fragment() throws RecognitionException {   
+        // ./src/spec.g3:585:27: ( relationalOp shiftExpression )
+        // ./src/spec.g3:585:27: relationalOp shiftExpression
+        {
+        pushFollow(FOLLOW_relationalOp_in_synpred2293405);
+        relationalOp();
+        _fsp--;
+        if (failed) return ;
+        pushFollow(FOLLOW_shiftExpression_in_synpred2293407);
+        shiftExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred229
+
+    // $ANTLR start synpred233
+    public final void synpred233_fragment() throws RecognitionException {   
         // ./src/spec.g3:593:30: ( shiftOp additiveExpression )
         // ./src/spec.g3:593:30: shiftOp additiveExpression
         {
-        pushFollow(FOLLOW_shiftOp_in_synpred2323452);
+        pushFollow(FOLLOW_shiftOp_in_synpred2333460);
         shiftOp();
         _fsp--;
         if (failed) return ;
-        pushFollow(FOLLOW_additiveExpression_in_synpred2323454);
+        pushFollow(FOLLOW_additiveExpression_in_synpred2333462);
         additiveExpression();
         _fsp--;
         if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred232
+    // $ANTLR end synpred233
 
-    // $ANTLR start synpred234
-    public final void synpred234_fragment() throws RecognitionException {   
+    // $ANTLR start synpred235
+    public final void synpred235_fragment() throws RecognitionException {   
         // ./src/spec.g3:598:15: ( '>' '>' '>' )
         // ./src/spec.g3:598:15: '>' '>' '>'
         {
-        match(input,34,FOLLOW_34_in_synpred2343484); if (failed) return ;
-        match(input,34,FOLLOW_34_in_synpred2343486); if (failed) return ;
-        match(input,34,FOLLOW_34_in_synpred2343488); if (failed) return ;
+        match(input,34,FOLLOW_34_in_synpred2353492); if (failed) return ;
+        match(input,34,FOLLOW_34_in_synpred2353494); if (failed) return ;
+        match(input,34,FOLLOW_34_in_synpred2353496); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred234
+    // $ANTLR end synpred235
 
-    // $ANTLR start synpred246
-    public final void synpred246_fragment() throws RecognitionException {   
-        // ./src/spec.g3:621:9: ( castExpression )
-        // ./src/spec.g3:621:9: castExpression
+    // $ANTLR start synpred237
+    public final void synpred237_fragment() throws RecognitionException {   
+        // ./src/spec.g3:603:36: ( ( '+' | '-' ) multiplicativeExpression )
+        // ./src/spec.g3:603:36: ( '+' | '-' ) multiplicativeExpression
         {
-        pushFollow(FOLLOW_castExpression_in_synpred2463669);
-        castExpression();
+        if ( (input.LA(1)>=116 && input.LA(1)<=117) ) {
+            input.consume();
+            errorRecovery=false;failed=false;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            MismatchedSetException mse =
+                new MismatchedSetException(null,input);
+            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred2373524);    throw mse;
+        }
+
+        pushFollow(FOLLOW_multiplicativeExpression_in_synpred2373532);
+        multiplicativeExpression();
         _fsp--;
         if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred246
+    // $ANTLR end synpred237
 
-    // $ANTLR start synpred250
-    public final void synpred250_fragment() throws RecognitionException {   
-        // ./src/spec.g3:626:8: ( '(' primitiveType ')' unaryExpression )
-        // ./src/spec.g3:626:8: '(' primitiveType ')' unaryExpression
+    // $ANTLR start synpred240
+    public final void synpred240_fragment() throws RecognitionException {   
+        // ./src/spec.g3:607:27: ( ( '*' | '/' | '%' ) unaryExpression )
+        // ./src/spec.g3:607:27: ( '*' | '/' | '%' ) unaryExpression
         {
-        match(input,44,FOLLOW_44_in_synpred2503707); if (failed) return ;
-        pushFollow(FOLLOW_primitiveType_in_synpred2503709);
-        primitiveType();
-        _fsp--;
-        if (failed) return ;
-        match(input,45,FOLLOW_45_in_synpred2503711); if (failed) return ;
-        pushFollow(FOLLOW_unaryExpression_in_synpred2503713);
+        if ( input.LA(1)==30||(input.LA(1)>=118 && input.LA(1)<=119) ) {
+            input.consume();
+            errorRecovery=false;failed=false;
+        }
+        else {
+            if (backtracking>0) {failed=true; return ;}
+            MismatchedSetException mse =
+                new MismatchedSetException(null,input);
+            recoverFromMismatchedSet(input,mse,FOLLOW_set_in_synpred2403555);    throw mse;
+        }
+
+        pushFollow(FOLLOW_unaryExpression_in_synpred2403569);
         unaryExpression();
         _fsp--;
         if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred250
+    // $ANTLR end synpred240
+
+    // $ANTLR start synpred247
+    public final void synpred247_fragment() throws RecognitionException {   
+        // ./src/spec.g3:621:9: ( castExpression )
+        // ./src/spec.g3:621:9: castExpression
+        {
+        pushFollow(FOLLOW_castExpression_in_synpred2473677);
+        castExpression();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred247
+
+    // $ANTLR start synpred248
+    public final void synpred248_fragment() throws RecognitionException {   
+        // ./src/spec.g3:622:17: ( selector )
+        // ./src/spec.g3:622:17: selector
+        {
+        pushFollow(FOLLOW_selector_in_synpred2483689);
+        selector();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred248
 
     // $ANTLR start synpred251
     public final void synpred251_fragment() throws RecognitionException {   
-        // ./src/spec.g3:627:13: ( expression )
-        // ./src/spec.g3:627:13: expression
+        // ./src/spec.g3:626:8: ( '(' primitiveType ')' unaryExpression )
+        // ./src/spec.g3:626:8: '(' primitiveType ')' unaryExpression
         {
-        pushFollow(FOLLOW_expression_in_synpred2513725);
-        expression();
+        match(input,44,FOLLOW_44_in_synpred2513715); if (failed) return ;
+        pushFollow(FOLLOW_primitiveType_in_synpred2513717);
+        primitiveType();
+        _fsp--;
+        if (failed) return ;
+        match(input,45,FOLLOW_45_in_synpred2513719); if (failed) return ;
+        pushFollow(FOLLOW_unaryExpression_in_synpred2513721);
+        unaryExpression();
         _fsp--;
         if (failed) return ;
 
@@ -14280,69 +17971,352 @@ public class specParser extends Parser {
     }
     // $ANTLR end synpred251
 
-    // $ANTLR start synpred260
-    public final void synpred260_fragment() throws RecognitionException {   
-        // ./src/spec.g3:638:21: ( '.' Identifier )
-        // ./src/spec.g3:638:21: '.' Identifier
+    // $ANTLR start synpred252
+    public final void synpred252_fragment() throws RecognitionException {   
+        // ./src/spec.g3:627:13: ( expression )
+        // ./src/spec.g3:627:13: expression
         {
-        match(input,29,FOLLOW_29_in_synpred2603841); if (failed) return ;
-        match(input,Identifier,FOLLOW_Identifier_in_synpred2603843); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2523733);
+        expression();
+        _fsp--;
+        if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred260
+    // $ANTLR end synpred252
+
+    // $ANTLR start synpred256
+    public final void synpred256_fragment() throws RecognitionException {   
+        // ./src/spec.g3:634:17: ( arguments )
+        // ./src/spec.g3:634:17: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred2563800);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred256
 
     // $ANTLR start synpred261
     public final void synpred261_fragment() throws RecognitionException {   
+        // ./src/spec.g3:638:21: ( '.' Identifier )
+        // ./src/spec.g3:638:21: '.' Identifier
+        {
+        match(input,29,FOLLOW_29_in_synpred2613849); if (failed) return ;
+        match(input,Identifier,FOLLOW_Identifier_in_synpred2613851); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred261
+
+    // $ANTLR start synpred262
+    public final void synpred262_fragment() throws RecognitionException {   
         // ./src/spec.g3:638:39: ( identifierSuffix )
         // ./src/spec.g3:638:39: identifierSuffix
         {
-        pushFollow(FOLLOW_identifierSuffix_in_synpred2613848);
+        pushFollow(FOLLOW_identifierSuffix_in_synpred2623856);
         identifierSuffix();
         _fsp--;
         if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred261
+    // $ANTLR end synpred262
 
-    // $ANTLR start synpred267
-    public final void synpred267_fragment() throws RecognitionException {   
+    // $ANTLR start synpred268
+    public final void synpred268_fragment() throws RecognitionException {   
         // ./src/spec.g3:645:5: ( '[' expression ']' )
         // ./src/spec.g3:645:5: '[' expression ']'
         {
-        match(input,50,FOLLOW_50_in_synpred2673911); if (failed) return ;
-        pushFollow(FOLLOW_expression_in_synpred2673913);
+        match(input,50,FOLLOW_50_in_synpred2683919); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2683921);
         expression();
         _fsp--;
         if (failed) return ;
-        match(input,51,FOLLOW_51_in_synpred2673915); if (failed) return ;
+        match(input,51,FOLLOW_51_in_synpred2683923); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred267
+    // $ANTLR end synpred268
 
-    // $ANTLR start synpred283
-    public final void synpred283_fragment() throws RecognitionException {   
+    // $ANTLR start synpred269
+    public final void synpred269_fragment() throws RecognitionException {   
+        // ./src/spec.g3:645:4: ( ( '[' expression ']' )+ )
+        // ./src/spec.g3:645:4: ( '[' expression ']' )+
+        {
+        // ./src/spec.g3:645:4: ( '[' expression ']' )+
+        int cnt210=0;
+        loop210:
+        do {
+            int alt210=2;
+            int LA210_0 = input.LA(1);
+
+            if ( (LA210_0==50) ) {
+                alt210=1;
+            }
+
+
+            switch (alt210) {
+        	case 1 :
+        	    // ./src/spec.g3:645:5: '[' expression ']'
+        	    {
+        	    match(input,50,FOLLOW_50_in_synpred2693919); if (failed) return ;
+        	    pushFollow(FOLLOW_expression_in_synpred2693921);
+        	    expression();
+        	    _fsp--;
+        	    if (failed) return ;
+        	    match(input,51,FOLLOW_51_in_synpred2693923); if (failed) return ;
+
+        	    }
+        	    break;
+
+        	default :
+        	    if ( cnt210 >= 1 ) break loop210;
+        	    if (backtracking>0) {failed=true; return ;}
+                    EarlyExitException eee =
+                        new EarlyExitException(210, input);
+                    throw eee;
+            }
+            cnt210++;
+        } while (true);
+
+
+        }
+    }
+    // $ANTLR end synpred269
+
+    // $ANTLR start synpred270
+    public final void synpred270_fragment() throws RecognitionException {   
+        // ./src/spec.g3:646:9: ( arguments )
+        // ./src/spec.g3:646:9: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred2703936);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred270
+
+    // $ANTLR start synpred273
+    public final void synpred273_fragment() throws RecognitionException {   
+        // ./src/spec.g3:649:9: ( '.' 'this' )
+        // ./src/spec.g3:649:9: '.' 'this'
+        {
+        match(input,29,FOLLOW_29_in_synpred2733970); if (failed) return ;
+        match(input,124,FOLLOW_124_in_synpred2733972); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred273
+
+    // $ANTLR start synpred274
+    public final void synpred274_fragment() throws RecognitionException {   
+        // ./src/spec.g3:650:9: ( '.' 'super' arguments )
+        // ./src/spec.g3:650:9: '.' 'super' arguments
+        {
+        match(input,29,FOLLOW_29_in_synpred2743982); if (failed) return ;
+        match(input,73,FOLLOW_73_in_synpred2743984); if (failed) return ;
+        pushFollow(FOLLOW_arguments_in_synpred2743986);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred274
+
+    // $ANTLR start synpred277
+    public final void synpred277_fragment() throws RecognitionException {   
+        // ./src/spec.g3:656:10: ( arrayCreatorRest )
+        // ./src/spec.g3:656:10: arrayCreatorRest
+        {
+        pushFollow(FOLLOW_arrayCreatorRest_in_synpred2774031);
+        arrayCreatorRest();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred277
+
+    // $ANTLR start synpred278
+    public final void synpred278_fragment() throws RecognitionException {   
+        // ./src/spec.g3:660:15: ( nonWildcardTypeArguments )
+        // ./src/spec.g3:660:15: nonWildcardTypeArguments
+        {
+        pushFollow(FOLLOW_nonWildcardTypeArguments_in_synpred2784049);
+        nonWildcardTypeArguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred278
+
+    // $ANTLR start synpred279
+    public final void synpred279_fragment() throws RecognitionException {   
+        // ./src/spec.g3:661:25: ( nonWildcardTypeArguments )
+        // ./src/spec.g3:661:25: nonWildcardTypeArguments
+        {
+        pushFollow(FOLLOW_nonWildcardTypeArguments_in_synpred2794065);
+        nonWildcardTypeArguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred279
+
+    // $ANTLR start synpred280
+    public final void synpred280_fragment() throws RecognitionException {   
+        // ./src/spec.g3:661:10: ( '.' Identifier ( nonWildcardTypeArguments )? )
+        // ./src/spec.g3:661:10: '.' Identifier ( nonWildcardTypeArguments )?
+        {
+        match(input,29,FOLLOW_29_in_synpred2804061); if (failed) return ;
+        match(input,Identifier,FOLLOW_Identifier_in_synpred2804063); if (failed) return ;
+        // ./src/spec.g3:661:25: ( nonWildcardTypeArguments )?
+        int alt211=2;
+        int LA211_0 = input.LA(1);
+
+        if ( (LA211_0==32) ) {
+            alt211=1;
+        }
+        switch (alt211) {
+            case 1 :
+                // ./src/spec.g3:0:0: nonWildcardTypeArguments
+                {
+                pushFollow(FOLLOW_nonWildcardTypeArguments_in_synpred2804065);
+                nonWildcardTypeArguments();
+                _fsp--;
+                if (failed) return ;
+
+                }
+                break;
+
+        }
+
+
+        }
+    }
+    // $ANTLR end synpred280
+
+    // $ANTLR start synpred284
+    public final void synpred284_fragment() throws RecognitionException {   
         // ./src/spec.g3:672:29: ( '[' expression ']' )
         // ./src/spec.g3:672:29: '[' expression ']'
         {
-        match(input,50,FOLLOW_50_in_synpred2834135); if (failed) return ;
-        pushFollow(FOLLOW_expression_in_synpred2834137);
+        match(input,50,FOLLOW_50_in_synpred2844143); if (failed) return ;
+        pushFollow(FOLLOW_expression_in_synpred2844145);
         expression();
         _fsp--;
         if (failed) return ;
-        match(input,51,FOLLOW_51_in_synpred2834139); if (failed) return ;
+        match(input,51,FOLLOW_51_in_synpred2844147); if (failed) return ;
 
         }
     }
-    // $ANTLR end synpred283
+    // $ANTLR end synpred284
 
-    public final boolean synpred144() {
+    // $ANTLR start synpred286
+    public final void synpred286_fragment() throws RecognitionException {   
+        // ./src/spec.g3:677:14: ( classBody )
+        // ./src/spec.g3:677:14: classBody
+        {
+        pushFollow(FOLLOW_classBody_in_synpred2864179);
+        classBody();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred286
+
+    // $ANTLR start synpred288
+    public final void synpred288_fragment() throws RecognitionException {   
+        // ./src/spec.g3:694:20: ( arguments )
+        // ./src/spec.g3:694:20: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred2884250);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred288
+
+    // $ANTLR start synpred294
+    public final void synpred294_fragment() throws RecognitionException {   
+        // ./src/spec.g3:702:4: ( arguments )
+        // ./src/spec.g3:702:4: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred2944311);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred294
+
+    // $ANTLR start synpred295
+    public final void synpred295_fragment() throws RecognitionException {   
+        // ./src/spec.g3:703:22: ( arguments )
+        // ./src/spec.g3:703:22: arguments
+        {
+        pushFollow(FOLLOW_arguments_in_synpred2954323);
+        arguments();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred295
+
+    // $ANTLR start synpred296
+    public final void synpred296_fragment() throws RecognitionException {   
+        // ./src/spec.g3:707:4: ( '(' )
+        // ./src/spec.g3:707:4: '('
+        {
+        match(input,44,FOLLOW_44_in_synpred2964339); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred296
+
+    // $ANTLR start synpred297
+    public final void synpred297_fragment() throws RecognitionException {   
+        // ./src/spec.g3:707:9: ( expressionList )
+        // ./src/spec.g3:707:9: expressionList
+        {
+        pushFollow(FOLLOW_expressionList_in_synpred2974342);
+        expressionList();
+        _fsp--;
+        if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred297
+
+    // $ANTLR start synpred298
+    public final void synpred298_fragment() throws RecognitionException {   
+        // ./src/spec.g3:707:25: ( ')' )
+        // ./src/spec.g3:707:25: ')'
+        {
+        match(input,45,FOLLOW_45_in_synpred2984345); if (failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred298
+
+    public final boolean synpred298() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred144_fragment(); // can never throw exception
+            synpred298_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14352,25 +18326,11 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred92() {
+    public final boolean synpred219() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred92_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred283() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred283_fragment(); // can never throw exception
+            synpred219_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14394,11 +18354,53 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred207() {
+    public final boolean synpred294() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred207_fragment(); // can never throw exception
+            synpred294_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred295() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred295_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred296() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred296_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred297() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred297_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14436,25 +18438,11 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred260() {
+    public final boolean synpred252() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred260_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred261() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred261_fragment(); // can never throw exception
+            synpred252_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14478,11 +18466,11 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred150() {
+    public final boolean synpred256() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred150_fragment(); // can never throw exception
+            synpred256_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14492,11 +18480,123 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred250() {
+    public final boolean synpred229() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred250_fragment(); // can never throw exception
+            synpred229_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred221() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred221_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred222() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred222_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred223() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred223_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred224() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred224_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred262() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred262_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred261() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred261_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred227() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred227_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred150() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred150_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14520,39 +18620,11 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred189() {
+    public final boolean synpred268() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred189_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred267() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred267_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred188() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred188_fragment(); // can never throw exception
+            synpred268_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14590,25 +18662,11 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred234() {
+    public final boolean synpred269() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred234_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !failed;
-        input.rewind(start);
-        backtracking--;
-        failed=false;
-        return success;
-    }
-    public final boolean synpred246() {
-        backtracking++;
-        int start = input.mark();
-        try {
-            synpred246_fragment(); // can never throw exception
+            synpred269_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14632,11 +18690,375 @@ public class specParser extends Parser {
         failed=false;
         return success;
     }
-    public final boolean synpred232() {
+    public final boolean synpred220() {
         backtracking++;
         int start = input.mark();
         try {
-            synpred232_fragment(); // can never throw exception
+            synpred220_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred144() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred144_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred277() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred277_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred278() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred278_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred279() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred279_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred273() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred273_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred274() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred274_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred270() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred270_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred189() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred189_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred237() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred237_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred188() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred188_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred235() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred235_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred233() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred233_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred22() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred96() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred96_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred94() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred94_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred95() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred95_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred92() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred92_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred288() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred288_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred286() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred286_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred284() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred284_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred207() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred207_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred280() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred280_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred240() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred240_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred206() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred206_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred248() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred248_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !failed;
+        input.rewind(start);
+        backtracking--;
+        failed=false;
+        return success;
+    }
+    public final boolean synpred247() {
+        backtracking++;
+        int start = input.mark();
+        try {
+            synpred247_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -14698,7 +19120,7 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_33_in_enumConstants330 = new BitSet(new long[]{0x0000000000000020L,0x0000000000020000L});
     public static final BitSet FOLLOW_enumConstant_in_enumConstants332 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_annotations_in_enumConstant346 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_enumConstant349 = new BitSet(new long[]{0x0000120000000002L});
+    public static final BitSet FOLLOW_Identifier_in_enumConstant349 = new BitSet(new long[]{0x0002320100001FA2L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_arguments_in_enumConstant352 = new BitSet(new long[]{0x0000020000000002L});
     public static final BitSet FOLLOW_classBody_in_enumConstant357 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_enumBodyDeclarations371 = new BitSet(new long[]{0xFFC1480014000012L,0x0000000000120000L});
@@ -14817,25 +19239,25 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_variableDeclaratorRest_in_variableDeclarator1148 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_50_in_variableDeclaratorRest1161 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_51_in_variableDeclaratorRest1163 = new BitSet(new long[]{0x0024000000000002L});
-    public static final BitSet FOLLOW_53_in_variableDeclaratorRest1168 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_53_in_variableDeclaratorRest1168 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_variableInitializer_in_variableDeclaratorRest1170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_variableDeclaratorRest1177 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_53_in_variableDeclaratorRest1177 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_variableInitializer_in_variableDeclaratorRest1179 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_constantDeclaratorRest_in_constantDeclaratorsRest1199 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_33_in_constantDeclaratorsRest1202 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_constantDeclarator_in_constantDeclaratorsRest1204 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_50_in_constantDeclaratorRest1221 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_51_in_constantDeclaratorRest1223 = new BitSet(new long[]{0x0024000000000000L});
-    public static final BitSet FOLLOW_53_in_constantDeclaratorRest1227 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_53_in_constantDeclaratorRest1227 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_variableInitializer_in_constantDeclaratorRest1229 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_Identifier_in_variableDeclaratorId1241 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_50_in_variableDeclaratorId1244 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_51_in_variableDeclaratorId1246 = new BitSet(new long[]{0x0004000000000002L});
     public static final BitSet FOLLOW_arrayInitializer_in_variableInitializer1259 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expression_in_variableInitializer1269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_arrayInitializer1281 = new BitSet(new long[]{0x000210C100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_38_in_arrayInitializer1281 = new BitSet(new long[]{0x000210C100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_variableInitializer_in_arrayInitializer1284 = new BitSet(new long[]{0x0000008200000000L});
-    public static final BitSet FOLLOW_33_in_arrayInitializer1287 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_33_in_arrayInitializer1287 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_variableInitializer_in_arrayInitializer1289 = new BitSet(new long[]{0x0000008200000000L});
     public static final BitSet FOLLOW_33_in_arrayInitializer1294 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_39_in_arrayInitializer1301 = new BitSet(new long[]{0x0000000000000002L});
@@ -14912,15 +19334,15 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_annotation_in_annotations1975 = new BitSet(new long[]{0x0000000000000002L,0x0000000000020000L});
     public static final BitSet FOLLOW_81_in_annotation1987 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_typeName_in_annotation1989 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_44_in_annotation1992 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000003FAFFL});
+    public static final BitSet FOLLOW_44_in_annotation1992 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000003FAFFL});
     public static final BitSet FOLLOW_Identifier_in_annotation1995 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_annotation1997 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000003FAFFL});
+    public static final BitSet FOLLOW_53_in_annotation1997 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000003FAFFL});
     public static final BitSet FOLLOW_elementValue_in_annotation2001 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_45_in_annotation2003 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_conditionalExpression_in_elementValue2017 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_annotation_in_elementValue2024 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_elementValueArrayInitializer_in_elementValue2031 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_elementValueArrayInitializer2043 = new BitSet(new long[]{0x000210C300001FA0L,0x1F9800000003FAFFL});
+    public static final BitSet FOLLOW_38_in_elementValueArrayInitializer2043 = new BitSet(new long[]{0x000210C300001FA0L,0x3F3000000003FAFFL});
     public static final BitSet FOLLOW_elementValue_in_elementValueArrayInitializer2046 = new BitSet(new long[]{0x0000008200000000L});
     public static final BitSet FOLLOW_33_in_elementValueArrayInitializer2051 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_39_in_elementValueArrayInitializer2055 = new BitSet(new long[]{0x0000000000000002L});
@@ -14949,14 +19371,14 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_45_in_annotationMethodRest2214 = new BitSet(new long[]{0x0000000000000002L,0x0000000000040000L});
     public static final BitSet FOLLOW_defaultValue_in_annotationMethodRest2217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_variableDeclarators_in_annotationConstantRest2234 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_defaultValue2249 = new BitSet(new long[]{0x0002104100001FA0L,0x1F9800000003FAFFL});
+    public static final BitSet FOLLOW_82_in_defaultValue2249 = new BitSet(new long[]{0x0002104100001FA0L,0x3F3000000003FAFFL});
     public static final BitSet FOLLOW_elementValue_in_defaultValue2251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_adviceBody2265 = new BitSet(new long[]{0xFFC2150194001FB0L,0x1F980003EF73FAFFL});
-    public static final BitSet FOLLOW_blockStatement_in_adviceBody2267 = new BitSet(new long[]{0xFFC2150194001FB0L,0x1F980003EF73FAFFL});
+    public static final BitSet FOLLOW_83_in_adviceBody2265 = new BitSet(new long[]{0xFFC2150194001FB0L,0x3F300003EF73FAFFL});
+    public static final BitSet FOLLOW_blockStatement_in_adviceBody2267 = new BitSet(new long[]{0xFFC2150194001FB0L,0x3F300003EF73FAFFL});
     public static final BitSet FOLLOW_42_in_adviceBody2270 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_block_in_specBody2281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_block2292 = new BitSet(new long[]{0xFFC2150194001FB0L,0x1F980003EF73FAFFL});
-    public static final BitSet FOLLOW_blockStatement_in_block2294 = new BitSet(new long[]{0xFFC2150194001FB0L,0x1F980003EF73FAFFL});
+    public static final BitSet FOLLOW_84_in_block2292 = new BitSet(new long[]{0xFFC2150194001FB0L,0x3F300003EF73FAFFL});
+    public static final BitSet FOLLOW_blockStatement_in_block2294 = new BitSet(new long[]{0xFFC2150194001FB0L,0x3F300003EF73FAFFL});
     public static final BitSet FOLLOW_42_in_block2297 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_localVariableDeclaration_in_blockStatement2309 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_classOrInterfaceDeclaration_in_blockStatement2319 = new BitSet(new long[]{0x0000000000000002L});
@@ -14966,25 +19388,25 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_variableDeclarators_in_localVariableDeclaration2348 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_set_in_localVariableDeclaration2350 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_block_in_statement2368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_statement2376 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_85_in_statement2376 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_statement2378 = new BitSet(new long[]{0x0000800004000010L});
-    public static final BitSet FOLLOW_47_in_statement2381 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_47_in_statement2381 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_statement2383 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_set_in_statement2387 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_86_in_statement2401 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_parExpression_in_statement2403 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_parExpression_in_statement2403 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2405 = new BitSet(new long[]{0x0000000000000002L,0x0000000000800000L});
-    public static final BitSet FOLLOW_87_in_statement2408 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_87_in_statement2408 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2410 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_88_in_statement2420 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_44_in_statement2422 = new BitSet(new long[]{0x0402100104001FB0L,0x1F9800000003FAFFL});
+    public static final BitSet FOLLOW_44_in_statement2422 = new BitSet(new long[]{0x0402100104001FB0L,0x3F3000000003FAFFL});
     public static final BitSet FOLLOW_forControl_in_statement2424 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45_in_statement2426 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_45_in_statement2426 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2428 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_89_in_statement2436 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_parExpression_in_statement2438 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_parExpression_in_statement2438 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_statement2448 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_90_in_statement2448 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2450 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
     public static final BitSet FOLLOW_89_in_statement2452 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_parExpression_in_statement2454 = new BitSet(new long[]{0x0000000004000010L});
@@ -15005,10 +19427,10 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_60_in_statement2540 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_parExpression_in_statement2542 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_block_in_statement2544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_statement2552 = new BitSet(new long[]{0x0002100104001FB0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_94_in_statement2552 = new BitSet(new long[]{0x0002100104001FB0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_statement2554 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_set_in_statement2557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_statement2571 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_95_in_statement2571 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_statement2573 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_set_in_statement2575 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_96_in_statement2589 = new BitSet(new long[]{0x0000000004000030L});
@@ -15021,7 +19443,7 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_statementExpression_in_statement2641 = new BitSet(new long[]{0x0000000004000010L});
     public static final BitSet FOLLOW_set_in_statement2643 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_Identifier_in_statement2658 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_statement2660 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_47_in_statement2660 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_statement2662 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_catchClause_in_catches2674 = new BitSet(new long[]{0x0000000000000002L,0x0000000400000000L});
     public static final BitSet FOLLOW_catchClause_in_catches2677 = new BitSet(new long[]{0x0000000000000002L,0x0000000400000000L});
@@ -15034,9 +19456,9 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_type_in_formalParameter2713 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_variableDeclaratorId_in_formalParameter2715 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_switchBlockStatementGroup_in_switchBlockStatementGroups2729 = new BitSet(new long[]{0x0000000000000002L,0x0000000800040000L});
-    public static final BitSet FOLLOW_switchLabel_in_switchBlockStatementGroup2743 = new BitSet(new long[]{0xFFC2110194001FB2L,0x1F980003EF73FAFFL});
-    public static final BitSet FOLLOW_blockStatement_in_switchBlockStatementGroup2745 = new BitSet(new long[]{0xFFC2110194001FB2L,0x1F980003EF73FAFFL});
-    public static final BitSet FOLLOW_99_in_switchLabel2758 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_switchLabel_in_switchBlockStatementGroup2743 = new BitSet(new long[]{0xFFC2110194001FB2L,0x3F300003EF73FAFFL});
+    public static final BitSet FOLLOW_blockStatement_in_switchBlockStatementGroup2745 = new BitSet(new long[]{0xFFC2110194001FB2L,0x3F300003EF73FAFFL});
+    public static final BitSet FOLLOW_99_in_switchLabel2758 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_constantExpression_in_switchLabel2760 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_47_in_switchLabel2762 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_99_in_switchLabel2769 = new BitSet(new long[]{0x0000000000000020L});
@@ -15044,13 +19466,13 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_47_in_switchLabel2773 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_82_in_switchLabel2780 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_47_in_switchLabel2782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_moreStatementExpressions2795 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_33_in_moreStatementExpressions2795 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_statementExpression_in_moreStatementExpressions2797 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_forVarControl_in_forControl2810 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_forInit_in_forControl2817 = new BitSet(new long[]{0x0000000004000010L});
-    public static final BitSet FOLLOW_set_in_forControl2820 = new BitSet(new long[]{0x0002100104001FB0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_set_in_forControl2820 = new BitSet(new long[]{0x0002100104001FB0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_forControl2828 = new BitSet(new long[]{0x0000000004000010L});
-    public static final BitSet FOLLOW_set_in_forControl2831 = new BitSet(new long[]{0x0002100100001FA2L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_set_in_forControl2831 = new BitSet(new long[]{0x0002100100001FA2L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_forUpdate_in_forControl2839 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_58_in_forInit2851 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
     public static final BitSet FOLLOW_type_in_forInit2854 = new BitSet(new long[]{0x0000000000000020L});
@@ -15064,23 +19486,23 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_variableDeclaratorRest_in_forVarControlRest2901 = new BitSet(new long[]{0x0000000204000010L});
     public static final BitSet FOLLOW_33_in_forVarControlRest2904 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_variableDeclarator_in_forVarControlRest2906 = new BitSet(new long[]{0x0000000204000010L});
-    public static final BitSet FOLLOW_set_in_forVarControlRest2910 = new BitSet(new long[]{0x0002900100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_set_in_forVarControlRest2910 = new BitSet(new long[]{0x0002900100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_forVarControlRest2918 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_forVarControlRest2921 = new BitSet(new long[]{0x0002100100001FA2L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_47_in_forVarControlRest2921 = new BitSet(new long[]{0x0002100100001FA2L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_forUpdate_in_forVarControlRest2923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_forVarControlRest2934 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_47_in_forVarControlRest2934 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_forVarControlRest2936 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expressionList_in_forUpdate2947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_parExpression2960 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_44_in_parExpression2960 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_parExpression2962 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_45_in_parExpression2964 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expression_in_expressionList2981 = new BitSet(new long[]{0x0000000200000002L});
-    public static final BitSet FOLLOW_33_in_expressionList2984 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_33_in_expressionList2984 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_expressionList2986 = new BitSet(new long[]{0x0000000200000002L});
     public static final BitSet FOLLOW_expression_in_statementExpression3002 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_expression_in_constantExpression3014 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_conditionalExpression_in_expression3026 = new BitSet(new long[]{0x0020000500000002L,0x00000FF000000000L});
-    public static final BitSet FOLLOW_assignmentOperator_in_expression3029 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_assignmentOperator_in_expression3029 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_expression3031 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_53_in_assignmentOperator3045 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_100_in_assignmentOperator3055 = new BitSet(new long[]{0x0000000000000002L});
@@ -15102,195 +19524,204 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_34_in_assignmentOperator3167 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_53_in_assignmentOperator3169 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_conditionalOrExpression_in_conditionalExpression3185 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
-    public static final BitSet FOLLOW_72_in_conditionalExpression3189 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_72_in_conditionalExpression3189 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_conditionalExpression3191 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_47_in_conditionalExpression3193 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_47_in_conditionalExpression3193 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_conditionalExpression3195 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression3214 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
-    public static final BitSet FOLLOW_108_in_conditionalOrExpression3218 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_108_in_conditionalOrExpression3218 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_conditionalAndExpression_in_conditionalOrExpression3220 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
     public static final BitSet FOLLOW_inclusiveOrExpression_in_conditionalAndExpression3239 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
-    public static final BitSet FOLLOW_109_in_conditionalAndExpression3243 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_109_in_conditionalAndExpression3243 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_inclusiveOrExpression_in_conditionalAndExpression3245 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000000L});
     public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression3264 = new BitSet(new long[]{0x0000000000000002L,0x0000400000000000L});
-    public static final BitSet FOLLOW_110_in_inclusiveOrExpression3268 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_110_in_inclusiveOrExpression3268 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_exclusiveOrExpression_in_inclusiveOrExpression3270 = new BitSet(new long[]{0x0000000000000002L,0x0000400000000000L});
     public static final BitSet FOLLOW_andExpression_in_exclusiveOrExpression3289 = new BitSet(new long[]{0x0000000000000002L,0x0000800000000000L});
-    public static final BitSet FOLLOW_111_in_exclusiveOrExpression3293 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_111_in_exclusiveOrExpression3293 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_andExpression_in_exclusiveOrExpression3295 = new BitSet(new long[]{0x0000000000000002L,0x0000800000000000L});
     public static final BitSet FOLLOW_equalityExpression_in_andExpression3314 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_36_in_andExpression3318 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_36_in_andExpression3318 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_equalityExpression_in_andExpression3320 = new BitSet(new long[]{0x0000001000000002L});
-    public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression3339 = new BitSet(new long[]{0x0000000000000002L,0x0003000000000000L});
-    public static final BitSet FOLLOW_set_in_equalityExpression3343 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression3351 = new BitSet(new long[]{0x0000000000000002L,0x0003000000000000L});
-    public static final BitSet FOLLOW_relationalExpression_in_instanceOfExpression3370 = new BitSet(new long[]{0x0000000000000002L,0x0004000000000000L});
-    public static final BitSet FOLLOW_114_in_instanceOfExpression3373 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_type_in_instanceOfExpression3375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_shiftExpression_in_relationalExpression3393 = new BitSet(new long[]{0x0000000500000002L});
-    public static final BitSet FOLLOW_relationalOp_in_relationalExpression3397 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_shiftExpression_in_relationalExpression3399 = new BitSet(new long[]{0x0000000500000002L});
-    public static final BitSet FOLLOW_32_in_relationalOp3415 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_relationalOp3417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_relationalOp3421 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_relationalOp3423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_relationalOp3427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_relationalOp3431 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_additiveExpression_in_shiftExpression3448 = new BitSet(new long[]{0x0000000500000002L});
-    public static final BitSet FOLLOW_shiftOp_in_shiftExpression3452 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_additiveExpression_in_shiftExpression3454 = new BitSet(new long[]{0x0000000500000002L});
-    public static final BitSet FOLLOW_32_in_shiftOp3478 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32_in_shiftOp3480 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_shiftOp3484 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_shiftOp3486 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_shiftOp3488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression3339 = new BitSet(new long[]{0x0000000000000002L,0x0007000000000000L});
+    public static final BitSet FOLLOW_112_in_equalityExpression3345 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_113_in_equalityExpression3347 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_113_in_equalityExpression3352 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_114_in_equalityExpression3356 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_instanceOfExpression_in_equalityExpression3359 = new BitSet(new long[]{0x0000000000000002L,0x0007000000000000L});
+    public static final BitSet FOLLOW_relationalExpression_in_instanceOfExpression3378 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L});
+    public static final BitSet FOLLOW_115_in_instanceOfExpression3381 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_type_in_instanceOfExpression3383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_shiftExpression_in_relationalExpression3401 = new BitSet(new long[]{0x0000000500000002L});
+    public static final BitSet FOLLOW_relationalOp_in_relationalExpression3405 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_shiftExpression_in_relationalExpression3407 = new BitSet(new long[]{0x0000000500000002L});
+    public static final BitSet FOLLOW_32_in_relationalOp3423 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_53_in_relationalOp3425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_relationalOp3429 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_53_in_relationalOp3431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_relationalOp3435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_relationalOp3439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_additiveExpression_in_shiftExpression3456 = new BitSet(new long[]{0x0000000500000002L});
+    public static final BitSet FOLLOW_shiftOp_in_shiftExpression3460 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_additiveExpression_in_shiftExpression3462 = new BitSet(new long[]{0x0000000500000002L});
+    public static final BitSet FOLLOW_32_in_shiftOp3486 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_32_in_shiftOp3488 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_shiftOp3492 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_shiftOp3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression3512 = new BitSet(new long[]{0x0000000000000002L,0x0018000000000000L});
-    public static final BitSet FOLLOW_set_in_additiveExpression3516 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression3524 = new BitSet(new long[]{0x0000000000000002L,0x0018000000000000L});
-    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression3543 = new BitSet(new long[]{0x0000000040000002L,0x0060000000000000L});
-    public static final BitSet FOLLOW_set_in_multiplicativeExpression3547 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression3561 = new BitSet(new long[]{0x0000000040000002L,0x0060000000000000L});
-    public static final BitSet FOLLOW_115_in_unaryExpression3581 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression3583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_unaryExpression3591 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression3593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_unaryExpression3603 = new BitSet(new long[]{0x0002100100001FA0L,0x180000000001FAFFL});
-    public static final BitSet FOLLOW_primary_in_unaryExpression3605 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_unaryExpression3615 = new BitSet(new long[]{0x0002100100001FA0L,0x180000000001FAFFL});
-    public static final BitSet FOLLOW_primary_in_unaryExpression3617 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression3627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_unaryExpressionNotPlusMinus3646 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_unaryExpressionNotPlusMinus3657 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_castExpression_in_unaryExpressionNotPlusMinus3669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primary_in_unaryExpressionNotPlusMinus3679 = new BitSet(new long[]{0x0004000020000002L,0x0180000000000000L});
-    public static final BitSet FOLLOW_selector_in_unaryExpressionNotPlusMinus3681 = new BitSet(new long[]{0x0004000020000002L,0x0180000000000000L});
-    public static final BitSet FOLLOW_set_in_unaryExpressionNotPlusMinus3684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_castExpression3707 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_primitiveType_in_castExpression3709 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45_in_castExpression3711 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_castExpression3713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_castExpression3722 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_castExpression3725 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_type_in_castExpression3729 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45_in_castExpression3732 = new BitSet(new long[]{0x0002100100001FA0L,0x1E0000000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_castExpression3734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_parExpression_in_primary3751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_primary3761 = new BitSet(new long[]{0x0000000000000020L,0x0800000000000200L});
-    public static final BitSet FOLLOW_explicitGenericInvocationSuffix_in_primary3772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_primary3776 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_arguments_in_primary3778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_primary3789 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_arguments_in_primary3792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_primary3804 = new BitSet(new long[]{0x0000100020000000L});
-    public static final BitSet FOLLOW_superSuffix_in_primary3806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_literal_in_primary3816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_primary3826 = new BitSet(new long[]{0x0000000100000020L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_creator_in_primary3828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Identifier_in_primary3838 = new BitSet(new long[]{0x0004100020000002L});
-    public static final BitSet FOLLOW_29_in_primary3841 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_primary3843 = new BitSet(new long[]{0x0004100020000002L});
-    public static final BitSet FOLLOW_identifierSuffix_in_primary3848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_primitiveType_in_primary3860 = new BitSet(new long[]{0x0004000020000000L});
-    public static final BitSet FOLLOW_50_in_primary3863 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_primary3865 = new BitSet(new long[]{0x0004000020000000L});
-    public static final BitSet FOLLOW_29_in_primary3869 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_125_in_primary3871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_primary3881 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_primary3883 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_125_in_primary3885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_identifierSuffix3897 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_identifierSuffix3899 = new BitSet(new long[]{0x0004000020000000L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3903 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_125_in_identifierSuffix3905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_identifierSuffix3911 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_identifierSuffix3913 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_identifierSuffix3915 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_arguments_in_identifierSuffix3928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3938 = new BitSet(new long[]{0x0000000000000000L,0x2000000000000000L});
-    public static final BitSet FOLLOW_125_in_identifierSuffix3940 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3950 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_explicitGenericInvocation_in_identifierSuffix3952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3962 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
-    public static final BitSet FOLLOW_123_in_identifierSuffix3964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3974 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_identifierSuffix3976 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_arguments_in_identifierSuffix3978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_identifierSuffix3988 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_126_in_identifierSuffix3990 = new BitSet(new long[]{0x0000000100000020L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_identifierSuffix3993 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_innerCreator_in_identifierSuffix3997 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_creator4009 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_createdName_in_creator4012 = new BitSet(new long[]{0x0004100000000000L});
-    public static final BitSet FOLLOW_arrayCreatorRest_in_creator4023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_classCreatorRest_in_creator4027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Identifier_in_createdName4039 = new BitSet(new long[]{0x0000000120000002L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_createdName4041 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_29_in_createdName4053 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_createdName4055 = new BitSet(new long[]{0x0000000120000002L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_createdName4057 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_primitiveType_in_createdName4068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Identifier_in_innerCreator4080 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_classCreatorRest_in_innerCreator4082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_arrayCreatorRest4093 = new BitSet(new long[]{0x000A100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_51_in_arrayCreatorRest4107 = new BitSet(new long[]{0x0004004000000000L});
-    public static final BitSet FOLLOW_50_in_arrayCreatorRest4110 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_arrayCreatorRest4112 = new BitSet(new long[]{0x0004004000000000L});
-    public static final BitSet FOLLOW_arrayInitializer_in_arrayCreatorRest4116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_arrayCreatorRest4130 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_arrayCreatorRest4132 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_50_in_arrayCreatorRest4135 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_arrayCreatorRest4137 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_arrayCreatorRest4139 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_50_in_arrayCreatorRest4144 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_arrayCreatorRest4146 = new BitSet(new long[]{0x0004000000000002L});
-    public static final BitSet FOLLOW_arguments_in_classCreatorRest4169 = new BitSet(new long[]{0x0000020000000002L});
-    public static final BitSet FOLLOW_classBody_in_classCreatorRest4171 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_explicitGenericInvocation4184 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000200L});
-    public static final BitSet FOLLOW_explicitGenericInvocationSuffix_in_explicitGenericInvocation4186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_nonWildcardTypeArguments4198 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_typeList_in_nonWildcardTypeArguments4200 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_nonWildcardTypeArguments4202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_explicitGenericInvocationSuffix4214 = new BitSet(new long[]{0x0000100020000000L});
-    public static final BitSet FOLLOW_superSuffix_in_explicitGenericInvocationSuffix4216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_Identifier_in_explicitGenericInvocationSuffix4223 = new BitSet(new long[]{0x0000100000000000L});
-    public static final BitSet FOLLOW_arguments_in_explicitGenericInvocationSuffix4225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_selector4237 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_selector4239 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_arguments_in_selector4242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_selector4251 = new BitSet(new long[]{0x0000000000000000L,0x0800000000000000L});
-    public static final BitSet FOLLOW_123_in_selector4253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_selector4260 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_73_in_selector4262 = new BitSet(new long[]{0x0000100020000000L});
-    public static final BitSet FOLLOW_superSuffix_in_selector4264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_selector4271 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
-    public static final BitSet FOLLOW_126_in_selector4273 = new BitSet(new long[]{0x0000000100000020L});
-    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_selector4276 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_innerCreator_in_selector4280 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_selector4287 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_selector4289 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_selector4291 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_arguments_in_superSuffix4303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_superSuffix4310 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_superSuffix4312 = new BitSet(new long[]{0x0000100000000002L});
-    public static final BitSet FOLLOW_arguments_in_superSuffix4315 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_arguments4331 = new BitSet(new long[]{0x0002300100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expressionList_in_arguments4333 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45_in_arguments4336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_shiftOp3494 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_shiftOp3496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_shiftOp3500 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_shiftOp3502 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression3520 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
+    public static final BitSet FOLLOW_set_in_additiveExpression3524 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_additiveExpression3532 = new BitSet(new long[]{0x0000000000000002L,0x0030000000000000L});
+    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression3551 = new BitSet(new long[]{0x0000000040000002L,0x00C0000000000000L});
+    public static final BitSet FOLLOW_set_in_multiplicativeExpression3555 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_multiplicativeExpression3569 = new BitSet(new long[]{0x0000000040000002L,0x00C0000000000000L});
+    public static final BitSet FOLLOW_116_in_unaryExpression3589 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression3591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_unaryExpression3599 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpression3601 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_unaryExpression3611 = new BitSet(new long[]{0x0002100100001FA0L,0x300000000001FAFFL});
+    public static final BitSet FOLLOW_primary_in_unaryExpression3613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_unaryExpression3623 = new BitSet(new long[]{0x0002100100001FA0L,0x300000000001FAFFL});
+    public static final BitSet FOLLOW_primary_in_unaryExpression3625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_unaryExpression3635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_unaryExpressionNotPlusMinus3654 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3656 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_unaryExpressionNotPlusMinus3665 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_unaryExpressionNotPlusMinus3667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_castExpression_in_unaryExpressionNotPlusMinus3677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primary_in_unaryExpressionNotPlusMinus3687 = new BitSet(new long[]{0x0004000020000002L,0x0300000000000000L});
+    public static final BitSet FOLLOW_selector_in_unaryExpressionNotPlusMinus3689 = new BitSet(new long[]{0x0004000020000002L,0x0300000000000000L});
+    public static final BitSet FOLLOW_set_in_unaryExpressionNotPlusMinus3692 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_castExpression3715 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_primitiveType_in_castExpression3717 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_45_in_castExpression3719 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_castExpression3721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_castExpression3730 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_castExpression3733 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_type_in_castExpression3737 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_45_in_castExpression3740 = new BitSet(new long[]{0x0002100100001FA0L,0x3C0000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpressionNotPlusMinus_in_castExpression3742 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_parExpression_in_primary3759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_primary3769 = new BitSet(new long[]{0x0000000000000020L,0x1000000000000200L});
+    public static final BitSet FOLLOW_explicitGenericInvocationSuffix_in_primary3780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_primary3784 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_primary3786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_primary3797 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_primary3800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_primary3812 = new BitSet(new long[]{0x0002300120001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_superSuffix_in_primary3814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_literal_in_primary3824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_primary3834 = new BitSet(new long[]{0x0000000100000020L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_creator_in_primary3836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_primary3846 = new BitSet(new long[]{0x0006300120001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_29_in_primary3849 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_primary3851 = new BitSet(new long[]{0x0006300120001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_identifierSuffix_in_primary3856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_primitiveType_in_primary3868 = new BitSet(new long[]{0x0004000020000000L});
+    public static final BitSet FOLLOW_50_in_primary3871 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_primary3873 = new BitSet(new long[]{0x0004000020000000L});
+    public static final BitSet FOLLOW_29_in_primary3877 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
+    public static final BitSet FOLLOW_126_in_primary3879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_primary3889 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_primary3891 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
+    public static final BitSet FOLLOW_126_in_primary3893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_identifierSuffix3905 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_identifierSuffix3907 = new BitSet(new long[]{0x0004000020000000L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3911 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
+    public static final BitSet FOLLOW_126_in_identifierSuffix3913 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_identifierSuffix3919 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_identifierSuffix3921 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_identifierSuffix3923 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_arguments_in_identifierSuffix3936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3946 = new BitSet(new long[]{0x0000000000000000L,0x4000000000000000L});
+    public static final BitSet FOLLOW_126_in_identifierSuffix3948 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3958 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_explicitGenericInvocation_in_identifierSuffix3960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3970 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_124_in_identifierSuffix3972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3982 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_identifierSuffix3984 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_identifierSuffix3986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_identifierSuffix3996 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_127_in_identifierSuffix3998 = new BitSet(new long[]{0x0000000100000020L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_identifierSuffix4001 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_innerCreator_in_identifierSuffix4005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_creator4017 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_createdName_in_creator4020 = new BitSet(new long[]{0x0006320100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arrayCreatorRest_in_creator4031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_classCreatorRest_in_creator4035 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_createdName4047 = new BitSet(new long[]{0x0000000120000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_createdName4049 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_29_in_createdName4061 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_createdName4063 = new BitSet(new long[]{0x0000000120000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_createdName4065 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_primitiveType_in_createdName4076 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_innerCreator4088 = new BitSet(new long[]{0x0002320100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_classCreatorRest_in_innerCreator4090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_arrayCreatorRest4101 = new BitSet(new long[]{0x000A100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_51_in_arrayCreatorRest4115 = new BitSet(new long[]{0x0004004000000000L});
+    public static final BitSet FOLLOW_50_in_arrayCreatorRest4118 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_arrayCreatorRest4120 = new BitSet(new long[]{0x0004004000000000L});
+    public static final BitSet FOLLOW_arrayInitializer_in_arrayCreatorRest4124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_arrayCreatorRest4138 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_arrayCreatorRest4140 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_50_in_arrayCreatorRest4143 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_arrayCreatorRest4145 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_arrayCreatorRest4147 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_50_in_arrayCreatorRest4152 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_arrayCreatorRest4154 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_arguments_in_classCreatorRest4177 = new BitSet(new long[]{0x0000020000000002L});
+    public static final BitSet FOLLOW_classBody_in_classCreatorRest4179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_explicitGenericInvocation4192 = new BitSet(new long[]{0x0000000000000020L,0x0000000000000200L});
+    public static final BitSet FOLLOW_explicitGenericInvocationSuffix_in_explicitGenericInvocation4194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_nonWildcardTypeArguments4206 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_typeList_in_nonWildcardTypeArguments4208 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_nonWildcardTypeArguments4210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_explicitGenericInvocationSuffix4222 = new BitSet(new long[]{0x0002300120001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_superSuffix_in_explicitGenericInvocationSuffix4224 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_Identifier_in_explicitGenericInvocationSuffix4231 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_explicitGenericInvocationSuffix4233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_selector4245 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_selector4247 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_selector4250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_selector4259 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_124_in_selector4261 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_selector4268 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_selector4270 = new BitSet(new long[]{0x0002300120001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_superSuffix_in_selector4272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_selector4279 = new BitSet(new long[]{0x0000000000000000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_127_in_selector4281 = new BitSet(new long[]{0x0000000100000020L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_selector4284 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_innerCreator_in_selector4288 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_selector4295 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_selector4297 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_selector4299 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_superSuffix4311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_superSuffix4318 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_superSuffix4320 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_superSuffix4323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_arguments4339 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expressionList_in_arguments4342 = new BitSet(new long[]{0x0000200000000002L});
+    public static final BitSet FOLLOW_45_in_arguments4345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred22352 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_29_in_synpred921444 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_Identifier_in_synpred921446 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeArguments_in_synpred941508 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_typeArguments_in_synpred951518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred961513 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_synpred961515 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_typeArguments_in_synpred961518 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_interfaceDeclaration_in_synpred1442166 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_localVariableDeclaration_in_synpred1502309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_synpred1582408 = new BitSet(new long[]{0x1002100104001FB0L,0x1F980003EF71FAFFL});
+    public static final BitSet FOLLOW_87_in_synpred1582408 = new BitSet(new long[]{0x1002100104001FB0L,0x3F300003EF71FAFFL});
     public static final BitSet FOLLOW_statement_in_synpred1582410 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_catches_in_synpred1642482 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
     public static final BitSet FOLLOW_92_in_synpred1642484 = new BitSet(new long[]{0x0000000000000000L,0x0000000000100000L});
     public static final BitSet FOLLOW_block_in_synpred1642486 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_catches_in_synpred1652496 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_99_in_synpred1882758 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_99_in_synpred1882758 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_constantExpression_in_synpred1882760 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_47_in_synpred1882762 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_99_in_synpred1892769 = new BitSet(new long[]{0x0000000000000020L});
@@ -15300,32 +19731,83 @@ public class specParser extends Parser {
     public static final BitSet FOLLOW_58_in_synpred1982851 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
     public static final BitSet FOLLOW_type_in_synpred1982854 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_variableDeclarators_in_synpred1982856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assignmentOperator_in_synpred2073029 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
+    public static final BitSet FOLLOW_33_in_synpred2062984 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2062986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_assignmentOperator_in_synpred2073029 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
     public static final BitSet FOLLOW_expression_in_synpred2073031 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_34_in_synpred2183149 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_34_in_synpred2183151 = new BitSet(new long[]{0x0020000000000000L});
     public static final BitSet FOLLOW_53_in_synpred2183153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_relationalOp_in_synpred2283397 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_shiftExpression_in_synpred2283399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_shiftOp_in_synpred2323452 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_additiveExpression_in_synpred2323454 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_synpred2343484 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_synpred2343486 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_synpred2343488 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_castExpression_in_synpred2463669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_synpred2503707 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FFL});
-    public static final BitSet FOLLOW_primitiveType_in_synpred2503709 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_45_in_synpred2503711 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_unaryExpression_in_synpred2503713 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_synpred2513725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_synpred2603841 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_Identifier_in_synpred2603843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_identifierSuffix_in_synpred2613848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_synpred2673911 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_synpred2673913 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_synpred2673915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_synpred2834135 = new BitSet(new long[]{0x0002100100001FA0L,0x1F9800000001FAFFL});
-    public static final BitSet FOLLOW_expression_in_synpred2834137 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_51_in_synpred2834139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_synpred2193189 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2193191 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_47_in_synpred2193193 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2193195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_synpred2203218 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_conditionalAndExpression_in_synpred2203220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_synpred2213243 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_inclusiveOrExpression_in_synpred2213245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_synpred2223268 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_exclusiveOrExpression_in_synpred2223270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_synpred2233293 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_andExpression_in_synpred2233295 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_synpred2243318 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_equalityExpression_in_synpred2243320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_synpred2273345 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
+    public static final BitSet FOLLOW_113_in_synpred2273347 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_113_in_synpred2273352 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_114_in_synpred2273356 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_instanceOfExpression_in_synpred2273359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_synpred2283381 = new BitSet(new long[]{0x0000000000000020L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_type_in_synpred2283383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_relationalOp_in_synpred2293405 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_shiftExpression_in_synpred2293407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_shiftOp_in_synpred2333460 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_additiveExpression_in_synpred2333462 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_synpred2353492 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_synpred2353494 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_synpred2353496 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred2373524 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_multiplicativeExpression_in_synpred2373532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_set_in_synpred2403555 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_synpred2403569 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_castExpression_in_synpred2473677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_selector_in_synpred2483689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_synpred2513715 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FFL});
+    public static final BitSet FOLLOW_primitiveType_in_synpred2513717 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_45_in_synpred2513719 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_unaryExpression_in_synpred2513721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_synpred2523733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred2563800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred2613849 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_synpred2613851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_identifierSuffix_in_synpred2623856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_synpred2683919 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2683921 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_synpred2683923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_synpred2693919 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2693921 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_synpred2693923 = new BitSet(new long[]{0x0004000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred2703936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred2733970 = new BitSet(new long[]{0x0000000000000000L,0x1000000000000000L});
+    public static final BitSet FOLLOW_124_in_synpred2733972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred2743982 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_73_in_synpred2743984 = new BitSet(new long[]{0x0002300100001FA2L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_arguments_in_synpred2743986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arrayCreatorRest_in_synpred2774031 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_synpred2784049 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_synpred2794065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_synpred2804061 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_Identifier_in_synpred2804063 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_nonWildcardTypeArguments_in_synpred2804065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_synpred2844143 = new BitSet(new long[]{0x0002100100001FA0L,0x3F3000000001FAFFL});
+    public static final BitSet FOLLOW_expression_in_synpred2844145 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_51_in_synpred2844147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_classBody_in_synpred2864179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred2884250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred2944311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_arguments_in_synpred2954323 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_synpred2964339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expressionList_in_synpred2974342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_synpred2984345 = new BitSet(new long[]{0x0000000000000002L});
 
 }
