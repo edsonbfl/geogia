@@ -27,7 +27,7 @@ importDeclaration
 	
 typeDeclaration
 	:	classOrInterfaceDeclaration
-    |   ';'
+    |   (';' | EOL)
 	;
 	
 classOrInterfaceDeclaration
@@ -71,7 +71,7 @@ enumConstant
 	;
 	
 enumBodyDeclarations
-	:	';' (classBodyDeclaration)*
+	:	(';' | EOL) (classBodyDeclaration)*
 	;
 	
 interfaceDeclaration
@@ -96,7 +96,7 @@ interfaceBody
 	;
 
 classBodyDeclaration
-	:	';'
+	:	(';' | EOL)
 	|	'static'? block
 	|	modifier* memberDecl
 	;
@@ -149,12 +149,12 @@ methodDeclaration
 	;
 
 fieldDeclaration
-	:	type variableDeclarators ';'
+	:	type variableDeclarators (';' | EOL)
 	;
 		
 interfaceBodyDeclaration
 	:	modifier* interfaceMemberDecl
-	|   ';'
+	|   (';' | EOL)
 	;
 
 interfaceMemberDecl
@@ -170,7 +170,7 @@ interfaceMethodOrFieldDecl
 	;
 	
 interfaceMethodOrFieldRest
-	:	constantDeclaratorsRest ';'
+	:	constantDeclaratorsRest (';' | EOL)
 	|	interfaceMethodDeclaratorRest
 	;
 	
@@ -178,19 +178,19 @@ methodDeclaratorRest
 	:	formalParameters ('[' ']')*
         ('throws' qualifiedNameList)?
         (   methodBody
-        |   ';'
+        |   (';' | EOL)
         )
 	;
 	
 voidMethodDeclaratorRest
 	:	formalParameters ('throws' qualifiedNameList)?
         (   methodBody
-        |   ';'
+        |   (';' | EOL)
         )
 	;
 	
 interfaceMethodDeclaratorRest
-	:	formalParameters ('[' ']')* ('throws' qualifiedNameList)? ';'
+	:	formalParameters ('[' ']')* ('throws' qualifiedNameList)? (';' | EOL)
 	;
 	
 interfaceGenericMethodDecl
@@ -199,7 +199,7 @@ interfaceGenericMethodDecl
 	;
 	
 voidInterfaceMethodDeclaratorRest
-	:	formalParameters ('throws' qualifiedNameList)? ';'
+	:	formalParameters ('throws' qualifiedNameList)? (';' | EOL)
 	;
 	
 constructorDeclaratorRest
@@ -388,7 +388,7 @@ annotationTypeElementDeclaration
 	;
 	
 annotationTypeElementRest
-	:	type Identifier annotationMethodOrConstantRest ';'
+	:	type Identifier annotationMethodOrConstantRest (';' | EOL)
 	|   classDeclaration
 	|   interfaceDeclaration
 	|   enumDeclaration
@@ -433,16 +433,16 @@ blockStatement
 	;
 	
 localVariableDeclaration
-	:	('final')? type variableDeclarators ';'
+	:	('final')? type variableDeclarators (';' | EOL)
 	;
 	
 statement
 	: block
-    | 'assert' expression (':' expression)? ';'
+    | 'assert' expression (':' expression)? (';' | EOL)
     | 'if' parExpression statement ('else' statement)?
     | 'for' '(' forControl ')' statement
     | 'while' parExpression statement
-    | 'do' statement 'while' parExpression ';'
+    | 'do' statement 'while' parExpression (';' | EOL)
     | 'try' block
       (	catches 'finally' block
       | catches
@@ -450,12 +450,12 @@ statement
       )
     | 'switch' parExpression '{' switchBlockStatementGroups '}'
     | 'synchronized' parExpression block
-    | 'return' expression? ';'
-    | 'throw' expression ';'
-    | 'break' Identifier? ';'
-    | 'continue' Identifier? ';'
-    | ';'
-    | statementExpression ';'
+    | 'return' expression? (';' | EOL)
+    | 'throw' expression (';' | EOL)
+    | 'break' Identifier? (';' | EOL)
+    | 'continue' Identifier? (';' | EOL)
+    | (';' | EOL)
+    | statementExpression (';' | EOL )
     | Identifier ':' statement
 	;
 	
@@ -491,7 +491,7 @@ moreStatementExpressions
 
 forControl
 	:	forVarControl
-	|   forInit? ';' expression? ';' forUpdate?
+	|   forInit? (';' | EOL) expression? (';' | EOL) forUpdate?
 	;
 
 forInit
@@ -504,7 +504,7 @@ forVarControl
 	;
 
 forVarControlRest
-	:	variableDeclaratorRest (',' variableDeclarator)* ';' expression? ':' forUpdate?
+	:	variableDeclaratorRest (',' variableDeclarator)* (';' | EOL) expression? ':' forUpdate?
     |   ':' expression
 	;
 
@@ -634,7 +634,7 @@ primary
     |   'this' (arguments)?
     |   'super' superSuffix
     |   literal
-    |   'new' creator
+    |   'สร้าง' creator
     |   Identifier ('.' Identifier)* (identifierSuffix)?
     |   primitiveType ('[' ']')* '.' 'class'
     |   'void' '.' 'class'
@@ -810,6 +810,8 @@ JavaIDDigit
        '\u0ed0'..'\u0ed9' |
        '\u1040'..'\u1049'
    ;
+
+EOL :  ('\r' | '\n') ;
 
 WS  :  (' '|'\r'|'\t'|'\u000C'|'\n') {$channel=HIDDEN;}
     ;
