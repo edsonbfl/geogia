@@ -574,7 +574,7 @@ andExpression
 	;
 
 equalityExpression
-    :   instanceOfExpression ( ('==' | '!=') instanceOfExpression )*
+    :   instanceOfExpression ( (('ควร' '==') | '==' | '!=') instanceOfExpression )*
 	;
 
 instanceOfExpression
@@ -704,22 +704,22 @@ superSuffix
     ;
 
 arguments
-	:	'(' expressionList? ')'
+	:	'('? expressionList? ')'?
 	;
 
 // LEXER
 
 HexLiteral : '0' ('x'|'X') HexDigit+ IntegerTypeSuffix? ;
 
-DecimalLiteral : ('0' | '1'..'9' '0'..'9'*) IntegerTypeSuffix? ;
+DecimalLiteral : ('0' | '1'..'9' '0'..'9'*) IntegerTypeSuffix?;
 
-OctalLiteral : '0' ('0'..'7')+ IntegerTypeSuffix? ;
+OctalLiteral : '0' ('0'..'7')+ IntegerTypeSuffix?;
 
 fragment
 HexDigit : ('0'..'9'|'a'..'f'|'A'..'F') ;
 
 fragment
-IntegerTypeSuffix : ('l'|'L') ;
+IntegerTypeSuffix : ('l'|'L'|('.'Identifier)) ;
 
 FloatingPointLiteral
     :   ('0'..'9')+ '.' ('0'..'9')* Exponent? FloatTypeSuffix?

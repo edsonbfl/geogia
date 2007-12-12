@@ -5,7 +5,7 @@ import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
 
 
-public class Test1 {
+public class Test_HPS_001 {
 
     public static void main(String args[]) throws IOException {
         specLexer lex = new specLexer(new ANTLRFileStream("C:\\workspace.europa\\spec\\input\\HPS_01.spec", "UTF-8"));
