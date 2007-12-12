@@ -88,7 +88,7 @@ typeList
 	;
 	
 classBody
-	:	'ดังนี้' classBodyDeclaration* 'จบ' (';' | EOL)
+	:	'ดังนี้' classBodyDeclaration* 'จบ' (';' | EOL)?
 	;
 	
 interfaceBody
@@ -132,7 +132,7 @@ symbol
 	;	
 	
 specDeclaration
-	:	'กำหนดให้' Identifier specBody
+	:	'กำหนดให้' (Identifier)+ specBody
 	;
 	
 genericMethodOrConstructorDecl
