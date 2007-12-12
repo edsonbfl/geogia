@@ -18,11 +18,11 @@ specUnit
 	;
 
 packageDeclaration
-	:	'แพ็คเกจ' qualifiedName 
+	:	'แพ็คเกจ' qualifiedName (';' | EOL)
 	;
 	
 importDeclaration
-	:	'นำเข้า' 'static'? Identifier ('.' Identifier)* ('.' '*')?
+	:	'นำเข้า' 'static'? Identifier ('.' Identifier)* ('.' '*')? (';' | EOL)
 	;
 	
 typeDeclaration
@@ -88,7 +88,7 @@ typeList
 	;
 	
 classBody
-	:	'ดังนี้' classBodyDeclaration* 'จบ'
+	:	'ดังนี้' classBodyDeclaration* 'จบ' (';' | EOL)
 	;
 	
 interfaceBody
