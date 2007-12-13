@@ -61,12 +61,19 @@
         </java>
     </target>
 	
-    <target name="Test1" depends="GenGrammar,build">
-        <java classname="Test_HPS_001" failonerror="true" fork="yes">
+	<target name="test" depends="GenGrammar,build">
+		<antcall target="test_stub">
+			<param name="spec" value="HPS_01.spec"/> 
+		</antcall>
+		<antcall target="test_stub">
+			<param name="spec" value="test_001.spec"/> 
+		</antcall>
+	</target>
+		
+    <target name="test_stub">
+        <java classname="Test" failonerror="true" fork="yes">
+        	<arg value="${spec}"/>
             <classpath refid="spec.classpath"/>
         </java>
-        <java classname="Test_001" failonerror="true" fork="yes">
-            <classpath refid="spec.classpath"/>
-        </java>    	
     </target>
 </project>
