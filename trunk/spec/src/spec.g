@@ -329,7 +329,9 @@ qualifiedName
 	;
 	
 literal	
-	:   integerLiteral
+	:   mapLiteral
+	|	listLiteral
+	|	integerLiteral
     |   FloatingPointLiteral
     |   CharacterLiteral
     |   StringLiteral
@@ -528,8 +530,10 @@ statementExpression
 	
 constantExpression
 	:	expression
+//	|	mapExpression
+//	| 	listExpression
 	;
-	
+		
 expression
 	:	conditionalExpression (assignmentOperator expression)?
 	;
@@ -639,6 +643,19 @@ primary
     |   primitiveType ('[' ']')* '.' 'class'
     |   'void' '.' 'class'
 	;
+	
+mapLiteral
+	:	'[' (mapEntry)+ ']'
+	|	'[' ':' ']'
+	;	
+	
+mapEntry
+	:	Identifier ':' expression
+	;
+	
+listLiteral
+	:	'[' (expressionList)? ']'
+	;	
 
 identifierSuffix
 	:	('[' ']')+ '.' 'class'
