@@ -530,8 +530,6 @@ statementExpression
 	
 constantExpression
 	:	expression
-//	|	mapExpression
-//	| 	listExpression
 	;
 		
 expression
@@ -578,7 +576,7 @@ andExpression
 	;
 
 equalityExpression
-    :   instanceOfExpression ( (('ควร' '==') | '==' | '!=') instanceOfExpression )*
+    :   instanceOfExpression ( (('ควร' '==') | ('ควร' '!=') | '==' | '!=') instanceOfExpression )*
 	;
 
 instanceOfExpression
@@ -645,12 +643,16 @@ primary
 	;
 	
 mapLiteral
-	:	'[' (mapEntry)+ ']'
-	|	'[' ':' ']'
+	:	'[' ':' ']'
+	|	'[' (mapEntryList)+ ']'
 	;	
 	
+mapEntryList
+	:	mapEntry (',' mapEntry)*
+	;
+	
 mapEntry
-	:	Identifier ':' expression
+	:   Identifier ':' expression
 	;
 	
 listLiteral
