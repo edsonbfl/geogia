@@ -10,11 +10,29 @@ options {
 protected boolean enumIsKeyword = false;
 }
 
+@parser::members {
+	public void emitErrorMessage(String arg0) {
+		StringBuffer s = new StringBuffer();
+		// System.out.println(arg0);
+		for(int i=0;i<arg0.length();i++) {
+			if(arg0.charAt(i)=='\\' && arg0.charAt(i+1)=='u'){
+				String e = "0x"+arg0.charAt(i+2)+arg0.charAt(i+3)+arg0.charAt(i+4)+arg0.charAt(i+5);
+				s.append((char)Integer.decode(e).intValue());
+				i=i+5;				
+			}
+			else {
+				s.append(arg0.charAt(i));
+			}
+		}
+		super.emitErrorMessage(s.toString());
+	}
+}
+
 // starting point for parsing a java file
 specUnit
 	:	packageDeclaration?
         importDeclaration*
-        typeDeclaration*
+        typeDeclaration+
 	;
 
 packageDeclaration
