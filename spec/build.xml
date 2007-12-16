@@ -61,7 +61,12 @@
         </java>
     </target>
 	
-	<target name="test" depends="GenGrammar,build">
+	<target name="test-with-build" depends="GenGrammar,build,test"/>	
+	
+	<target name="test">
+		<antcall target="test_stub">
+			<param name="spec" value="test_000.spec"/> 
+		</antcall>		
 		<antcall target="test_stub">
 			<param name="spec" value="HPS_01.spec"/> 
 		</antcall>
@@ -74,6 +79,8 @@
         <java classname="Test" failonerror="true" fork="yes">
         	<arg value="${spec}"/>
             <classpath refid="spec.classpath"/>
+        	<jvmarg value="-Xms256M"/>
+        	<jvmarg value="-Xmx512M"/>
         </java>
     </target>
 </project>

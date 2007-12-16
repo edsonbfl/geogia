@@ -1,4 +1,4 @@
-// $ANTLR 3.0.1 ./src/spec.g3 2007-12-13 17:46:13
+// $ANTLR 3.0.1 ./src/spec.g3 2007-12-16 06:33:13
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -2077,8 +2077,8 @@ public class specLexer extends Lexer {
     public final void mHexLiteral() throws RecognitionException {
         try {
             int _type = HexLiteral;
-            // ./src/spec.g3:731:12: ( '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )? )
-            // ./src/spec.g3:731:14: '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )?
+            // ./src/spec.g3:749:12: ( '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )? )
+            // ./src/spec.g3:749:14: '0' ( 'x' | 'X' ) ( HexDigit )+ ( IntegerTypeSuffix )?
             {
             match('0'); 
             if ( input.LA(1)=='X'||input.LA(1)=='x' ) {
@@ -2091,7 +2091,7 @@ public class specLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ./src/spec.g3:731:28: ( HexDigit )+
+            // ./src/spec.g3:749:28: ( HexDigit )+
             int cnt1=0;
             loop1:
             do {
@@ -2105,7 +2105,7 @@ public class specLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ./src/spec.g3:731:28: HexDigit
+            	    // ./src/spec.g3:749:28: HexDigit
             	    {
             	    mHexDigit(); 
 
@@ -2121,7 +2121,7 @@ public class specLexer extends Lexer {
                 cnt1++;
             } while (true);
 
-            // ./src/spec.g3:731:38: ( IntegerTypeSuffix )?
+            // ./src/spec.g3:749:38: ( IntegerTypeSuffix )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -2130,7 +2130,7 @@ public class specLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ./src/spec.g3:731:38: IntegerTypeSuffix
+                    // ./src/spec.g3:749:38: IntegerTypeSuffix
                     {
                     mIntegerTypeSuffix(); 
 
@@ -2153,10 +2153,10 @@ public class specLexer extends Lexer {
     public final void mDecimalLiteral() throws RecognitionException {
         try {
             int _type = DecimalLiteral;
-            // ./src/spec.g3:733:16: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )? )
-            // ./src/spec.g3:733:18: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )?
+            // ./src/spec.g3:751:16: ( ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )? )
+            // ./src/spec.g3:751:18: ( '0' | '1' .. '9' ( '0' .. '9' )* ) ( IntegerTypeSuffix )?
             {
-            // ./src/spec.g3:733:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )
+            // ./src/spec.g3:751:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2168,23 +2168,23 @@ public class specLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("733:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )", 4, 0, input);
+                    new NoViableAltException("751:18: ( '0' | '1' .. '9' ( '0' .. '9' )* )", 4, 0, input);
 
                 throw nvae;
             }
             switch (alt4) {
                 case 1 :
-                    // ./src/spec.g3:733:19: '0'
+                    // ./src/spec.g3:751:19: '0'
                     {
                     match('0'); 
 
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:733:25: '1' .. '9' ( '0' .. '9' )*
+                    // ./src/spec.g3:751:25: '1' .. '9' ( '0' .. '9' )*
                     {
                     matchRange('1','9'); 
-                    // ./src/spec.g3:733:34: ( '0' .. '9' )*
+                    // ./src/spec.g3:751:34: ( '0' .. '9' )*
                     loop3:
                     do {
                         int alt3=2;
@@ -2197,7 +2197,7 @@ public class specLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ./src/spec.g3:733:34: '0' .. '9'
+                    	    // ./src/spec.g3:751:34: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2215,7 +2215,7 @@ public class specLexer extends Lexer {
 
             }
 
-            // ./src/spec.g3:733:45: ( IntegerTypeSuffix )?
+            // ./src/spec.g3:751:45: ( IntegerTypeSuffix )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -2224,7 +2224,7 @@ public class specLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ./src/spec.g3:733:45: IntegerTypeSuffix
+                    // ./src/spec.g3:751:45: IntegerTypeSuffix
                     {
                     mIntegerTypeSuffix(); 
 
@@ -2247,11 +2247,11 @@ public class specLexer extends Lexer {
     public final void mOctalLiteral() throws RecognitionException {
         try {
             int _type = OctalLiteral;
-            // ./src/spec.g3:735:14: ( '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )? )
-            // ./src/spec.g3:735:16: '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )?
+            // ./src/spec.g3:753:14: ( '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )? )
+            // ./src/spec.g3:753:16: '0' ( '0' .. '7' )+ ( IntegerTypeSuffix )?
             {
             match('0'); 
-            // ./src/spec.g3:735:20: ( '0' .. '7' )+
+            // ./src/spec.g3:753:20: ( '0' .. '7' )+
             int cnt6=0;
             loop6:
             do {
@@ -2265,7 +2265,7 @@ public class specLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ./src/spec.g3:735:21: '0' .. '7'
+            	    // ./src/spec.g3:753:21: '0' .. '7'
             	    {
             	    matchRange('0','7'); 
 
@@ -2281,7 +2281,7 @@ public class specLexer extends Lexer {
                 cnt6++;
             } while (true);
 
-            // ./src/spec.g3:735:32: ( IntegerTypeSuffix )?
+            // ./src/spec.g3:753:32: ( IntegerTypeSuffix )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2290,7 +2290,7 @@ public class specLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ./src/spec.g3:735:32: IntegerTypeSuffix
+                    // ./src/spec.g3:753:32: IntegerTypeSuffix
                     {
                     mIntegerTypeSuffix(); 
 
@@ -2312,8 +2312,8 @@ public class specLexer extends Lexer {
     // $ANTLR start HexDigit
     public final void mHexDigit() throws RecognitionException {
         try {
-            // ./src/spec.g3:738:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
-            // ./src/spec.g3:738:12: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
+            // ./src/spec.g3:756:10: ( ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' ) )
+            // ./src/spec.g3:756:12: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' )
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                 input.consume();
@@ -2337,10 +2337,10 @@ public class specLexer extends Lexer {
     // $ANTLR start IntegerTypeSuffix
     public final void mIntegerTypeSuffix() throws RecognitionException {
         try {
-            // ./src/spec.g3:741:19: ( ( 'l' | 'L' | ( '.' Identifier ) ) )
-            // ./src/spec.g3:741:21: ( 'l' | 'L' | ( '.' Identifier ) )
+            // ./src/spec.g3:759:19: ( ( 'l' | 'L' | ( '.' Identifier ) ) )
+            // ./src/spec.g3:759:21: ( 'l' | 'L' | ( '.' Identifier ) )
             {
-            // ./src/spec.g3:741:21: ( 'l' | 'L' | ( '.' Identifier ) )
+            // ./src/spec.g3:759:21: ( 'l' | 'L' | ( '.' Identifier ) )
             int alt8=3;
             switch ( input.LA(1) ) {
             case 'l':
@@ -2360,31 +2360,31 @@ public class specLexer extends Lexer {
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("741:21: ( 'l' | 'L' | ( '.' Identifier ) )", 8, 0, input);
+                    new NoViableAltException("759:21: ( 'l' | 'L' | ( '.' Identifier ) )", 8, 0, input);
 
                 throw nvae;
             }
 
             switch (alt8) {
                 case 1 :
-                    // ./src/spec.g3:741:22: 'l'
+                    // ./src/spec.g3:759:22: 'l'
                     {
                     match('l'); 
 
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:741:26: 'L'
+                    // ./src/spec.g3:759:26: 'L'
                     {
                     match('L'); 
 
                     }
                     break;
                 case 3 :
-                    // ./src/spec.g3:741:30: ( '.' Identifier )
+                    // ./src/spec.g3:759:30: ( '.' Identifier )
                     {
-                    // ./src/spec.g3:741:30: ( '.' Identifier )
-                    // ./src/spec.g3:741:31: '.' Identifier
+                    // ./src/spec.g3:759:30: ( '.' Identifier )
+                    // ./src/spec.g3:759:31: '.' Identifier
                     {
                     match('.'); 
                     mIdentifier(); 
@@ -2410,14 +2410,14 @@ public class specLexer extends Lexer {
     public final void mFloatingPointLiteral() throws RecognitionException {
         try {
             int _type = FloatingPointLiteral;
-            // ./src/spec.g3:744:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix )
+            // ./src/spec.g3:762:5: ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix )
             int alt20=4;
             alt20 = dfa20.predict(input);
             switch (alt20) {
                 case 1 :
-                    // ./src/spec.g3:744:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )?
+                    // ./src/spec.g3:762:9: ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )?
                     {
-                    // ./src/spec.g3:744:9: ( '0' .. '9' )+
+                    // ./src/spec.g3:762:9: ( '0' .. '9' )+
                     int cnt9=0;
                     loop9:
                     do {
@@ -2431,7 +2431,7 @@ public class specLexer extends Lexer {
 
                         switch (alt9) {
                     	case 1 :
-                    	    // ./src/spec.g3:744:10: '0' .. '9'
+                    	    // ./src/spec.g3:762:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2448,7 +2448,7 @@ public class specLexer extends Lexer {
                     } while (true);
 
                     match('.'); 
-                    // ./src/spec.g3:744:25: ( '0' .. '9' )*
+                    // ./src/spec.g3:762:25: ( '0' .. '9' )*
                     loop10:
                     do {
                         int alt10=2;
@@ -2461,7 +2461,7 @@ public class specLexer extends Lexer {
 
                         switch (alt10) {
                     	case 1 :
-                    	    // ./src/spec.g3:744:26: '0' .. '9'
+                    	    // ./src/spec.g3:762:26: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2473,7 +2473,7 @@ public class specLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ./src/spec.g3:744:37: ( Exponent )?
+                    // ./src/spec.g3:762:37: ( Exponent )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -2482,7 +2482,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ./src/spec.g3:744:37: Exponent
+                            // ./src/spec.g3:762:37: Exponent
                             {
                             mExponent(); 
 
@@ -2491,7 +2491,7 @@ public class specLexer extends Lexer {
 
                     }
 
-                    // ./src/spec.g3:744:47: ( FloatTypeSuffix )?
+                    // ./src/spec.g3:762:47: ( FloatTypeSuffix )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2500,7 +2500,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ./src/spec.g3:744:47: FloatTypeSuffix
+                            // ./src/spec.g3:762:47: FloatTypeSuffix
                             {
                             mFloatTypeSuffix(); 
 
@@ -2513,10 +2513,10 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:745:9: '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )?
+                    // ./src/spec.g3:763:9: '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )?
                     {
                     match('.'); 
-                    // ./src/spec.g3:745:13: ( '0' .. '9' )+
+                    // ./src/spec.g3:763:13: ( '0' .. '9' )+
                     int cnt13=0;
                     loop13:
                     do {
@@ -2530,7 +2530,7 @@ public class specLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ./src/spec.g3:745:14: '0' .. '9'
+                    	    // ./src/spec.g3:763:14: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2546,7 +2546,7 @@ public class specLexer extends Lexer {
                         cnt13++;
                     } while (true);
 
-                    // ./src/spec.g3:745:25: ( Exponent )?
+                    // ./src/spec.g3:763:25: ( Exponent )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2555,7 +2555,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // ./src/spec.g3:745:25: Exponent
+                            // ./src/spec.g3:763:25: Exponent
                             {
                             mExponent(); 
 
@@ -2564,7 +2564,7 @@ public class specLexer extends Lexer {
 
                     }
 
-                    // ./src/spec.g3:745:35: ( FloatTypeSuffix )?
+                    // ./src/spec.g3:763:35: ( FloatTypeSuffix )?
                     int alt15=2;
                     int LA15_0 = input.LA(1);
 
@@ -2573,7 +2573,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt15) {
                         case 1 :
-                            // ./src/spec.g3:745:35: FloatTypeSuffix
+                            // ./src/spec.g3:763:35: FloatTypeSuffix
                             {
                             mFloatTypeSuffix(); 
 
@@ -2586,9 +2586,9 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ./src/spec.g3:746:9: ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )?
+                    // ./src/spec.g3:764:9: ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )?
                     {
-                    // ./src/spec.g3:746:9: ( '0' .. '9' )+
+                    // ./src/spec.g3:764:9: ( '0' .. '9' )+
                     int cnt16=0;
                     loop16:
                     do {
@@ -2602,7 +2602,7 @@ public class specLexer extends Lexer {
 
                         switch (alt16) {
                     	case 1 :
-                    	    // ./src/spec.g3:746:10: '0' .. '9'
+                    	    // ./src/spec.g3:764:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2619,7 +2619,7 @@ public class specLexer extends Lexer {
                     } while (true);
 
                     mExponent(); 
-                    // ./src/spec.g3:746:30: ( FloatTypeSuffix )?
+                    // ./src/spec.g3:764:30: ( FloatTypeSuffix )?
                     int alt17=2;
                     int LA17_0 = input.LA(1);
 
@@ -2628,7 +2628,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt17) {
                         case 1 :
-                            // ./src/spec.g3:746:30: FloatTypeSuffix
+                            // ./src/spec.g3:764:30: FloatTypeSuffix
                             {
                             mFloatTypeSuffix(); 
 
@@ -2641,9 +2641,9 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ./src/spec.g3:747:9: ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix
+                    // ./src/spec.g3:765:9: ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix
                     {
-                    // ./src/spec.g3:747:9: ( '0' .. '9' )+
+                    // ./src/spec.g3:765:9: ( '0' .. '9' )+
                     int cnt18=0;
                     loop18:
                     do {
@@ -2657,7 +2657,7 @@ public class specLexer extends Lexer {
 
                         switch (alt18) {
                     	case 1 :
-                    	    // ./src/spec.g3:747:10: '0' .. '9'
+                    	    // ./src/spec.g3:765:10: '0' .. '9'
                     	    {
                     	    matchRange('0','9'); 
 
@@ -2673,7 +2673,7 @@ public class specLexer extends Lexer {
                         cnt18++;
                     } while (true);
 
-                    // ./src/spec.g3:747:21: ( Exponent )?
+                    // ./src/spec.g3:765:21: ( Exponent )?
                     int alt19=2;
                     int LA19_0 = input.LA(1);
 
@@ -2682,7 +2682,7 @@ public class specLexer extends Lexer {
                     }
                     switch (alt19) {
                         case 1 :
-                            // ./src/spec.g3:747:21: Exponent
+                            // ./src/spec.g3:765:21: Exponent
                             {
                             mExponent(); 
 
@@ -2707,8 +2707,8 @@ public class specLexer extends Lexer {
     // $ANTLR start Exponent
     public final void mExponent() throws RecognitionException {
         try {
-            // ./src/spec.g3:751:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
-            // ./src/spec.g3:751:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
+            // ./src/spec.g3:769:10: ( ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+ )
+            // ./src/spec.g3:769:12: ( 'e' | 'E' ) ( '+' | '-' )? ( '0' .. '9' )+
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -2720,7 +2720,7 @@ public class specLexer extends Lexer {
                 recover(mse);    throw mse;
             }
 
-            // ./src/spec.g3:751:22: ( '+' | '-' )?
+            // ./src/spec.g3:769:22: ( '+' | '-' )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2747,7 +2747,7 @@ public class specLexer extends Lexer {
 
             }
 
-            // ./src/spec.g3:751:33: ( '0' .. '9' )+
+            // ./src/spec.g3:769:33: ( '0' .. '9' )+
             int cnt22=0;
             loop22:
             do {
@@ -2761,7 +2761,7 @@ public class specLexer extends Lexer {
 
                 switch (alt22) {
             	case 1 :
-            	    // ./src/spec.g3:751:34: '0' .. '9'
+            	    // ./src/spec.g3:769:34: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2789,8 +2789,8 @@ public class specLexer extends Lexer {
     // $ANTLR start FloatTypeSuffix
     public final void mFloatTypeSuffix() throws RecognitionException {
         try {
-            // ./src/spec.g3:754:17: ( ( 'f' | 'F' | 'd' | 'D' ) )
-            // ./src/spec.g3:754:19: ( 'f' | 'F' | 'd' | 'D' )
+            // ./src/spec.g3:772:17: ( ( 'f' | 'F' | 'd' | 'D' ) )
+            // ./src/spec.g3:772:19: ( 'f' | 'F' | 'd' | 'D' )
             {
             if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='d'||input.LA(1)=='f' ) {
                 input.consume();
@@ -2815,11 +2815,11 @@ public class specLexer extends Lexer {
     public final void mCharacterLiteral() throws RecognitionException {
         try {
             int _type = CharacterLiteral;
-            // ./src/spec.g3:757:5: ( '\\'' ( EscapeSequence | ~ ( '\\'' | '\\\\' ) ) '\\'' )
-            // ./src/spec.g3:757:9: '\\'' ( EscapeSequence | ~ ( '\\'' | '\\\\' ) ) '\\''
+            // ./src/spec.g3:775:5: ( '\\'' ( EscapeSequence | ~ ( '\\'' | '\\\\' ) ) '\\'' )
+            // ./src/spec.g3:775:9: '\\'' ( EscapeSequence | ~ ( '\\'' | '\\\\' ) ) '\\''
             {
             match('\''); 
-            // ./src/spec.g3:757:14: ( EscapeSequence | ~ ( '\\'' | '\\\\' ) )
+            // ./src/spec.g3:775:14: ( EscapeSequence | ~ ( '\\'' | '\\\\' ) )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -2831,20 +2831,20 @@ public class specLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("757:14: ( EscapeSequence | ~ ( '\\'' | '\\\\' ) )", 23, 0, input);
+                    new NoViableAltException("775:14: ( EscapeSequence | ~ ( '\\'' | '\\\\' ) )", 23, 0, input);
 
                 throw nvae;
             }
             switch (alt23) {
                 case 1 :
-                    // ./src/spec.g3:757:16: EscapeSequence
+                    // ./src/spec.g3:775:16: EscapeSequence
                     {
                     mEscapeSequence(); 
 
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:757:33: ~ ( '\\'' | '\\\\' )
+                    // ./src/spec.g3:775:33: ~ ( '\\'' | '\\\\' )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
                         input.consume();
@@ -2877,11 +2877,11 @@ public class specLexer extends Lexer {
     public final void mStringLiteral() throws RecognitionException {
         try {
             int _type = StringLiteral;
-            // ./src/spec.g3:761:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
-            // ./src/spec.g3:761:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
+            // ./src/spec.g3:779:5: ( '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"' )
+            // ./src/spec.g3:779:8: '\"' ( EscapeSequence | ~ ( '\\\\' | '\"' ) )* '\"'
             {
             match('\"'); 
-            // ./src/spec.g3:761:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
+            // ./src/spec.g3:779:12: ( EscapeSequence | ~ ( '\\\\' | '\"' ) )*
             loop24:
             do {
                 int alt24=3;
@@ -2897,14 +2897,14 @@ public class specLexer extends Lexer {
 
                 switch (alt24) {
             	case 1 :
-            	    // ./src/spec.g3:761:14: EscapeSequence
+            	    // ./src/spec.g3:779:14: EscapeSequence
             	    {
             	    mEscapeSequence(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // ./src/spec.g3:761:31: ~ ( '\\\\' | '\"' )
+            	    // ./src/spec.g3:779:31: ~ ( '\\\\' | '\"' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -2939,7 +2939,7 @@ public class specLexer extends Lexer {
     // $ANTLR start EscapeSequence
     public final void mEscapeSequence() throws RecognitionException {
         try {
-            // ./src/spec.g3:766:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
+            // ./src/spec.g3:784:5: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape )
             int alt25=3;
             int LA25_0 = input.LA(1);
 
@@ -2976,7 +2976,7 @@ public class specLexer extends Lexer {
                     break;
                 default:
                     NoViableAltException nvae =
-                        new NoViableAltException("764:1: fragment EscapeSequence : ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape );", 25, 1, input);
+                        new NoViableAltException("782:1: fragment EscapeSequence : ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape );", 25, 1, input);
 
                     throw nvae;
                 }
@@ -2984,13 +2984,13 @@ public class specLexer extends Lexer {
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("764:1: fragment EscapeSequence : ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape );", 25, 0, input);
+                    new NoViableAltException("782:1: fragment EscapeSequence : ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' ) | UnicodeEscape | OctalEscape );", 25, 0, input);
 
                 throw nvae;
             }
             switch (alt25) {
                 case 1 :
-                    // ./src/spec.g3:766:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
+                    // ./src/spec.g3:784:9: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | '\\\"' | '\\'' | '\\\\' )
                     {
                     match('\\'); 
                     if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||input.LA(1)=='t' ) {
@@ -3007,14 +3007,14 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:767:9: UnicodeEscape
+                    // ./src/spec.g3:785:9: UnicodeEscape
                     {
                     mUnicodeEscape(); 
 
                     }
                     break;
                 case 3 :
-                    // ./src/spec.g3:768:9: OctalEscape
+                    // ./src/spec.g3:786:9: OctalEscape
                     {
                     mOctalEscape(); 
 
@@ -3031,7 +3031,7 @@ public class specLexer extends Lexer {
     // $ANTLR start OctalEscape
     public final void mOctalEscape() throws RecognitionException {
         try {
-            // ./src/spec.g3:773:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
+            // ./src/spec.g3:791:5: ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) )
             int alt26=3;
             int LA26_0 = input.LA(1);
 
@@ -3064,38 +3064,38 @@ public class specLexer extends Lexer {
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("771:1: fragment OctalEscape : ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) );", 26, 1, input);
+                        new NoViableAltException("789:1: fragment OctalEscape : ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) );", 26, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("771:1: fragment OctalEscape : ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) );", 26, 0, input);
+                    new NoViableAltException("789:1: fragment OctalEscape : ( '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) ( '0' .. '7' ) | '\\\\' ( '0' .. '7' ) );", 26, 0, input);
 
                 throw nvae;
             }
             switch (alt26) {
                 case 1 :
-                    // ./src/spec.g3:773:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
+                    // ./src/spec.g3:791:9: '\\\\' ( '0' .. '3' ) ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // ./src/spec.g3:773:14: ( '0' .. '3' )
-                    // ./src/spec.g3:773:15: '0' .. '3'
+                    // ./src/spec.g3:791:14: ( '0' .. '3' )
+                    // ./src/spec.g3:791:15: '0' .. '3'
                     {
                     matchRange('0','3'); 
 
                     }
 
-                    // ./src/spec.g3:773:25: ( '0' .. '7' )
-                    // ./src/spec.g3:773:26: '0' .. '7'
+                    // ./src/spec.g3:791:25: ( '0' .. '7' )
+                    // ./src/spec.g3:791:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // ./src/spec.g3:773:36: ( '0' .. '7' )
-                    // ./src/spec.g3:773:37: '0' .. '7'
+                    // ./src/spec.g3:791:36: ( '0' .. '7' )
+                    // ./src/spec.g3:791:37: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -3105,18 +3105,18 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ./src/spec.g3:774:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
+                    // ./src/spec.g3:792:9: '\\\\' ( '0' .. '7' ) ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // ./src/spec.g3:774:14: ( '0' .. '7' )
-                    // ./src/spec.g3:774:15: '0' .. '7'
+                    // ./src/spec.g3:792:14: ( '0' .. '7' )
+                    // ./src/spec.g3:792:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
                     }
 
-                    // ./src/spec.g3:774:25: ( '0' .. '7' )
-                    // ./src/spec.g3:774:26: '0' .. '7'
+                    // ./src/spec.g3:792:25: ( '0' .. '7' )
+                    // ./src/spec.g3:792:26: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -3126,11 +3126,11 @@ public class specLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ./src/spec.g3:775:9: '\\\\' ( '0' .. '7' )
+                    // ./src/spec.g3:793:9: '\\\\' ( '0' .. '7' )
                     {
                     match('\\'); 
-                    // ./src/spec.g3:775:14: ( '0' .. '7' )
-                    // ./src/spec.g3:775:15: '0' .. '7'
+                    // ./src/spec.g3:793:14: ( '0' .. '7' )
+                    // ./src/spec.g3:793:15: '0' .. '7'
                     {
                     matchRange('0','7'); 
 
@@ -3150,8 +3150,8 @@ public class specLexer extends Lexer {
     // $ANTLR start UnicodeEscape
     public final void mUnicodeEscape() throws RecognitionException {
         try {
-            // ./src/spec.g3:780:5: ( '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit )
-            // ./src/spec.g3:780:9: '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit
+            // ./src/spec.g3:798:5: ( '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit )
+            // ./src/spec.g3:798:9: '\\\\' 'u' HexDigit HexDigit HexDigit HexDigit
             {
             match('\\'); 
             match('u'); 
@@ -3172,8 +3172,8 @@ public class specLexer extends Lexer {
     public final void mENUM() throws RecognitionException {
         try {
             int _type = ENUM;
-            // ./src/spec.g3:783:5: ( 'enum' )
-            // ./src/spec.g3:783:7: 'enum'
+            // ./src/spec.g3:801:5: ( 'enum' )
+            // ./src/spec.g3:801:7: 'enum'
             {
             match("enum"); 
 
@@ -3192,11 +3192,11 @@ public class specLexer extends Lexer {
     public final void mIdentifier() throws RecognitionException {
         try {
             int _type = Identifier;
-            // ./src/spec.g3:787:5: ( Letter ( Letter | JavaIDDigit )* )
-            // ./src/spec.g3:787:9: Letter ( Letter | JavaIDDigit )*
+            // ./src/spec.g3:805:5: ( Letter ( Letter | JavaIDDigit )* )
+            // ./src/spec.g3:805:9: Letter ( Letter | JavaIDDigit )*
             {
             mLetter(); 
-            // ./src/spec.g3:787:16: ( Letter | JavaIDDigit )*
+            // ./src/spec.g3:805:16: ( Letter | JavaIDDigit )*
             loop27:
             do {
                 int alt27=2;
@@ -3243,7 +3243,7 @@ public class specLexer extends Lexer {
     // $ANTLR start Letter
     public final void mLetter() throws RecognitionException {
         try {
-            // ./src/spec.g3:799:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
+            // ./src/spec.g3:817:5: ( '\\u0024' | '\\u0041' .. '\\u005a' | '\\u005f' | '\\u0061' .. '\\u007a' | '\\u00c0' .. '\\u00d6' | '\\u00d8' .. '\\u00f6' | '\\u00f8' .. '\\u00ff' | '\\u0100' .. '\\u1fff' | '\\u3040' .. '\\u318f' | '\\u3300' .. '\\u337f' | '\\u3400' .. '\\u3d2d' | '\\u4e00' .. '\\u9fff' | '\\uf900' .. '\\ufaff' )
             // ./src/spec.g3:
             {
             if ( input.LA(1)=='$'||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z')||(input.LA(1)>='\u00C0' && input.LA(1)<='\u00D6')||(input.LA(1)>='\u00D8' && input.LA(1)<='\u00F6')||(input.LA(1)>='\u00F8' && input.LA(1)<='\u1FFF')||(input.LA(1)>='\u3040' && input.LA(1)<='\u318F')||(input.LA(1)>='\u3300' && input.LA(1)<='\u337F')||(input.LA(1)>='\u3400' && input.LA(1)<='\u3D2D')||(input.LA(1)>='\u4E00' && input.LA(1)<='\u9FFF')||(input.LA(1)>='\uF900' && input.LA(1)<='\uFAFF') ) {
@@ -3268,7 +3268,7 @@ public class specLexer extends Lexer {
     // $ANTLR start JavaIDDigit
     public final void mJavaIDDigit() throws RecognitionException {
         try {
-            // ./src/spec.g3:816:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
+            // ./src/spec.g3:834:5: ( '\\u0030' .. '\\u0039' | '\\u0660' .. '\\u0669' | '\\u06f0' .. '\\u06f9' | '\\u0966' .. '\\u096f' | '\\u09e6' .. '\\u09ef' | '\\u0a66' .. '\\u0a6f' | '\\u0ae6' .. '\\u0aef' | '\\u0b66' .. '\\u0b6f' | '\\u0be7' .. '\\u0bef' | '\\u0c66' .. '\\u0c6f' | '\\u0ce6' .. '\\u0cef' | '\\u0d66' .. '\\u0d6f' | '\\u0e50' .. '\\u0e59' | '\\u0ed0' .. '\\u0ed9' | '\\u1040' .. '\\u1049' )
             // ./src/spec.g3:
             {
             if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='\u0660' && input.LA(1)<='\u0669')||(input.LA(1)>='\u06F0' && input.LA(1)<='\u06F9')||(input.LA(1)>='\u0966' && input.LA(1)<='\u096F')||(input.LA(1)>='\u09E6' && input.LA(1)<='\u09EF')||(input.LA(1)>='\u0A66' && input.LA(1)<='\u0A6F')||(input.LA(1)>='\u0AE6' && input.LA(1)<='\u0AEF')||(input.LA(1)>='\u0B66' && input.LA(1)<='\u0B6F')||(input.LA(1)>='\u0BE7' && input.LA(1)<='\u0BEF')||(input.LA(1)>='\u0C66' && input.LA(1)<='\u0C6F')||(input.LA(1)>='\u0CE6' && input.LA(1)<='\u0CEF')||(input.LA(1)>='\u0D66' && input.LA(1)<='\u0D6F')||(input.LA(1)>='\u0E50' && input.LA(1)<='\u0E59')||(input.LA(1)>='\u0ED0' && input.LA(1)<='\u0ED9')||(input.LA(1)>='\u1040' && input.LA(1)<='\u1049') ) {
@@ -3294,8 +3294,8 @@ public class specLexer extends Lexer {
     public final void mEOL() throws RecognitionException {
         try {
             int _type = EOL;
-            // ./src/spec.g3:833:5: ( ( '\\r' | '\\n' ) )
-            // ./src/spec.g3:833:8: ( '\\r' | '\\n' )
+            // ./src/spec.g3:851:5: ( ( '\\r' | '\\n' ) )
+            // ./src/spec.g3:851:8: ( '\\r' | '\\n' )
             {
             if ( input.LA(1)=='\n'||input.LA(1)=='\r' ) {
                 input.consume();
@@ -3321,8 +3321,8 @@ public class specLexer extends Lexer {
     public final void mWS() throws RecognitionException {
         try {
             int _type = WS;
-            // ./src/spec.g3:835:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
-            // ./src/spec.g3:835:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
+            // ./src/spec.g3:853:5: ( ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' ) )
+            // ./src/spec.g3:853:8: ( ' ' | '\\r' | '\\t' | '\\u000C' | '\\n' )
             {
             if ( (input.LA(1)>='\t' && input.LA(1)<='\n')||(input.LA(1)>='\f' && input.LA(1)<='\r')||input.LA(1)==' ' ) {
                 input.consume();
@@ -3349,12 +3349,12 @@ public class specLexer extends Lexer {
     public final void mCOMMENT() throws RecognitionException {
         try {
             int _type = COMMENT;
-            // ./src/spec.g3:839:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ./src/spec.g3:839:9: '/*' ( options {greedy=false; } : . )* '*/'
+            // ./src/spec.g3:857:5: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ./src/spec.g3:857:9: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ./src/spec.g3:839:14: ( options {greedy=false; } : . )*
+            // ./src/spec.g3:857:14: ( options {greedy=false; } : . )*
             loop28:
             do {
                 int alt28=2;
@@ -3379,7 +3379,7 @@ public class specLexer extends Lexer {
 
                 switch (alt28) {
             	case 1 :
-            	    // ./src/spec.g3:839:42: .
+            	    // ./src/spec.g3:857:42: .
             	    {
             	    matchAny(); 
 
@@ -3408,12 +3408,12 @@ public class specLexer extends Lexer {
     public final void mLINE_COMMENT() throws RecognitionException {
         try {
             int _type = LINE_COMMENT;
-            // ./src/spec.g3:843:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-            // ./src/spec.g3:843:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+            // ./src/spec.g3:861:5: ( '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+            // ./src/spec.g3:861:7: '//' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
             {
             match("//"); 
 
-            // ./src/spec.g3:843:12: (~ ( '\\n' | '\\r' ) )*
+            // ./src/spec.g3:861:12: (~ ( '\\n' | '\\r' ) )*
             loop29:
             do {
                 int alt29=2;
@@ -3426,7 +3426,7 @@ public class specLexer extends Lexer {
 
                 switch (alt29) {
             	case 1 :
-            	    // ./src/spec.g3:843:12: ~ ( '\\n' | '\\r' )
+            	    // ./src/spec.g3:861:12: ~ ( '\\n' | '\\r' )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFE') ) {
             	        input.consume();
@@ -3447,7 +3447,7 @@ public class specLexer extends Lexer {
                 }
             } while (true);
 
-            // ./src/spec.g3:843:26: ( '\\r' )?
+            // ./src/spec.g3:861:26: ( '\\r' )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -3456,7 +3456,7 @@ public class specLexer extends Lexer {
             }
             switch (alt30) {
                 case 1 :
-                    // ./src/spec.g3:843:26: '\\r'
+                    // ./src/spec.g3:861:26: '\\r'
                     {
                     match('\r'); 
 
@@ -4350,7 +4350,7 @@ public class specLexer extends Lexer {
             this.transition = DFA20_transition;
         }
         public String getDescription() {
-            return "743:1: FloatingPointLiteral : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix );";
+            return "761:1: FloatingPointLiteral : ( ( '0' .. '9' )+ '.' ( '0' .. '9' )* ( Exponent )? ( FloatTypeSuffix )? | '.' ( '0' .. '9' )+ ( Exponent )? ( FloatTypeSuffix )? | ( '0' .. '9' )+ Exponent ( FloatTypeSuffix )? | ( '0' .. '9' )+ ( Exponent )? FloatTypeSuffix );";
         }
     }
     static final String DFA31_eotS =
