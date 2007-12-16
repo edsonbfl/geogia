@@ -13,7 +13,6 @@ protected boolean enumIsKeyword = false;
 @parser::members {
 	public void emitErrorMessage(String arg0) {
 		StringBuffer s = new StringBuffer();
-		// System.out.println(arg0);
 		for(int i=0;i<arg0.length();i++) {
 			if(arg0.charAt(i)=='\\' && arg0.charAt(i+1)=='u'){
 				String e = "0x"+arg0.charAt(i+2)+arg0.charAt(i+3)+arg0.charAt(i+4)+arg0.charAt(i+5);
