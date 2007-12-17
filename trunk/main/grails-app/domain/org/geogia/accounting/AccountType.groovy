@@ -23,10 +23,21 @@
  *
 **/
 
-package org.geogia.accounting;
+package org.geogia.accounting
 
-class AccountType {
-	
+ class AccountType {
+                      
+	static void initEnums() {
+		if(AccountType.count()==0) {
+			new AccountType(value:'GL').save()
+			new AccountType(value:'PROJECT').save()
+		}
+	}
+
 	String value
-	
+
+	String toString() {
+		return "${id}: ${value}"
+	}
+
 }
