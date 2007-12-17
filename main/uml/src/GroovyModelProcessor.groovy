@@ -175,6 +175,23 @@ class GroovyModelProcessor {
        return findFeatures(classifier, Attribute.class)
    }
 
+   def getAllEnums = { model ->
+   	  return model.core.enumeration.refAllOfType()
+   }
+
+   def getEnumLiterals = { anEnum ->
+      return anEnum.literal
+   }
+
+   def friendlyNameType = { type ->
+       def attributeType = javaType(type)
+       if(attributeType.startsWith('java')) {
+           return type.name
+       } else {
+    	   return attributeType
+       }
+   }
+
    def loadResourceStream = { name ->
        def inputStream
        def file = new File(name)
@@ -190,10 +207,12 @@ class GroovyModelProcessor {
        def binding = [
            "javaToSql":javaToSql,
            "javaType":javaType,
+           "friendlyNameType":friendlyNameType,
            "firstCharUpper":firstCharUpper,
            "firstCharLower":firstCharLower,
            "getPackageName":getPackageName,
            "getAttributes":getAttributes,
+           "getEnumLiterals":getEnumLiterals,
            "getAssociationEnds":getAssociationEnds,
            "getEndType":getEndType,
            "getEndName":getEndName,
@@ -230,7 +249,7 @@ class GroovyModelProcessor {
    }
 
    InputStream preProcessXMI(InputStream inputStream) {
-       return inputStream
+       return new XMIPreFilter().transform(inputStream)
    }
 
    void process(Map context) {
