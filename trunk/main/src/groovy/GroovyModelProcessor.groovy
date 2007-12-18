@@ -65,6 +65,14 @@ class GroovyModelProcessor {
     def isOneToOne = {source, target ->
         return (upperRange(source) == 1 && upperRange(target) == 1)
     }
+    
+    def isOptional = { end ->
+    		return (upperRange(end) == 0)
+    }
+    
+    def isExact = { end, x ->
+    		return (upperRange(end) == x)
+  	}
 
     def isCollection = {end ->
         return (upperRange(end) == -1)
@@ -146,13 +154,17 @@ class GroovyModelProcessor {
         return (owner == associationEnd)
     }
 
-    def getEndType = {associationEnd ->
+    def getEndType = {associationEnd, packageName ->
         def type
         if (isCollection(associationEnd)) {
-            type = isOrdered(associationEnd) ? "java.util.List" : "java.util.Set"
-            type += "<${associationEnd.participant.name}>"
+            type = isOrdered(associationEnd) ? "List" : "Set"
+            // type += "<${associationEnd.participant.name}>"
         } else {
-            type = getFullyQualifiedName(associationEnd.participant)
+        	  def p = getPackageName(associationEnd.participant)
+        	  type = associationEnd.participant.name
+        		if(packageName==null || packageName!=p) {
+            	type = p + "." + type
+            } //getFullyQualifiedName(associationEnd.participant)
         }
         return type
     }
@@ -223,7 +235,9 @@ class GroovyModelProcessor {
                 "isManyToOne": isManyToOne,
                 "isManyToMany": isManyToMany,
                 "isOwner": isOwner,
-                "isCollection": isCollection
+                "isCollection": isCollection,
+                "isOptional": isOptional,
+                "isExact": isExact
         ]
         if (map) {
             binding.putAll(map)
