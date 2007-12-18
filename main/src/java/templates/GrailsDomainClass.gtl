@@ -1,20 +1,29 @@
-<% if (getPackageName(currentModelElement) != '') { %>
-package ${getPackageName(currentModelElement)}
+<% def packageName = getPackageName(currentModelElement)
+   if (packageName != '') { %>
+package ${packageName}
 <% } %>
 class ${currentModelElement.name} {
    <% getAttributes(currentModelElement).each { attribute ->
+       if(!attribute) return
        def attributeName = attribute.name
        def attributeType = friendlyNameType(attribute.type)
        def attributeTags = taggedValues(attribute) %>            
-   ${attributeType} ${attributeName}<% } %>
-   
+   ${attributeType} ${attributeName}<% } %>      
+   <% getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+   		def assoc = sourceEnd.association
+   		def targetEnd = assoc.connection.find { end -> end != sourceEnd }
+   		if(targetEnd.isNavigable()) {
+   				def targetType = getEndType(targetEnd, packageName)
+      		def targetName = getEndName(targetEnd)%>
+   ${targetType} ${targetName}<% } }%>
+      
    // TODO generate belongTo
    // TODO generate hasMany
    // TODO generate embed
    // TODO generate many-to-many   
       
    String toString() {
-   	 return "\${id}: \${${getAttributes(currentModelElement)[0].name}}"
+   	 return "\${id}: \${${getAttributes(currentModelElement)[0]?.name}}"
    }
    
 }
