@@ -33,6 +33,7 @@ import org.netbeans.api.xmi.XMIReaderFactory;
  *  The main class for the GroovyMDA tool
  *
  * @author     <a href="mailto:craig2600@gmail.com">Craig MacKay</a>
+ * @author     <a href="mailto:chanwit@gmail.com">Chanwit Kaewkasi</a>
  * @version $Revision: 3 $
  * @created    July 18, 2007
  */
@@ -115,7 +116,8 @@ public class GroovyMDA {
 
         ClassLoader parent = getClass().getClassLoader();
         GroovyClassLoader loader = new GroovyClassLoader(parent);
-        Class modelProcessorClass = loader.parseClass(getClass().getResourceAsStream("/GroovyModelProcessor.groovy"));
+        Class modelProcessorClass = Class.forName("GroovyModelProcessor"); 
+                //loader.parseClass(getClass().getResourceAsStream("/GroovyModelProcessor.groovy"));
         if (context.containsKey("scriptUrl")) {
             // if specified use the scrupt url as the model processor
             modelProcessorClass = loader.parseClass(new URL((String) context.get("scriptUrl")).openStream());
