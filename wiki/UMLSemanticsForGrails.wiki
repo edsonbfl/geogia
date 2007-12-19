@@ -6,9 +6,11 @@ This page is for discussing about how to map UML semantics to Grails domain clas
 
 = Diagram =
 [http://geogia.googlecode.com/svn/trunk/main/screenshots/blog_classes.png]
+
 This is a diagram describing a simple Blog system.
 
 = Generated Codes =
+* Blog.groovy
 {{{
 package org.geogia.blog
            
