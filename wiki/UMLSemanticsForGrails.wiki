@@ -1,4 +1,5 @@
 #summary Mapping UML semantics to Grails domain classes.
+#labels Featured
 
 = Introduction =
 
