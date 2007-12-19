@@ -51,28 +51,31 @@ class GroovyModelProcessor {
     }
 
     def isOneToMany = {source, target ->
-        return (upperRange(source) == 1 && upperRange(target) == -1)
+        def uTarget = upperRange(target)
+        return (upperRange(source) == 1 && (uTarget == -1) || (uTarget > 1))
     }
 
     def isManyToOne = {source, target ->
-        return (upperRange(source) == -1 && upperRange(target) == 1)
+        return isOneToMany(target, source)
     }
 
     def isManyToMany = {source, target ->
-        return (upperRange(source) == -1 && upperRange(target) == -1)
+        def uSource = upperRange(source)
+        def uTarget = upperRange(target)
+        return ((uSource == -1) || (uSource > 1) && (uTarget == -1) || (uTarget > 1))
     }
 
     def isOneToOne = {source, target ->
         return (upperRange(source) == 1 && upperRange(target) == 1)
     }
-    
-    def isOptional = { end ->
-    		return (upperRange(end) == 0)
+
+    def isOptional = {end ->
+        return (upperRange(end) == 0)
     }
-    
-    def isExact = { end, x ->
-    		return (upperRange(end) == x)
-  	}
+
+    def isExact = {end, x ->
+        return (upperRange(end) == x)
+    }
 
     def isCollection = {end ->
         return (upperRange(end) == -1)
@@ -160,12 +163,22 @@ class GroovyModelProcessor {
             type = isOrdered(associationEnd) ? "List" : "Set"
             // type += "<${associationEnd.participant.name}>"
         } else {
-        	  def p = getPackageName(associationEnd.participant)
-        	  type = associationEnd.participant.name
-        		if(packageName==null || packageName!=p) {
-            	type = p + "." + type
+            def p = getPackageName(associationEnd.participant)
+            type = associationEnd.participant.name
+            if (packageName == null || packageName != p) {
+                type = p + "." + type
             } //getFullyQualifiedName(associationEnd.participant)
         }
+        return type
+    }
+
+    def getEndTypeName = {associationEnd, packageName ->
+        def type
+        def p = getPackageName(associationEnd.participant)
+        type = associationEnd.participant.name
+        if (packageName == null || packageName != p) {
+            type = p + "." + type
+        } //getFullyQualifiedName(associationEnd.participant)
         return type
     }
 
@@ -228,6 +241,7 @@ class GroovyModelProcessor {
                 "getEnumLiterals": getEnumLiterals,
                 "getAssociationEnds": getAssociationEnds,
                 "getEndType": getEndType,
+                "getEndTypeName": getEndTypeName,
                 "getEndName": getEndName,
                 "taggedValues": taggedValues,
                 "isOneToOne": isOneToOne,
@@ -270,7 +284,7 @@ class GroovyModelProcessor {
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
             if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {
-                println "Generating class: ${fullyQualifiedName}"                
+                println "Generating class: ${fullyQualifiedName}"
                 def templateName = "templates/GrailsDomainClass.gtl"
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)
@@ -280,7 +294,7 @@ class GroovyModelProcessor {
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
             if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {
-                println "Generating enum: ${fullyQualifiedName}"                
+                println "Generating enum: ${fullyQualifiedName}"
                 def templateName = "templates/GrailsDomainEnum.gtl"
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)

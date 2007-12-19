@@ -9,7 +9,7 @@ target('default':'Generate domain classes from an XMI file') {
 	compile()
 	args = System.getProperty("grails.cli.args")
 	if(args) {
-		GroovyMDA.main(["jar:file:./uml/${args}.zargo!/${args}.xmi",'grails-app/domain'] as String[])
+		GroovyMDA.main(["jar:file:./uml/${args}.zargo!/${args}.xmi",'output'/*'grails-app/domain'*/] as String[])
 	} else {
 		println 'Please specify a model name'
 		println()
