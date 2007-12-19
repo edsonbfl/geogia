@@ -19,11 +19,8 @@ class ${currentModelElement.name} {
         def assoc = sourceEnd.association
         def thisEnd = assoc.connection.find {end -> end != sourceEnd}
         if (thisEnd.isNavigable()) {
-            //def targetType = getEndType(thisEnd, packageName)
             def targetName = getEndName(thisEnd)
             if(isManyToOne(thisEnd, sourceEnd)) {
-                //println "hasMany: ${targetName}"
-                //println "${thisEnd.aggregation}"                 
                 switch(sourceEnd.aggregation) {
                     case 'ak_none': /*how to deal with none*/ break;
                     case 'ak_aggregate': hasMany[targetName]=getEndTypeName(thisEnd, packageName); break;
@@ -31,14 +28,11 @@ class ${currentModelElement.name} {
                 }
             } else if(isOneToMany(thisEnd, sourceEnd)) {
                 switch(thisEnd.aggregation) {
-                    // case 'ak_aggregate': hasMany[targetName]=getEndTypeName(thisEnd, packageName); break;
                     case 'ak_composite': belongsTo[targetName]=getEndTypeName(thisEnd, packageName); break;
                     case 'ak_aggregate': none[targetName]=getEndTypeName(thisEnd, packageName); break;
                     case 'ak_none': none[targetName]=getEndTypeName(thisEnd, packageName); break;
                 }
             } else if(isOneToOne(thisEnd, sourceEnd)) {
-                //println "embed: ${targetName}"
-                //println "${sourceEnd.aggregation}"
                 if(sourceEnd.aggregation.toString() == 'ak_composite') {
                    embed << targetName
                 }
