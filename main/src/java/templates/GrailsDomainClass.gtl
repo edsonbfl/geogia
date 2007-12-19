@@ -1,30 +1,54 @@
-<% def packageName = getPackageName(currentModelElement)
-   if (packageName != '') { %>
+<%  def none=[:]
+    def hasMany=[:]
+    def belongsTo=[:]
+    def embed=[]
+    def packageName = getPackageName(currentModelElement)
+if (packageName != '') { %>
 package ${packageName}
-<% } %>
+<% } %>           
 class ${currentModelElement.name} {
-   <% getAttributes(currentModelElement).each { attribute ->
-       if(!attribute) return
-       def attributeName = attribute.name
-       def attributeType = friendlyNameType(attribute.type)
-       def attributeTags = taggedValues(attribute) %>            
-   ${attributeType} ${attributeName}<% } %>      
-   <% getAssociationEnds(model, currentModelElement).each { sourceEnd ->
-   		def assoc = sourceEnd.association
-   		def targetEnd = assoc.connection.find { end -> end != sourceEnd }
-   		if(targetEnd.isNavigable()) {
-   			def targetType = getEndType(targetEnd, packageName)
-      		def targetName = getEndName(targetEnd)%>
-   ${targetType} ${targetName}<% } }%>
-      
-   // TODO generate belongTo
-   // TODO generate hasMany
-   // TODO generate embed
-   // TODO generate many-to-many   
-      
-   String toString() {
-   	 return "\${id}: \${${getAttributes(currentModelElement)[0]?.name}}"
-   }
+
+<% getAttributes(currentModelElement).each {attribute ->
+        if (!attribute) return
+        def attributeName = attribute.name
+        def attributeType = friendlyNameType(attribute.type)
+        def attributeTags = taggedValues(attribute)
+        out.println("    ${attributeType} ${attributeName}")
+    }
+    getAssociationEnds(model, currentModelElement).each {sourceEnd ->
+        def assoc = sourceEnd.association
+        def thisEnd = assoc.connection.find {end -> end != sourceEnd}
+        if (thisEnd.isNavigable()) {
+            //def targetType = getEndType(thisEnd, packageName)
+            def targetName = getEndName(thisEnd)
+            if(isOneToMany(thisEnd, sourceEnd)) {
+                switch(thisEnd.aggregation) {
+                    case 'ak_aggregate': hasMany[targetName]=getEndTypeName(thisEnd, packageName); break;
+                    case 'ak_composite': belongsTo[targetName]=getEndTypeName(thisEnd, packageName); break;
+                    case 'ak_none': none[targetName]=getEndTypeName(thisEnd, packageName); break;
+                }
+            } else if(isOneToOne(thisEnd, sourceEnd)) {
+                println "embed: ${targetName}"
+                println "${sourceEnd.aggregation}" 
+                if(sourceEnd.aggregation.toString() == 'ak_composite') {
+                   embed << targetName
+                   none[targetName]=getEndTypeName(thisEnd, packageName);
+                }
+            }
+              else if(isManyToMany(thisEnd, sourceEnd)) {
+                // TODO Many to Many
+            }
+        }
+    }
+    none.each{k,v -> out.println("    ${v} ${k}")}
+    if(embed.size()>0)     {def x='    static embedded='+embed;  out.println(x.replaceAll('"','\''))}
+    if(hasMany.size()>0)   {def x='    static hasMany='+hasMany; out.println(x.replaceAll('"',''))}
+    if(belongsTo.size()>0) {def x='    static belongsTo='+belongsTo; out.println(x.replaceAll('"',''))}
+    // TODO generating constraints
+%>
+    String toString() {
+        return "\${id}: \${${getAttributes(currentModelElement)[0]?.name}}"
+    }
    
 }
 
