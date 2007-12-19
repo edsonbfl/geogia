@@ -13,7 +13,7 @@ class ${currentModelElement.name} {
    		def assoc = sourceEnd.association
    		def targetEnd = assoc.connection.find { end -> end != sourceEnd }
    		if(targetEnd.isNavigable()) {
-   				def targetType = getEndType(targetEnd, packageName)
+   			def targetType = getEndType(targetEnd, packageName)
       		def targetName = getEndName(targetEnd)%>
    ${targetType} ${targetName}<% } }%>
       
