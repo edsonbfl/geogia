@@ -6,3 +6,8 @@ class TestClosure {
 	}
 
 }
+/*
+class TestClosure {
+		
+}
+*/
