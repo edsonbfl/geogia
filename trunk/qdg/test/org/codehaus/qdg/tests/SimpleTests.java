@@ -2,7 +2,9 @@ package org.codehaus.qdg.tests;
 
 import junit.framework.TestCase;
 import org.codehaus.groovy.qdg.classgen.QdgClassGen;
+import org.codehaus.qdg.Original_002;
 import org.codehaus.qdg.TestGen_001;
+import org.codehaus.qdg.TestGen_002;
 
 /**
  * 
@@ -35,5 +37,27 @@ public class SimpleTests extends TestCase {
     	TestGen_001 t = new TestGen_001();
     	t.a.call(1);
     }
+    
+    public void testCallingClosure_002() {
+    	long s1 = System.currentTimeMillis();
+    	TestGen_002 t = new TestGen_002();
+    	t.a.call();
+    	long s2 = System.currentTimeMillis()-s1;
+    	System.out.println("time:" + s2);    	
+    	// time:30974
+    	// time:28661
+    	// time:27730
+    	// time:28090
+    }
+    
+    public void testCallingOriginal_002() {
+    	long s1 = System.currentTimeMillis();
+    	Original_002 t = new Original_002();
+    	t.a();
+    	long s2 = System.currentTimeMillis()-s1;
+    	System.out.println("time:" + s2);  
+    	// time:22883
+    }
+    
 
 }
