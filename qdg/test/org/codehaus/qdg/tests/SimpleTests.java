@@ -2,13 +2,12 @@ package org.codehaus.qdg.tests;
 
 import junit.framework.TestCase;
 import org.codehaus.groovy.qdg.classgen.QdgClassGen;
+import org.codehaus.qdg.TestGen_001;
 
 /**
- * Created by IntelliJ IDEA.
+ * 
  * User: chanwit
- * Date: 23 ¸.¤. 2550
- * Time: 4:40:55
- * To change this template use File | Settings | File Templates.
+ * 
  */
 public class SimpleTests extends TestCase {
 
@@ -30,6 +29,11 @@ public class SimpleTests extends TestCase {
     public void testClosure() {
        QdgClassGen q = new QdgClassGen("tests/TestClosure.groovy");
        q.generate("output");
+    }
+    
+    public void testCallingClosure() {
+    	TestGen_001 t = new TestGen_001();
+    	t.a.call(1);
     }
 
 }
