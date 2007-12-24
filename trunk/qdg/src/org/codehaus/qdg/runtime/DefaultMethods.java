@@ -9,5 +9,9 @@ public class DefaultMethods {
 			closure.call(i);
 		}
 	}
+	
+	public static void println(Object obj) {
+		System.out.println(obj);
+	}
 
 }
