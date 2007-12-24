@@ -19,7 +19,7 @@ public class TestGen_002 {
 	
 	private Object a__0(Object... args) {
 		Closure a$a = new Closure(this, "a$a__0");
-		DefaultMethods.times(1000000, a$a);
+		DefaultMethods.times(100, a$a);
 		return null;
 	}
 	

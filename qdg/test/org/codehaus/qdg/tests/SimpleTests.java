@@ -44,7 +44,8 @@ public class SimpleTests extends TestCase {
     	TestGen_002 t = new TestGen_002();
     	t.a.call();
     	long s2 = System.currentTimeMillis()-s1;
-    	System.out.println("time:" + s2);    	
+    	System.out.println("time:" + s2);    
+    	// 1,000,000 loops
     	// time:30974
     	// time:28661
     	// time:27730
@@ -57,6 +58,7 @@ public class SimpleTests extends TestCase {
     	t.a();
     	long s2 = System.currentTimeMillis()-s1;
     	System.out.println("time:" + s2);  
+    	// 1,000,000 loops    	
     	// time:22883
     }
     
@@ -66,6 +68,7 @@ public class SimpleTests extends TestCase {
     	t.a.call();
     	long s2 = System.currentTimeMillis()-s1;
     	System.out.println("time:" + s2);  
+    	// 1,000,000 loops    	
     	// time:22643
     }    
     
