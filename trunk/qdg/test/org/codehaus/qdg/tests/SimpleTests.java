@@ -5,6 +5,7 @@ import org.codehaus.groovy.qdg.classgen.QdgClassGen;
 import org.codehaus.qdg.Original_002;
 import org.codehaus.qdg.TestGen_001;
 import org.codehaus.qdg.TestGen_002;
+import org.codehaus.qdg.TestGen_002_Inlined;
 
 /**
  * 
@@ -58,6 +59,15 @@ public class SimpleTests extends TestCase {
     	System.out.println("time:" + s2);  
     	// time:22883
     }
+    
+    public void testCallingInlined_002() {
+    	long s1 = System.currentTimeMillis();
+    	TestGen_002_Inlined t = new TestGen_002_Inlined();
+    	t.a.call();
+    	long s2 = System.currentTimeMillis()-s1;
+    	System.out.println("time:" + s2);  
+    	// time:22643
+    }    
     
 
 }
