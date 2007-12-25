@@ -2,9 +2,20 @@ package org.codehaus.groovy.qdg.classgen;
 
 import org.codehaus.groovy.ast.ClassCodeVisitorSupport;
 import org.codehaus.groovy.ast.ClassNode;
+import org.codehaus.groovy.ast.FieldNode;
 import org.codehaus.groovy.ast.ModuleNode;
+import org.codehaus.groovy.ast.PropertyNode;
+import org.codehaus.groovy.ast.expr.BinaryExpression;
+import org.codehaus.groovy.ast.expr.Expression;
+import org.codehaus.groovy.ast.expr.FieldExpression;
+import org.codehaus.groovy.ast.expr.VariableExpression;
+import org.codehaus.groovy.ast.stmt.ExpressionStatement;
+import org.codehaus.groovy.ast.stmt.ReturnStatement;
+import org.codehaus.groovy.ast.stmt.Statement;
 import org.codehaus.groovy.control.SourceUnit;
 import org.codehaus.groovy.control.CompilationFailedException;
+import org.codehaus.groovy.syntax.Token;
+import org.codehaus.groovy.syntax.Types;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.ClassVisitor;
@@ -33,7 +44,21 @@ abstract class AbstractQdgClassGen extends ClassCodeVisitorSupport implements Op
     private SourceUnit sourceUnit;
     private String filename;
     private String output;
+    
+    protected static String capitalize(String name) {
+        return name.substring(0, 1).toUpperCase() + name.substring(1, name.length());
+    }
+    
+    protected Statement createGetterBlock(PropertyNode propertyNode, FieldNode field) {
+        Expression expression = new FieldExpression(field);
+        return new ReturnStatement(expression);
+    }
 
+    protected Statement createSetterBlock(PropertyNode propertyNode, FieldNode field) {
+        Expression expression = new FieldExpression(field);
+        return new ExpressionStatement(
+            new BinaryExpression(expression, Token.newSymbol(Types.EQUAL, 0, 0), new VariableExpression("value")));
+    }    
 
     public AbstractQdgClassGen(String filename) {
         this.filename = filename;
