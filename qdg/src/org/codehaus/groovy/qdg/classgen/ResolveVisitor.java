@@ -52,7 +52,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
     // note: BigInteger and BigDecimal are also imported by default
     public static final String[] DEFAULT_IMPORTS = {"java.lang.", "java.io.", "java.net.", "java.util.", "groovy.lang.", "groovy.util."};
     // private CompilationUnit compilationUnit;
-    private Map cachedClasses = new HashMap();
+    private Map<String, Object> cachedClasses = new HashMap<String, Object>();
     private static final Object NO_CLASS = new Object();
     private static final Object SCRIPT = new Object();
     private SourceUnit source;
@@ -63,7 +63,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
     private boolean inClosure = false;
     private boolean isSpecialConstructorCall = false;
 
-    private Map genericParameterNames = new HashMap();
+    private Map<String, GenericsType> genericParameterNames = new HashMap<String, GenericsType>();
 
     public ResolveVisitor() {
 //        CompilationUnit cu) {
@@ -196,7 +196,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
             return false;
         } else {
             try {
-                setClass(type, (Class) val);
+                setClass(type, (Class<?>)val);
             } catch (Exception e) {
                 return false;
             }
@@ -205,12 +205,12 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
     }
 
     // NOTE: copied from GroovyClassLoader
-    private long getTimeStamp(Class cls) {
+    private long getTimeStamp(Class<?> cls) {
         return Verifier.getTimestamp(cls);
     }
 
     // NOTE: copied from GroovyClassLoader
-    private boolean isSourceNewer(URL source, Class cls) {
+    private boolean isSourceNewer(URL source, Class<?> cls) {
         try {
             long lastMod;
 
@@ -323,7 +323,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
         return false;
     }
 
-    private void setClass(ClassNode n, Class cls) {
+    private void setClass(ClassNode n, Class<?> cls) {
         ClassNode cn = ClassHelper.make(cls);
         n.setRedirect(cn);
     }
@@ -383,14 +383,16 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
             type.setName(module.getPackageName() + name);
         }
         // look into the module node if there is a class with that name
-        List moduleClasses = module.getClasses();
-        for (Iterator iter = moduleClasses.iterator(); iter.hasNext();) {
-            ClassNode mClass = (ClassNode) iter.next();
+        List<ClassNode> moduleClasses = (List<ClassNode>)module.getClasses();
+        for(ClassNode mClass: moduleClasses) {
             if (mClass.getName().equals(type.getName())) {
                 if (mClass != type) type.setRedirect(mClass);
                 return true;
-            }
+            }        	
         }
+//        for (Iterator iter = moduleClasses.iterator(); iter.hasNext();) {
+//            ClassNode mClass = (ClassNode) iter.next();
+//        }
         type.setName(name);
 
         if (testModuleImports) {
@@ -427,7 +429,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
         if (currentClass.getModule().hasPackageName() && name.indexOf('.') == -1) return false;
         //GroovyClassLoader loader = compilationUnit.getClassLoader();
         ClassLoader loader = this.getClass().getClassLoader();
-        Class cls;
+        Class<?> cls;
         try {
             // NOTE: it's important to do no lookup against script files
             // here since the GroovyClassLoader would create a new CompilationUnit
