@@ -14,12 +14,20 @@ import org.codehaus.groovy.qdg.Closure;
 
 public class TestGen_001 {
 	
-	public Closure a = new Closure(this, "a$body");
+	private Closure a = new Closure(this, "a__0");
 
-	private Object a$body(Object... args) {
+	private Object a__0(Object... args) {
 		System.out.println(args[0]);
 		System.out.println("a_body");
 		return null;
+	}
+
+	public Closure getA() {
+		return a;
+	}
+
+	public void setA(Closure a) {
+		this.a = a;
 	}
 	
 }

@@ -36,7 +36,7 @@ public class SimpleTests extends TestCase {
     
     public void testCallingClosure() {
     	TestGen_001 t = new TestGen_001();
-    	t.a.call(1);
+    	t.getA().call(1);
     }
     
     public void testCallingClosure_002() {
