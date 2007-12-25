@@ -83,7 +83,7 @@ public class ResolveVisitor extends ClassCodeExpressionTransformer {
         genericParameterNames = new HashMap(genericParameterNames);
 
         resolveGenericsHeader(node.getGenericsTypes());
-
+        
         Parameter[] paras = node.getParameters();
         for (int i = 0; i < paras.length; i++) {
             Parameter p = paras[i];
