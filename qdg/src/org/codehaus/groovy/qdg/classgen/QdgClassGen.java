@@ -22,16 +22,20 @@ import org.objectweb.asm.Opcodes;
 
 public class QdgClassGen extends AbstractQdgClassGen {
 
-    private ClassNode classNode;
+    private static final String CLOSURE_TYPE_DESC = "Lorg/codehaus/groovy/qdg/Closure;";
+	private static final String CLOSURE_INTERNAL_NAME = "org/codehaus/groovy/qdg/Closure";
+	private static final String closureBodySuffix = "__0";
+	private ClassNode classNode;
 	private FieldNode currentField;
-	private Object constructorNode;
-	private MethodNode methodNode;
-	private boolean outputReturn;
+//	private Object constructorNode;
+//	private MethodNode methodNode;
+//	private boolean outputReturn;
 	
 	private MethodVisitor mv;
-	private BytecodeHelper helper;
+//	private BytecodeHelper helper;
 	
-	private List<Runnable> exceptionBlocks = new ArrayList<Runnable>();
+//	private List<Runnable> exceptionBlocks = new ArrayList<Runnable>();
+	private List<FieldNode> closuresToInit = new ArrayList<FieldNode>();
 
     public QdgClassGen(String filename) {
         super(filename);
@@ -41,44 +45,73 @@ public class QdgClassGen extends AbstractQdgClassGen {
 		return classNode;
 	}
 	
-    private boolean methodNeedsReplacement(MethodNode m) {
-        // no method found, we need to replace
-        if (m==null) return true;
-        // method is in current class, nothing to be done
-        if (m.getDeclaringClass()==this.getClassNode()) return false;
-        // do not overwrite final
-        if ((m.getModifiers()&ACC_FINAL)!=0) return false;
-        return true;
-    }    
-    
-    private boolean isVargs(Parameter[] p) {
-        if (p.length==0) return false;
-        ClassNode clazz = p[p.length-1].getType();
-        return (clazz.isArray());
-    }
-    
-    private String[] buildExceptions(ClassNode[] exceptions) {
-        if (exceptions == null) return null;
-        String[] ret = new String[exceptions.length];
-        for (int i = 0; i < exceptions.length; i++) {
-            ret[i] = BytecodeHelper.getClassInternalName(exceptions[i]);
-        }
-        return ret;
-    }    
+//    private boolean methodNeedsReplacement(MethodNode m) {
+//        // no method found, we need to replace
+//        if (m==null) return true;
+//        // method is in current class, nothing to be done
+//        if (m.getDeclaringClass()==this.getClassNode()) return false;
+//        // do not overwrite final
+//        if ((m.getModifiers()&ACC_FINAL)!=0) return false;
+//        return true;
+//    }    
+//    
+//    private boolean isVargs(Parameter[] p) {
+//        if (p.length==0) return false;
+//        ClassNode clazz = p[p.length-1].getType();
+//        return (clazz.isArray());
+//    }
+//    
+//    private String[] buildExceptions(ClassNode[] exceptions) {
+//        if (exceptions == null) return null;
+//        String[] ret = new String[exceptions.length];
+//        for (int i = 0; i < exceptions.length; i++) {
+//            ret[i] = BytecodeHelper.getClassInternalName(exceptions[i]);
+//        }
+//        return ret;
+//    }    
 
+	public void visitInit(ClassNode node) {
+		mv = cv.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
+		mv.visitCode();
+		mv.visitVarInsn(ALOAD, 0);
+		mv.visitMethodInsn(INVOKESPECIAL, this.baseInternalName, "<init>", "()V");
+		for(FieldNode fnode: closuresToInit) {
+			mv.visitVarInsn(ALOAD, 0);
+			mv.visitTypeInsn(NEW, CLOSURE_INTERNAL_NAME);
+			mv.visitInsn(DUP);
+			mv.visitVarInsn(ALOAD, 0);
+			mv.visitLdcInsn(fnode.getName() + closureBodySuffix);
+			mv.visitMethodInsn(INVOKESPECIAL, 
+					CLOSURE_INTERNAL_NAME, 
+					"<init>", 
+					"(Ljava/lang/Object;Ljava/lang/String;)V"
+			);
+			mv.visitFieldInsn(PUTFIELD, 
+					this.internalName, 
+					fnode.getName(), 
+					CLOSURE_TYPE_DESC
+			);
+		}
+		mv.visitInsn(RETURN);
+
+		mv.visitMaxs(0, 0);
+		mv.visitEnd();
+	}
+	
     @Override
     public void visitClass(ClassNode node) {
         this.classNode = node;
         this.internalName = BytecodeHelper.getClassInternalName(node);
         this.baseInternalName = BytecodeHelper.getClassInternalName(node.getSuperClass());
         cv.visit(V1_6,
-                node.getModifiers(),
+                node.getModifiers() + ACC_SUPER,
                 this.internalName,
                 null,                   // generics
                 this.baseInternalName,  // super class
                 null                    // interfaces
         );
         super.visitClass(node);
+        visitInit(node);
         cv.visitEnd();
     }   
 
@@ -87,7 +120,8 @@ public class QdgClassGen extends AbstractQdgClassGen {
     	this.currentField = node;      	
     	String fieldTypeDesc;
 		if(node.getInitialExpression() instanceof ClosureExpression){
-    		fieldTypeDesc = "Lorg/codehaus/groovy/qdg/Closure;";    		
+    		fieldTypeDesc = CLOSURE_TYPE_DESC;
+    		closuresToInit.add(node);
     	} else {
     		fieldTypeDesc = BytecodeHelper.getTypeDescription(node.getType());
     	}
@@ -104,10 +138,7 @@ public class QdgClassGen extends AbstractQdgClassGen {
 
 	@Override
     public void visitClosureExpression(ClosureExpression closureExpression) {
-    	System.out.println(currentField);
-        System.out.println(closureExpression);
         super.visitClosureExpression(closureExpression);
-        // TODO generate closure body        
     }	
 
 	private void generatePropSetter(final String name,
@@ -117,17 +148,12 @@ public class QdgClassGen extends AbstractQdgClassGen {
     			"(Lorg/codehaus/groovy/qdg/Closure;)V", 
     			null, null);    	
     	mv.visitCode();    	
-    	Label l0 = new Label();
-    	mv.visitLabel(l0);
     	mv.visitVarInsn(ALOAD, 0);
     	mv.visitVarInsn(ALOAD, 1);
-    	mv.visitFieldInsn(PUTFIELD, this.internalName, name, "Lorg/codehaus/groovy/qdg/Closure;");
+    	mv.visitFieldInsn(PUTFIELD, this.internalName, name, CLOSURE_TYPE_DESC);
     	mv.visitInsn(RETURN);
-    	Label l2 = new Label();
-    	mv.visitLabel(l2);
-    	mv.visitLocalVariable("this", internalTypeDesc, null, l0, l2, 0);
-    	mv.visitLocalVariable("value", "Lorg/codehaus/groovy/qdg/Closure;", null, l0, l2, 1);
-    	mv.visitMaxs(2, 2);
+
+    	mv.visitMaxs(0, 0);
 	}
 
 	private void generatePropGetter(final String name,
@@ -137,22 +163,15 @@ public class QdgClassGen extends AbstractQdgClassGen {
         		"()Lorg/codehaus/groovy/qdg/Closure;", 
         		null, null);
         mv.visitCode();
-        Label l0 = new Label();
-        mv.visitLabel(l0);
         mv.visitVarInsn(ALOAD, 0);
 		mv.visitFieldInsn(
         		GETFIELD, 
         		this.internalName, 
-        		name, "Lorg/codehaus/groovy/qdg/Closure;"
+        		name, CLOSURE_TYPE_DESC
         );
         mv.visitInsn(ARETURN);
-        Label l1 = new Label();
-        mv.visitLabel(l1);        
-        mv.visitLocalVariable(
-        		"this", 
-        		internalTypeDesc,
-        		null, l0, l1, 0);
-        mv.visitMaxs(1, 1);
+
+        mv.visitMaxs(0, 0);
         mv.visitEnd();
 	}	
 	
