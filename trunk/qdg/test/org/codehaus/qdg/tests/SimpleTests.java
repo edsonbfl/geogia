@@ -14,22 +14,23 @@ import org.codehaus.qdg.TestGen_002_Inlined;
  */
 public class SimpleTests extends TestCase {
 
-    public void testSimple1() {
+    public void testGenerateMyDomain() {
         QdgClassGen q = new QdgClassGen("tests/MyDomain.groovy");
         q.generate("output");        
     }
 
-    public void testSimple2() {
+    public void testGenerateMyController() {
         QdgClassGen q = new QdgClassGen("tests/pk/MyController.groovy");
         q.generate("output");
+        
     }
 
-    public void testProp() {
+    public void testGenerateTestProp() {
        QdgClassGen q = new QdgClassGen("tests/TestProp.groovy");
        q.generate("output");
     }
 
-    public void testClosure() {
+    public void testGenerateTestClosure() {
        QdgClassGen q = new QdgClassGen("tests/TestClosure.groovy");
        q.generate("output");
     }
