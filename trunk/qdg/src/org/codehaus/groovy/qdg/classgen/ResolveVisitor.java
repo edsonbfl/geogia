@@ -50,7 +50,13 @@ import java.util.*;
 public class ResolveVisitor extends ClassCodeExpressionTransformer {
     private ClassNode currentClass;
     // note: BigInteger and BigDecimal are also imported by default
-    public static final String[] DEFAULT_IMPORTS = {"java.lang.", "java.io.", "java.net.", "java.util.", "groovy.lang.", "groovy.util."};
+    public static final String[] DEFAULT_IMPORTS = 
+    	{"java.lang.", 
+    	 "java.io.", 
+    	 "java.net.", 
+    	 "java.util.", 
+    	 "groovy.lang.", 
+    	 "groovy.util."};
     // private CompilationUnit compilationUnit;
     private Map<String, Object> cachedClasses = new HashMap<String, Object>();
     private static final Object NO_CLASS = new Object();
