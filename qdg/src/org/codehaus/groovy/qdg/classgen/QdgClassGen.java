@@ -13,6 +13,7 @@ import org.codehaus.groovy.ast.PropertyNode;
 import org.codehaus.groovy.ast.FieldNode;
 import org.codehaus.groovy.ast.expr.ClassExpression;
 import org.codehaus.groovy.ast.expr.ClosureExpression;
+import org.codehaus.groovy.ast.expr.MethodCallExpression;
 import org.codehaus.groovy.ast.stmt.Statement;
 import org.codehaus.groovy.classgen.BytecodeHelper;
 import org.objectweb.asm.FieldVisitor;
@@ -24,7 +25,8 @@ public class QdgClassGen extends AbstractQdgClassGen {
 
     private static final String CLOSURE_TYPE_DESC = "Lorg/codehaus/groovy/qdg/Closure;";
 	private static final String CLOSURE_INTERNAL_NAME = "org/codehaus/groovy/qdg/Closure";
-	private static final String closureBodySuffix = "__0";
+	private static final String CLOSURE_BODY_SUFFIX = "__0";
+	
 	private ClassNode classNode;
 	private FieldNode currentField;
 //	private Object constructorNode;
@@ -80,7 +82,7 @@ public class QdgClassGen extends AbstractQdgClassGen {
 			mv.visitTypeInsn(NEW, CLOSURE_INTERNAL_NAME);
 			mv.visitInsn(DUP);
 			mv.visitVarInsn(ALOAD, 0);
-			mv.visitLdcInsn(fnode.getName() + closureBodySuffix);
+			mv.visitLdcInsn(fnode.getName() + CLOSURE_BODY_SUFFIX);
 			mv.visitMethodInsn(INVOKESPECIAL, 
 					CLOSURE_INTERNAL_NAME, 
 					"<init>", 
@@ -134,14 +136,25 @@ public class QdgClassGen extends AbstractQdgClassGen {
         );
         super.visitField(node);
         fv.visitEnd();
+        this.currentField = null;        
     }
 
 	@Override
     public void visitClosureExpression(ClosureExpression closureExpression) {
+		if(this.currentField != null) {
+			mv = cv.visitMethod(ACC_PRIVATE + ACC_VARARGS, 
+					this.currentField.getName() + CLOSURE_BODY_SUFFIX, 
+					"([Ljava/lang/Object;)Ljava/lang/Object;", null, null);
+			mv.visitCode();
+		} else {
+			
+		}
         super.visitClosureExpression(closureExpression);
+        mv.visitMaxs(0, 0);
+        mv.visitEnd();
     }	
 
-	private void generatePropSetter(final String name,
+	private void generateClosurePropSetter(final String name,
 			final String internalTypeDesc, final String setterName) {
     	mv = cv.visitMethod(ACC_PUBLIC  + ACC_SYNTHETIC,
     			setterName, 
@@ -156,7 +169,7 @@ public class QdgClassGen extends AbstractQdgClassGen {
     	mv.visitMaxs(0, 0);
 	}
 
-	private void generatePropGetter(final String name,
+	private void generateClosurePropGetter(final String name,
 			final String internalTypeDesc, final String getterName) {
         mv = cv.visitMethod(ACC_PUBLIC + ACC_SYNTHETIC,
         		getterName, 
@@ -177,14 +190,36 @@ public class QdgClassGen extends AbstractQdgClassGen {
 	
 	@Override
 	public void visitProperty(PropertyNode node) {
+		System.out.println("visitProperty");
 		System.out.println("property: " + node.getName());
         final String name = node.getName();
         final String internalTypeDesc = BytecodeHelper.getTypeDescription(this.getClassNode());        
         final String getterName = "get" + capitalize(name);
         final String setterName = "set" + capitalize(name);
-        generatePropGetter(name, internalTypeDesc, getterName);
-        generatePropSetter(name, internalTypeDesc, setterName);
+        generateClosurePropGetter(name, internalTypeDesc, getterName);
+        generateClosurePropSetter(name, internalTypeDesc, setterName);
 	}
+	
+
+	
+	@Override
+	public void visitMethodCallExpression(MethodCallExpression call) {
+		System.out.println("implicit this:" + call.isImplicitThis());
+		if(call.isImplicitThis()) {
+			// RULE to resolve @Default methods
+			// 1. the call is implicit "this"
+			// 2. no declared method in this class
+			// 3. no declared method in super class
+			// 4. static context, how?
+			// 5. 
+			mv.visitLdcInsn("test");
+			mv.visitMethodInsn(INVOKESTATIC, "org/codehaus/qdg/runtime/DefaultMethods", "println", "(Ljava/lang/String;)V");
+			mv.visitInsn(ACONST_NULL);
+			mv.visitInsn(ARETURN);
+		}
+	}
+	
+	
 	
 //	@Override
 //	public void visitMethod(MethodNode node) {

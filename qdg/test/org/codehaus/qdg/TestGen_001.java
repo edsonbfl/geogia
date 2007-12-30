@@ -1,6 +1,7 @@
 package org.codehaus.qdg;
 
 import org.codehaus.groovy.qdg.Closure;
+import org.codehaus.qdg.runtime.DefaultMethods;
 
 /*
  * class TestGen_001 {
@@ -17,8 +18,9 @@ public class TestGen_001 {
 	private Closure a = new Closure(this, "a__0");
 
 	private Object a__0(Object... args) {
-		System.out.println(args[0]);
-		System.out.println("a_body");
+		DefaultMethods.println("test");
+		//System.out.println(args[0]);
+		//System.out.println("a_body");
 		return null;
 	}
 
