@@ -1,0 +1,17 @@
+import org.codehaus.groovy.runtime.*;
+
+*Controller$_*#doCall(Object) {
+  currentTimeMillis -> System#currentTimeMillis();
+}
+
+static main(String[]) {
+  currentTimeMillis -> System#currentTimeMillis();
+  times -> DefaultGroovyMethods#times((Number)$1, (Closure)$[0]);
+  minus -> DefaultGroovyMethods#minus((Number)$1, (Object)$[0]);
+  println -> DefaultGroovyMethods#println((Object)$[0]);
+}
+
+*$_main_closure1#doCall(Object) {
+  dumpStack -> Thread#dumpStack(); 
+}
+
