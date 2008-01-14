@@ -1,0 +1,8 @@
+import org.codehaus.groovy.runtime.DefaultGroovyMethods;
+import org.codehaus.groovy.runtime.A;
+
+* {
+}
+
+*Controller {
+}
