@@ -4,53 +4,89 @@ options {k=2; backtrack=true; memoize=true;}
 
 @parser::header {
 package org.codehaus.groovy.aop.parser;
+
+import org.codehaus.groovy.aop.parser.codedom.*;
+import org.objectweb.asm.Type;
 }
+
 @lexer::header {
 package org.codehaus.groovy.aop.parser;
 }
 
-@lexer::members {
-protected boolean enumIsKeyword = false;
-}
+compilationUnit returns [GStatic gstatic]
+@init   	{ gstatic = new GStatic(); }
+	:		( i=  importDecl  { gstatic.addImport(i);}       )* 
+	    	( ab= aspectBlock { gstatic.addAspectBlock(ab);} )*
+	;
+	
+importDecl returns [String stmt]
+	:	'import' i= importStmt ';' {
+	    		stmt = $i.text;
+		}
+	;
 
-compilationUnit
-	:	importDecl* aspectBlock*
-	;
-	
-importDeclaration
-	:	'import' Identifier ('.' Identifier)* ('.' '*')? ';'
-	;
+importStmt
+	:	Identifier ('.' Identifier)* ('.' '*')?
+	;	
 
-/*
-static main(String[]) {
-  currentTimeMillis -> System#currentTimeMillis();
-  times -> DefaultGroovyMethods#times((Number)$1, (Closure)$[0]);
-  minus -> DefaultGroovyMethods#minus((Number)$1, (Object)$[0]);
-  println -> DefaultGroovyMethods#println((Object)$[0]);
-}
-*/
-aspectBlock
-	:	'static'? packagePattern? '#' methodPattern methodSig? blockBody 	
+aspectBlock returns [AspectBlock ab]
+@init 		{ ab = new AspectBlock(); }
+	:	s='static'? classNamePattern? '#' methodPattern m=methodSig? blockBody 	{
+			if(s!=null) ab.setStatic(true);
+			ab.addClassNamePattern($classNamePattern.text);
+			ab.addMethodPattern($methodPattern.text);
+			ab.setWhereSignature(m);			
+		}
 	;
 	
-blockBody
-	:	'{' ( methodCall '->' replaceStmt )* '}
+blockBody returns [List<ReplaceStmt> replaceStmts]
+@init 		{ replaceStmts = new List<ReplaceStmt>(); }
+	:	'{' 
+			( r= replaceRule { replaceStmts.add(r); } )* 
+		'}'
 	;
 	
-methodCall
-	:	'static'? classNamePattern? '#' methodPattern methodSig?
+replaceRule returns [ReplaceStmt r]
+@init 		{ r = new ReplaceStmt(); }
+	:  	m=methodCall '->' re=replaceStmt { 
+	   		r.setMethodCall(m);
+	   		r.setReplaceStmt(re);
+	   	}
+	;	
+	
+methodCall returns [MethodCall m]
+	:	'static'? classNamePattern? '#' methodPattern methodSig? {
+			
+		}
 	;
 	
-methodSig
-	:	'(' typeList? ')'
+methodSig returns [List<Type> types]
+	:	'(' typeList? ')'		
 	;
 	
-typeList
-	:	typeName (',' typeName)*
+typeList returns [List<Type> types]
+@init		{  types = new ArrayList<Type>(); }
+	:	e=typeName {types.add(e);} ( ',' e=typeName {types.add(e);} )*
 	;
 	
-typeName
-	:	(primitiveType | className) ('[' ']')*
+typeName returns [Type type]
+	:	a=primitiveOrFull ArrayMask
+		{
+			System.out.println($a.text);
+			System.out.println($ArrayMask.text);
+			if($ArrayMask != null) {
+				
+			}
+			// type = Type.getDescription($a.text);
+		}
+	;
+	
+primitiveOrFull
+	: (primitiveType | className)
+	;	
+	
+ArrayMask
+	:	('[' ']')*
 	;
 	
 primitiveType
@@ -69,7 +105,11 @@ varList
 	:	var (',' var)*
 	;
 	
-var :	typeCast? '$' ( JavaIDDigit | ('[' JavaIDDigit ']'))
+var :	typeCast? '#' ( JavaIDDigit | ('[' JavaIDDigit ']'))
+	;
+
+typeCast
+	: '(' className ')'
 	;
 	
 className
@@ -89,7 +129,7 @@ methodPattern
 	;
 	
 Identifier_Pattern 
-    :   (Letter | '*' | '+') (Letter| '*' | '+' | JavaIDDigit)*
+    :   (Letter | '*' | '+' ) (Letter| '*' | '+' | JavaIDDigit)*
     ;	
 	
 Identifier 
