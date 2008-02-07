@@ -4,7 +4,7 @@ import org.omg.uml.foundation.core.DataType
 import org.omg.uml.foundation.core.UmlClass
 import org.omg.uml.foundation.datatypes.OrderingKindEnum
 import org.omg.uml.modelmanagement.Model
-import org.geogia.xmi.XMIPreFilter
+import org.geogia.xmi.*
 
 class GroovyModelProcessor {
 
@@ -110,7 +110,7 @@ class GroovyModelProcessor {
             def valueBuffer = new StringBuffer()
             taggedValue.dataValue.each {value ->
                 if (valueBuffer.length() > 0) {
-                    valueBuffer.append(",")
+                    valueBuffer.append(',')
                 }
                 valueBuffer.append(value)
             }
@@ -152,7 +152,7 @@ class GroovyModelProcessor {
     def isOwner = {association, associationEnd ->
         def owner = association.connection.find {end -> taggedValues(end).owner}
         if (owner == null) {
-            throw new IllegalStateException("no owner defined for ")
+            throw new IllegalStateException('no owner defined for ')
         }
         return (owner == associationEnd)
     }
@@ -160,7 +160,7 @@ class GroovyModelProcessor {
     def getEndType = {associationEnd, packageName ->
         def type
         if (isCollection(associationEnd)) {
-            type = isOrdered(associationEnd) ? "List" : "Set"
+            type = isOrdered(associationEnd) ? 'List' : 'Set'
         } else {
             def p = getPackageName(associationEnd.participant)
             type = associationEnd.participant.name
@@ -263,7 +263,9 @@ class GroovyModelProcessor {
         outputFile.parentFile.mkdirs()
         outputFile.delete()
         outputFile.createNewFile()
-        outputFile << new SimpleTemplateEngine().createTemplate(new InputStreamReader(loadResourceStream(templateName))).make(prepareBinding(context)).toString()
+        def s = new SimpleTemplateEngine().createTemplate(new InputStreamReader(loadResourceStream(templateName))).make(prepareBinding(context)).toString()
+        new GroovyPrettyPrinter(s, outputFile)
+        // outputFile << s 
     }
 
     def getOutputPath(context, path) {
@@ -284,7 +286,7 @@ class GroovyModelProcessor {
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
             if (!fullyQualifiedName.startsWith('java') && fullyQualifiedName.size() > 0) {
                 println "Generating class: ${fullyQualifiedName}"
-                def templateName = "templates/GrailsDomainClass.gtl"
+                def templateName = 'templates/GrailsDomainClass.gtl'
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)
             }
@@ -292,9 +294,9 @@ class GroovyModelProcessor {
         getAllEnums(context.model).each {modelElement ->
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
-            if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {
+            if (!fullyQualifiedName.startsWith('java') && fullyQualifiedName.size() > 0) {
                 println "Generating enum: ${fullyQualifiedName}"
-                def templateName = "templates/GrailsDomainEnum.gtl"
+                def templateName = 'templates/GrailsDomainEnum.gtl'
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)
             }
