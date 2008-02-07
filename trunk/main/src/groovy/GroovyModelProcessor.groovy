@@ -265,7 +265,6 @@ class GroovyModelProcessor {
         outputFile.createNewFile()
         def s = new SimpleTemplateEngine().createTemplate(new InputStreamReader(loadResourceStream(templateName))).make(prepareBinding(context)).toString()
         new GroovyPrettyPrinter(s, outputFile)
-        // outputFile << s 
     }
 
     def getOutputPath(context, path) {

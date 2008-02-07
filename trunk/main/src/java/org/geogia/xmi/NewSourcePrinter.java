@@ -876,7 +876,11 @@ public class NewSourcePrinter extends VisitorAdapter {
             String theString = escape(t.getText());
         if (getParentNode().getType() != GroovyTokenTypes.LABELED_ARG &&
             getParentNode().getType() != GroovyTokenTypes.STRING_CONSTRUCTOR) {
-                theString = "\"" + theString + "\"";
+                if(theString.matches("\\$\\{")) {
+                    theString = "\"" + theString + "\"";
+                }  else {
+                    theString = "'" + theString + "'";
+                }
             }
             print(t,visit,theString);
         }
