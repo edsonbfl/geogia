@@ -161,13 +161,12 @@ class GroovyModelProcessor {
         def type
         if (isCollection(associationEnd)) {
             type = isOrdered(associationEnd) ? "List" : "Set"
-            // type += "<${associationEnd.participant.name}>"
         } else {
             def p = getPackageName(associationEnd.participant)
             type = associationEnd.participant.name
             if (packageName == null || packageName != p) {
-                type = p + "." + type
-            } //getFullyQualifiedName(associationEnd.participant)
+                type = p + '.' + type
+            }
         }
         return type
     }
@@ -177,8 +176,8 @@ class GroovyModelProcessor {
         def p = getPackageName(associationEnd.participant)
         type = associationEnd.participant.name
         if (packageName == null || packageName != p) {
-            type = p + "." + type
-        } //getFullyQualifiedName(associationEnd.participant)
+            type = p + '.' + type
+        }
         return type
     }
 
@@ -231,27 +230,27 @@ class GroovyModelProcessor {
 
     def prepareBinding = {map ->
         def binding = [
-                "javaToSql": javaToSql,
-                "javaType": javaType,
-                "friendlyNameType": friendlyNameType,
-                "firstCharUpper": firstCharUpper,
-                "firstCharLower": firstCharLower,
-                "getPackageName": getPackageName,
-                "getAttributes": getAttributes,
-                "getEnumLiterals": getEnumLiterals,
-                "getAssociationEnds": getAssociationEnds,
-                "getEndType": getEndType,
-                "getEndTypeName": getEndTypeName,
-                "getEndName": getEndName,
-                "taggedValues": taggedValues,
-                "isOneToOne": isOneToOne,
-                "isOneToMany": isOneToMany,
-                "isManyToOne": isManyToOne,
-                "isManyToMany": isManyToMany,
-                "isOwner": isOwner,
-                "isCollection": isCollection,
-                "isOptional": isOptional,
-                "isExact": isExact
+                'javaToSql': javaToSql,
+                'javaType': javaType,
+                'friendlyNameType': friendlyNameType,
+                'firstCharUpper': firstCharUpper,
+                'firstCharLower': firstCharLower,
+                'getPackageName': getPackageName,
+                'getAttributes': getAttributes,
+                'getEnumLiterals': getEnumLiterals,
+                'getAssociationEnds': getAssociationEnds,
+                'getEndType': getEndType,
+                'getEndTypeName': getEndTypeName,
+                'getEndName': getEndName,
+                'taggedValues': taggedValues,
+                'isOneToOne': isOneToOne,
+                'isOneToMany': isOneToMany,
+                'isManyToOne': isManyToOne,
+                'isManyToMany': isManyToMany,
+                'isOwner': isOwner,
+                'isCollection': isCollection,
+                'isOptional': isOptional,
+                'isExact': isExact
         ]
         if (map) {
             binding.putAll(map)
@@ -283,7 +282,7 @@ class GroovyModelProcessor {
         getAllClasses(context.model).each {modelElement ->
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
-            if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {
+            if (!fullyQualifiedName.startsWith('java') && fullyQualifiedName.size() > 0) {
                 println "Generating class: ${fullyQualifiedName}"
                 def templateName = "templates/GrailsDomainClass.gtl"
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
@@ -301,21 +300,6 @@ class GroovyModelProcessor {
             }
         }
 
-        //       getAllClasses(context.model).each { modelElement ->
-        //
-        //           context.currentModelElement = modelElement
-        //
-        //           def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
-        //           if (!fullyQualifiedName.startsWith("java") && fullyQualifiedName.size() > 0) {
-        //
-        //               def templateName = "templates/JpaEntity.gtl"
-        //               def outputName = "${fullyQualifiedName.replace('.','/')}.java"
-        //
-        //               processTemplate(templateName, outputName, context)
-        //
-        //           }
-        //
-        //       }
     }
 
 }
