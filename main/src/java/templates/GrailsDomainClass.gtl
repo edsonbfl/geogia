@@ -13,7 +13,8 @@ package ${packageName}
            
 class ${currentModelElement.name} {
 
-<%  getAttributes(currentModelElement).each {attribute ->
+<%
+    getAttributes(currentModelElement).each {attribute ->
         if (!attribute) return
         def attributeName = attribute.name
         def attributeType = friendlyNameType(attribute.type)
@@ -31,8 +32,11 @@ class ${currentModelElement.name} {
         }
         def defaultValue = attribute.initialValue?.body
         if(defaultValue != null) { attributeName = attributeName + ' = ' + defaultValue}
-%>    ${attributeType} ${attributeName}
-<%  }
+        out.println("${attributeType} ${attributeName}")
+    }
+%>
+
+<%
     getAssociationEnds(model, currentModelElement).each {sourceEnd ->
         def assoc = sourceEnd.association
         def thisEnd = assoc.connection.find {end -> end != sourceEnd}
@@ -61,15 +65,39 @@ class ${currentModelElement.name} {
             }
         }
     }
-    none.each{k,v -> out.println("    ${v} ${k}")}
 %>
-<%if(embed.size()>0)   {def x='    static embedded='+embed;  out.println(x.replaceAll('"','\''))}
-if(hasMany.size()>0)   {def x='    static hasMany='+hasMany; out.println(x.replaceAll('"',''))}
-if(belongsTo.size()>0) {def x='    static belongsTo='+belongsTo; out.println(x.replaceAll('"',''))}
-if(constraints.size()>0){%>
+
+<%
+    none.each{k,v ->
+      out.println("${v} ${k}")
+    } 
+%>
+
+<%
+    if(embed.size()>0) {
+        def x='static embedded='+embed
+        out.println(x.replace('"','\''))
+    }
+    if(hasMany.size()>0) {
+        def x='static hasMany='+hasMany;
+        out.println(x.replaceAll('"',''))
+    }
+    if(belongsTo.size()>0) {
+        def x='static belongsTo='+belongsTo;
+        out.println(x.replaceAll('"',''))
+    }
+%>
+
+<% if(constraints.size()>0) { %>
     static constraints = {
-<%constraints.each{ out.println '        ' + it }%>    }
-<%}%>
+<%
+    constraints.each{
+        out.println(it)
+    }
+%>
+}
+<%} // if %>
+
     String toString() {
         return "\${id}"
     }
