@@ -32,10 +32,10 @@ import org.netbeans.api.xmi.XMIReaderFactory;
 /**
  *  The main class for the GroovyMDA tool
  *
- * @author     <a href="mailto:craig2600@gmail.com">Craig MacKay</a>
- * @author     <a href="mailto:chanwit@gmail.com">Chanwit Kaewkasi</a>
- * @version $Revision: 3 $
- * @created    July 18, 2007
+ * @author		<a href="mailto:craig2600@gmail.com">Craig MacKay</a>
+ * @author		<a href="mailto:chanwit@gmail.com">Chanwit Kaewkasi</a>
+ * @version 	$Revision: 3 $
+ * @created		July 18, 2007
  */
 public class GroovyMDA {
 

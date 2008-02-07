@@ -1,12 +1,16 @@
-<%  def none=[:]
+<%  
+	def none=[:]
     def hasMany=[:]
     def belongsTo=[:]
     def embed=[]
     def constraints=[]
     def packageName = getPackageName(currentModelElement)
-if (packageName != '') { %>
+%>
+    
+<% if (packageName != '') { %>
 package ${packageName}
-<% } %>           
+<% } %>
+           
 class ${currentModelElement.name} {
 
 <%  getAttributes(currentModelElement).each {attribute ->
