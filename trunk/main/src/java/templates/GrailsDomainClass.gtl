@@ -5,13 +5,14 @@
     def embed=[]
     def constraints=[]
     def packageName = getPackageName(currentModelElement)
+    def parentName = getParentName(currentModelElement)
 %>
     
 <% if (packageName != '') { %>
 package ${packageName}
 <% } %>
            
-class ${currentModelElement.name} {
+class ${currentModelElement.name} <%if(parentName){%>extends ${parentName}<%}%> {
 
 <%
     getAttributes(currentModelElement).each {attribute ->

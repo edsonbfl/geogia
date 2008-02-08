@@ -196,6 +196,16 @@ class GroovyModelProcessor {
         return clazz?.name
     }
 
+    def getParentName = {clazz ->
+        if(clazz?.generalization.size() == 0) return null
+        def parent = clazz.generalization.toArray()[0].parent
+        if(clazz.namespace == parent.namespace) {
+            return parent.name
+        } else {
+            return getFullyQualifiedName(parent)
+        }
+    }
+
     def getAttributes = {classifier ->
         return findFeatures(classifier, Attribute.class)
     }
@@ -236,6 +246,7 @@ class GroovyModelProcessor {
                 'firstCharUpper': firstCharUpper,
                 'firstCharLower': firstCharLower,
                 'getPackageName': getPackageName,
+                'getParentName': getParentName,
                 'getAttributes': getAttributes,
                 'getEnumLiterals': getEnumLiterals,
                 'getAssociationEnds': getAssociationEnds,
@@ -280,21 +291,21 @@ class GroovyModelProcessor {
 
     void process(Map context) {
 
-        getAllClasses(context.model).each {modelElement ->
+        getAllClasses(context.model).each { modelElement ->
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
             if (!fullyQualifiedName.startsWith('java') && fullyQualifiedName.size() > 0) {
-                println "Generating class: ${fullyQualifiedName}"
+                println "Generating: ${fullyQualifiedName}"
                 def templateName = 'templates/GrailsDomainClass.gtl'
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)
             }
         }
-        getAllEnums(context.model).each {modelElement ->
+        getAllEnums(context.model).each { modelElement ->
             context.currentModelElement = modelElement
             def fullyQualifiedName = getFullyQualifiedName(context.currentModelElement)
             if (!fullyQualifiedName.startsWith('java') && fullyQualifiedName.size() > 0) {
-                println "Generating enum: ${fullyQualifiedName}"
+                println "Generating: ${fullyQualifiedName}"
                 def templateName = 'templates/GrailsDomainEnum.gtl'
                 def outputName = "${fullyQualifiedName.replace('.', '/')}.groovy"
                 processTemplate(templateName, outputName, context)
