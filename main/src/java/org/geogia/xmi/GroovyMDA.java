@@ -17,25 +17,28 @@ package org.geogia.xmi;
 
 import groovy.lang.GroovyClassLoader;
 import groovy.lang.GroovyObject;
+
 import java.net.URL;
 import java.io.InputStream;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Collection;
 import javax.jmi.model.ModelElement;
 import javax.jmi.model.ModelPackage;
 import javax.jmi.reflect.RefPackage;
+
 import org.netbeans.api.mdr.MDRManager;
 import org.netbeans.api.mdr.MDRepository;
 import org.netbeans.api.xmi.XMIReaderFactory;
 
 /**
- *  The main class for the GroovyMDA tool
+ * The main class for the GroovyMDA tool
  *
- * @author		<a href="mailto:craig2600@gmail.com">Craig MacKay</a>
- * @author		<a href="mailto:chanwit@gmail.com">Chanwit Kaewkasi</a>
- * @version 	$Revision: 3 $
- * @created		July 18, 2007
+ * @version $Revision: 3 $
+ * @author        <a href="mailto:craig2600@gmail.com">Craig MacKay</a>
+ * @author        <a href="mailto:chanwit@gmail.com">Chanwit Kaewkasi</a>
+ * @created July 18, 2007
  */
 public class GroovyMDA {
 
@@ -45,9 +48,9 @@ public class GroovyMDA {
     private GroovyObject modelProcessor;
 
     /**
-     *  The main method for the GroovyMDA class
+     * The main method for the GroovyMDA class
      *
-     *@param  args  The command line arguments
+     * @param args The command line arguments
      */
     public static void main(String[] args) {
         if (args.length < 1) {
@@ -67,12 +70,12 @@ public class GroovyMDA {
 
 
     /**
-     *  Main processing method for the GroovyMDA object
+     * Main processing method for the GroovyMDA object
      *
-     *@param  context  Description of the Parameter
+     * @param context Description of the Parameter
      */
     public void processModel(Map context) {
-	this.context = context;
+        this.context = context;
         try {
             initialize();
             loadModel();
@@ -90,9 +93,9 @@ public class GroovyMDA {
 
 
     /**
-     *  Initializes the MDR
+     * Initializes the MDR
      *
-     *@exception  Exception  Description of the Exception
+     * @throws Exception Description of the Exception
      */
     public void initialize() throws Exception {
         System.setProperty(
@@ -116,8 +119,7 @@ public class GroovyMDA {
 
         ClassLoader parent = getClass().getClassLoader();
         GroovyClassLoader loader = new GroovyClassLoader(parent);
-        Class modelProcessorClass = Class.forName("GroovyModelProcessor"); 
-                //loader.parseClass(getClass().getResourceAsStream("/GroovyModelProcessor.groovy"));
+        Class modelProcessorClass = Class.forName("GroovyModelProcessor");
         if (context.containsKey("scriptUrl")) {
             // if specified use the scrupt url as the model processor
             modelProcessorClass = loader.parseClass(new URL((String) context.get("scriptUrl")).openStream());
@@ -127,15 +129,15 @@ public class GroovyMDA {
 
 
     /**
-     *  Loads the model
+     * Loads the model
      *
-     *@param  context        Description of the Parameter
-     *@exception  Exception  Description of the Exception
+     * @param context Description of the Parameter
+     * @throws Exception Description of the Exception
      */
     public void loadModel() throws Exception {
-	URL modelUrl = new URL((String) context.get("modelPath"));
+        URL modelUrl = new URL((String) context.get("modelPath"));
         String modelName = modelUrl.toExternalForm();
-	InputStream in = (InputStream)modelProcessor.invokeMethod("preProcessXMI", modelUrl.openStream());
+        InputStream in = (InputStream) modelProcessor.invokeMethod("preProcessXMI", modelUrl.openStream());
         RefPackage modelExtent = repository.getExtent("MODEL");
         if (modelExtent != null) {
             modelExtent.refDelete();
@@ -147,10 +149,10 @@ public class GroovyMDA {
 
 
     /**
-     *  Runs the groovy script
+     * Runs the groovy script
      *
-     *@param  context        Description of the Parameter
-     *@exception  Exception  Description of the Exception
+     * @param context Description of the Parameter
+     * @throws Exception Description of the Exception
      */
     public void runScript() throws Exception {
         modelProcessor.invokeMethod("process", context);
@@ -158,9 +160,9 @@ public class GroovyMDA {
 
 
     /**
-     *  Cleans up the MDR
+     * Cleans up the MDR
      *
-     *@exception  Exception  Description of the Exception
+     * @throws Exception Description of the Exception
      */
     public void destory() throws Exception {
         if (repository != null) {
@@ -170,15 +172,15 @@ public class GroovyMDA {
 
 
     /**
-     *  Helper method for finding a model element by name in a given package
+     * Helper method for finding a model element by name in a given package
      *
-     *@param  name          Description of the Parameter
-     *@param  modelPackage  Description of the Parameter
-     *@return               Description of the Return Value
+     * @param name         Description of the Parameter
+     * @param modelPackage Description of the Parameter
+     * @return Description of the Return Value
      */
     private ModelElement findModelElement(String name, ModelPackage modelPackage) {
         ModelElement modelElement = null;
-        for (Iterator i = modelPackage.getMofPackage().refAllOfClass().iterator(); i.hasNext(); ) {
+        for (Iterator i = modelPackage.getMofPackage().refAllOfClass().iterator(); i.hasNext();) {
             modelElement = (ModelElement) i.next();
             if (modelElement.getName().equals(name)) {
                 return modelElement;
