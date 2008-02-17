@@ -1,7 +1,5 @@
 package org.tspec.runtime;
 
-import org.tspec.VerificationException;
-
 public class ShouldObject {
 
 	private Object object;

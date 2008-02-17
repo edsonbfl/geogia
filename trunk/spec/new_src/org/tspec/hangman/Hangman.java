@@ -39,5 +39,17 @@ public class Hangman {
 	public int getWrongs() {
 		return wrongs;
 	}
+	
+	public void guess(String ch) {
+		if(this.word.indexOf(ch)==-1) {
+			wrongs++;
+		} else {
+			// TODO correct it
+		}
+	}
+	
+	public void newGame() {
+		this.wrongs = 0;
+	}
 
 }
