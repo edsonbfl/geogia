@@ -34,6 +34,7 @@ public class Hangman {
 			unrevealedWord.add("_");
 		}
 		this.maxGuess = 12;
+		this.finished = false;
 	}
 
 	public int getWrongs() {
@@ -49,6 +50,18 @@ public class Hangman {
 			wrongs++;
 		} else {
 			unrevealedWord.set(i, ch);
+			for(int j=i+1;j<this.word.length();j++) {
+				if(this.word.charAt(j)==ch.charAt(0)) {
+					unrevealedWord.set(j, ch);
+				}
+			}
+			finished = true;
+			for(String s: unrevealedWord) {
+				if(s.equals("_")) {
+					finished = false;
+					break;
+				}
+			}
 		}
 	}
 	
