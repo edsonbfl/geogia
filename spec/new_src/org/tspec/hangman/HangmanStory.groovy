@@ -85,5 +85,24 @@ import org.tspec.hangman.Hangman
 	และ 'คำที่ซ่อนอยู่ควรเป็น he และช่องว่าง 3 ตัว', {
 		hangman.unrevealedWord.should == ['h','e','_','_','_']
 	}	
+	และเมื่อ 'ทายด้วย l', {
+		hangman.guess('l')
+	}
+	แล้ว 'จำนวนครั้งที่ผิดควรจะยังเป็น 0 อยู่', {		
+		hangman.wrongs.should == 0
+	}
+	และ 'คำที่ซ่อนอยู่ควรเป็น hell และช่องว่าง 1 ตัว', {
+		hangman.unrevealedWord.should == ['h','e','l','l','_']
+	}		
+	และเมื่อ 'ทายด้วย o', {
+		hangman.guess('o')
+	}
+	แล้ว 'จำนวนครั้งที่ผิดควรจะยังเป็น 0 อยู่', {		
+		hangman.wrongs.should == 0
+	}
+	และ 'คำที่ซ่อนอยู่ควรเป็น hello และจบการเล่น', {
+		hangman.unrevealedWord.should == ['h','e','l','l','o']
+		hangman.finished.should == true
+	}		
 }
 
