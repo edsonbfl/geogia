@@ -79,5 +79,12 @@ import org.tspec.hangman.Hangman
 	และ 'คำที่ซ่อนอยู่ควรเป็น h และช่องว่าง 4 ตัว', {
 		hangman.unrevealedWord.should == ['h','_','_','_','_']
 	}
+	และ 'เมื่อทายด้วย e จำนวนครั้งที่ผิดควรจะยังเป็น 0 อยู่', {
+		hangman.guess('e')
+		hangman.wrongs.should == 0
+	}
+	และ 'คำที่ซ่อนอยู่ควรเป็น he และช่องว่าง 3 ตัว', {
+		hangman.unrevealedWord.should == ['h','e','_','_','_']
+	}	
 }
 
