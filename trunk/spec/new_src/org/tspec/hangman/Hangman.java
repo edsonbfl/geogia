@@ -44,10 +44,11 @@ public class Hangman {
 		if(wrongs == 12) {
 			throw new ExceedGuessException();
 		}
-		if(this.word.indexOf(ch)==-1) {
+		int i = this.word.indexOf(ch);
+		if(i==-1) {
 			wrongs++;
 		} else {
-			// TODO correct it
+			unrevealedWord.set(i, ch);
 		}
 	}
 	
