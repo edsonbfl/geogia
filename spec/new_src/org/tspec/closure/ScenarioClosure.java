@@ -20,6 +20,7 @@ public class ScenarioClosure extends Closure {
 		body.setProperty("แล้ว", new ThenClosure("แล้ว", this));
 		body.setProperty("และควร", new AndThenClosure("และควร", this));		
 		body.setProperty("และ", new AndThenClosure("และ", this));		
+		body.setProperty("และเมื่อ", new AndThenClosure("และเมื่อ", this));		
 	}
 	
 	public Story doCall(String name, Closure body) {
