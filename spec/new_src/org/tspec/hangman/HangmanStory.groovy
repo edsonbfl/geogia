@@ -26,13 +26,10 @@ import org.tspec.hangman.Hangman
 		hangman.word = 'hello'
 	}
 	เมื่อ 'ผู้เล่นเล่นเกมไปแล้วด้วยการทาย a และสั่งให้เริ่มเกมใหม่', {
-		playThenNewGame = {
-			hangman.guess('a')
-			hangman.newGame()
-		}
+		hangman.guess('a')
+		hangman.newGame()
 	}
 	แล้ว 'จำนวนครั้งของการเล่นผิดควรเป็น 0',{
-		playThenNewGame()
 		hangman.wrongs.should == 0
 	}
 }
