@@ -40,7 +40,10 @@ public class Hangman {
 		return wrongs;
 	}
 	
-	public void guess(String ch) {
+	public void guess(String ch) throws ExceedGuessException {
+		if(wrongs == 12) {
+			throw new ExceedGuessException();
+		}
 		if(this.word.indexOf(ch)==-1) {
 			wrongs++;
 		} else {

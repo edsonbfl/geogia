@@ -31,7 +31,7 @@ public class Runner {
 		} catch(InvokerInvocationException e) {
 			if(e.getCause()!=null) {
 				for(StackTraceElement ste: e.getCause().getStackTrace()) {
-					if(ste.getFileName().lastIndexOf("Story.groovy")!=-1) {
+					if(ste.getFileName()!=null && ste.getFileName().lastIndexOf("Story.groovy")!=-1) {
 						ErrorListener.v().addError(
 							ste.getFileName()+":"+ste.getLineNumber() + " / "
 							+ e.getMessage()
