@@ -87,6 +87,7 @@ public class Scenario extends GroovyObjectSupport {
 		if(thenClauses.size() > 0) {
 			for (final Then then : thenClauses) {
 				if(then.getBody() != null) {
+					then.init(this);
 					then.getBody().setDelegate(this);
 					then.getBody().setResolveStrategy(Closure.DELEGATE_FIRST);
 					DefaultGroovyMethods.use(this, ShouldCategory.class, then.getBody());

@@ -15,7 +15,7 @@ public class ThenClosure extends ScenarioItemClosure {
 	}
 	
 	public void doCall(String name, Closure body) {
-		Then then = new Then(this.label, name, body, getScenario());
+		Then then = new Then(this.label, name, body);
 		getScenario().addThen(then);
 	}
 
