@@ -1,23 +1,16 @@
 package org.tspec;
 
-import org.codehaus.groovy.runtime.MetaClassHelper;
-import org.codehaus.groovy.runtime.metaclass.ClosureMetaMethod;
-import org.codehaus.groovy.runtime.metaclass.MetaClassRegistryImpl;
-import org.tspec.closure.ScenarioClosure;
-import org.tspec.closure.SubjectClosure;
-import org.tspec.dom.Story;
-import org.tspec.runtime.ShouldObject;
-
 import groovy.lang.Binding;
 import groovy.lang.Closure;
 import groovy.lang.ExpandoMetaClass;
 import groovy.lang.ExpandoMetaClassCreationHandle;
 import groovy.lang.GroovySystem;
-import groovy.lang.MetaBeanProperty;
-import groovy.lang.MetaClass;
-import groovy.lang.MetaClassImpl;
 import groovy.lang.MetaClassRegistry;
-import groovy.lang.MetaMethod;
+
+import org.tspec.closure.ScenarioClosure;
+import org.tspec.closure.SubjectClosure;
+import org.tspec.dom.Story;
+import org.tspec.runtime.ShouldObject;
 
 
 public class ThaiSpecBinding extends Binding {
@@ -32,6 +25,10 @@ public class ThaiSpecBinding extends Binding {
 		setVariable("เรื่อง", new SubjectClosure(root));		
 		setVariable("อธิบาย", new ScenarioClosure(root));
 		
+		setupShould();			
+	}
+
+	private void setupShould() {
 		ExpandoMetaClassCreationHandle.enable();
 		MetaClassRegistry mr = GroovySystem.getMetaClassRegistry();
 		ExpandoMetaClass mc = (ExpandoMetaClass)mr.getMetaClass(Object.class);
@@ -40,7 +37,7 @@ public class ThaiSpecBinding extends Binding {
 				return new ShouldObject(this.getDelegate()); 				
 			}
 		};
-		mc.setProperty("getShould", c);			
+		mc.setProperty("getShould", c);
 	}
 
 }
