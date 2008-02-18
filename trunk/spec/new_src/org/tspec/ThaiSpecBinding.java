@@ -33,6 +33,7 @@ public class ThaiSpecBinding extends Binding {
 		MetaClassRegistry mr = GroovySystem.getMetaClassRegistry();
 		ExpandoMetaClass mc = (ExpandoMetaClass)mr.getMetaClass(Object.class);
 		Closure c = new Closure(null){
+			@SuppressWarnings("unused")
 			public ShouldObject doCall() {
 				return new ShouldObject(this.getDelegate()); 				
 			}
