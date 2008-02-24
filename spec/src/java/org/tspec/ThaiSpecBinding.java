@@ -7,6 +7,8 @@ import groovy.lang.ExpandoMetaClassCreationHandle;
 import groovy.lang.GroovySystem;
 import groovy.lang.MetaClassRegistry;
 
+import org.tspec.closure.AfterClosure;
+import org.tspec.closure.BeforeClosure;
 import org.tspec.closure.ScenarioClosure;
 import org.tspec.closure.SubjectClosure;
 import org.tspec.dom.Story;
@@ -24,7 +26,8 @@ public class ThaiSpecBinding extends Binding {
 		Story root = new Story();
 		setVariable("เรื่อง", new SubjectClosure(root));		
 		setVariable("อธิบาย", new ScenarioClosure(root));
-		
+		setVariable("ก่อน", new BeforeClosure(root));
+		setVariable("หลัง", new AfterClosure(root));
 		setupShould();			
 	}
 
