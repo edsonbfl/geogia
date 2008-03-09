@@ -3,27 +3,31 @@ package org.tspec.runtime;
 public class ShouldObject {
 
 	private Object object;
+	private boolean not;
 
 	public ShouldObject(Object o) {
-		this.object = o;
-	}
+		this(o, false);
+	}	
 	
+	public ShouldObject(Object o, boolean b) {
+		this.object = o;
+		this.not = b;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
-		if(!this.object.equals(obj)) {
-			for(StackTraceElement ste: Thread.currentThread().getStackTrace()) {
-				if(ste.getFileName()!=null && ste.getFileName().lastIndexOf("Story.groovy")!=-1) {
-					ErrorListener.v().addError(
-						ste.getFileName()+":"+ste.getLineNumber() + " / "
-						+ this.object + " should be " + obj
-					);
-					break;
-				}				
-			}
-			return false;
+		boolean result = this.object.equals(obj);
+		if(this.not==true) {
+			if(!result) ReportHelper.reportError(this.object, obj, "should not be");
+			return !result;
 		} else {
-			return true;
+			if(result) ReportHelper.reportError(this.object, obj, "should be");
+			return result;
 		}
-	}	
+	}
+	
+	public ShouldObject getNot() {
+		return new ShouldObject(this.object, true);
+	}		
 
 }
