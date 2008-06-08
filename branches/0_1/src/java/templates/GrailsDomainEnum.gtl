@@ -1,0 +1,19 @@
+<% if (getPackageName(currentModelElement) != '') { %>
+package ${getPackageName(currentModelElement)}
+<% } %>
+class ${currentModelElement.name} {
+
+	static void initEnums() {
+		if(${currentModelElement.name}.count()==0) {<% getEnumLiterals(currentModelElement).each { literal -> %>
+			new ${currentModelElement.name}(value:'${literal.name}').save() <% } %>
+		}
+	}
+	
+	String value
+	
+	String toString() {
+		return "\${id}: \${value}"
+	}
+      
+}
+
