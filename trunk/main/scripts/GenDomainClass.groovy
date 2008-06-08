@@ -5,6 +5,8 @@ class GenDomainClass {
 	// TODO 1. Enumeration, still noway to correct his
 	// 		2. Constraints, @see def constraintGen
 	//		3. Validation
+	
+	static classes = [:]
 		
 	def fieldMaps = [:]				
 	def sqlTypes =  [:]
@@ -36,16 +38,19 @@ class GenDomainClass {
 	}	
 	
 	def relationGen = { r, fields, hasMany ->
-		switch(r.'@type') {
+		switch(r.'@type') {			
 			case 'one': 	
 			case 'one-nofk':
 							def fname = r.'key-map'.'@field-name'.text()
+							// trim Id out
 							if(fname.lastIndexOf('Id') != -1) { 
 								fields.remove(fname)
 								fname = fname[0..fname.length()-3] 								
 							}
+							if(fname == 'return') fname = '_return' // TODO work around the 'return' keyword
 							fields[fname] = r.'@rel-entity-name'.text()
 							break
+							
 			case 'many': 	def name = r.'@title'?.text()
 							if(name == null || name=='') name = r.'@rel-entity-name'.text()
 							hasMany[decap(name)] =  r.'@rel-entity-name'.text()							
@@ -83,9 +88,12 @@ class GenDomainClass {
 	}
 	
 	def gen = { ent ->
-		StringBuffer sb = new StringBuffer()
-		sb.append "package ${ent.'@package-name'}\n"
-		sb.append '\n'
+		def packageName = ent.'@package-name'.text()
+		// TODO work around the 'return' keyword
+		packageName = packageName.replace('org.ofbiz.','')
+		StringBuffer sb = new StringBuffer()		
+		// sb.append "package ${packageName};\n"
+		// sb.append '\n'
 		sb.append "class ${ent.'@entity-name'} {\n"
 		sb.append '\n'
 		def fs = [:]
@@ -100,7 +108,7 @@ class GenDomainClass {
 		sb.append '\n'
 		sb.append "}"
 		
-		def dir = "./grails-app/domain/" + ent.'@package-name'.text().replace('.','/')
+		def dir = "./grails-app/domain/" + packageName.replace('.','/')
 		def filename = ent.'@entity-name'.text() + ".groovy"
 		println "Generating $filename ..."
 		new File(dir).mkdirs()
