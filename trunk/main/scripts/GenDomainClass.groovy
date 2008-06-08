@@ -11,7 +11,7 @@ class GenDomainClass {
 	
 	GenDomainClass() {
 		// populate field type data
-		def ft = new XmlSlurper().parse('../framework/entity/fieldtype/fieldtypemysql.xml')
+		def ft = new XmlSlurper().parse('./ofbiz/framework/entity/fieldtype/fieldtypemysql.xml')
 		ft.'field-type-def'.each {
 			// TODO reformat data type, for example indicator -> would be boolean or char(1)
 			// TODO generate a correct validation			
@@ -100,11 +100,11 @@ class GenDomainClass {
 		sb.append '\n'
 		sb.append "}"
 		
-		def dir = ent.'@package-name'.text().replace('.','/')
-		def filename = ent.'@entity-name'.text()
+		def dir = "./grails-app/domain/" + ent.'@package-name'.text().replace('.','/')
+		def filename = ent.'@entity-name'.text() + ".groovy"
 		println "Generating $filename ..."
 		new File(dir).mkdirs()
-		new File(dir + '/' + filename + '.groovy').write(sb.toString());
+		new File(dir + '/' + filename).write(sb.toString());
 	}	
 	
 	static main(args) {
@@ -116,7 +116,7 @@ class GenDomainClass {
 		]
 		modules.each { module ->
 			try {
-				def root = new XmlSlurper().parse("../applications/$module/entitydef/entitymodel.xml")
+				def root = new XmlSlurper().parse("./ofbiz/applications/$module/entitydef/entitymodel.xml")
 				root.entity.each {
 					new GenDomainClass().gen(it)
 				}
