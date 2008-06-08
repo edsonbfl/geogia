@@ -1,0 +1,1 @@
+svn export http://svn.apache.org/repos/asf/ofbiz/trunk/applications/ ofbiz/.
