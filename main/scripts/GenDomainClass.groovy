@@ -23,9 +23,9 @@ class GenDomainClass {
 	}
 	
 	private String normalise(String className) {
-		if(className=='java.sql.Timestamp') return 'Timestamp'
+		if(className=='java.sql.Timestamp') return 'Date'
 		if(className=='java.sql.Date') return 'Date'
-		if(className=='java.sql.Time') return 'Time'
+		if(className=='java.sql.Time') return 'Date'
 		return className
 	}
 	
@@ -46,8 +46,8 @@ class GenDomainClass {
 							if(fname.lastIndexOf('Id') != -1) { 
 								fields.remove(fname)
 								fname = fname[0..fname.length()-3] 								
-							}
-							if(fname == 'return') fname = '_return' // TODO work around the 'return' keyword
+							}			
+							if(fname == 'return') fname = 'returnId' // TODO work around the 'return' keyword				
 							fields[fname] = r.'@rel-entity-name'.text()
 							break
 							
@@ -89,7 +89,6 @@ class GenDomainClass {
 	
 	def gen = { ent ->
 		def packageName = ent.'@package-name'.text()
-		// TODO work around the 'return' keyword
 		packageName = packageName.replace('org.ofbiz.','')
 		StringBuffer sb = new StringBuffer()		
 		// sb.append "package ${packageName};\n"
