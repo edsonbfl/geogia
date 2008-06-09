@@ -41,7 +41,12 @@ class GenDomainClass {
 		switch(r.'@type') {			
 			case 'one': 	
 			case 'one-nofk':
-							def fname = r.'key-map'.'@field-name'.text()
+							def fname
+							if(r.'key-map'.size()!=1) {
+								fname = decap(r.'@rel-entity-name'.text())
+							} else {
+								fname = r.'key-map'.'@field-name'.text()
+							}
 							// trim Id out
 							if(fname.lastIndexOf('Id') != -1) { 
 								fields.remove(fname)
