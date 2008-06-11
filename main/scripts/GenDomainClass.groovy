@@ -132,6 +132,7 @@ class GenDomainClass {
 				root.entity.each {
 					new GenDomainClass().gen(it)
 				}
+				
 			} catch(FileNotFoundException e) {
 				println e.message
 			}
